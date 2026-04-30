@@ -1,0 +1,1317 @@
+openapi: 3.0.0
+info:
+  title: AgriTrace API
+  description: Plataforma de Trazabilidad y Exportación Sostenible para Productores Agrícolas
+  version: 1.0.0
+  contact:
+    name: AgriTrace Support
+    email: support@agritrace.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.agritrace.com/v1
+    description: Production server
+  - url: https://staging-api.agritrace.com/v1
+    description: Staging server
+  - url: http://localhost:3000/v1
+    description: Development server
+
+tags:
+  - name: Auth
+    description: Autenticación y gestión de usuarios
+  - name: Producers
+    description: Gestión de productores
+  - name: Farms
+    description: Gestión de fincas
+  - name: Plots
+    description: Gestión de lotes agrícolas
+  - name: Activities
+    description: Registro de actividades agrícolas
+  - name: QR
+    description: Generación y verificación de códigos QR
+  - name: Traceability
+    description: Consulta pública de trazabilidad
+  - name: Certificates
+    description: Gestión de certificaciones
+  - name: Admin
+    description: Funciones administrativas
+
+paths:
+  # ============================================================================
+  # AUTH ENDPOINTS
+  # ============================================================================
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Registrar nuevo usuario
+      description: Crea una nueva cuenta de usuario (productor, cooperativa, exportador)
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - fullName
+                - role
+                - phone
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: juan@example.com
+                password:
+                  type: string
+                  format: password
+                  minLength: 8
+                  example: SecurePass123!
+                fullName:
+                  type: string
+                  example: Juan Gómez
+                role:
+                  type: string
+                  enum: [producer, cooperative, exporter, buyer, admin]
+                  example: producer
+                phone:
+                  type: string
+                  example: "+57 310 123 4567"
+                organization:
+                  type: string
+                  example: Asoprofrutas (opcional si role = cooperative)
+      responses:
+        '201':
+          description: Usuario registrado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  email:
+                    type: string
+                  fullName:
+                    type: string
+                  role:
+                    type: string
+                  accessToken:
+                    type: string
+                    description: JWT token para autenticación
+                  refreshToken:
+                    type: string
+        '400':
+          description: Datos inválidos o email ya registrado
+        '500':
+          description: Error del servidor
+
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Iniciar sesión
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Login exitoso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '401':
+          description: Credenciales inválidas
+        '404':
+          description: Usuario no encontrado
+
+  /auth/refresh:
+    post:
+      tags:
+        - Auth
+      summary: Renovar access token
+      operationId: refreshToken
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - refreshToken
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Nuevo access token generado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+        '401':
+          description: Token inválido o expirado
+
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      summary: Cerrar sesión
+      operationId: logoutUser
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Sesión cerrada exitosamente
+        '401':
+          description: No autenticado
+
+  # ============================================================================
+  # PRODUCERS ENDPOINTS
+  # ============================================================================
+  /producers:
+    get:
+      tags:
+        - Producers
+      summary: Listar productores
+      operationId: listProducers
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: role
+          in: query
+          schema:
+            type: string
+            enum: [producer, cooperative, exporter]
+      responses:
+        '200':
+          description: Lista de productores
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Producer'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+        '401':
+          description: No autenticado
+
+    post:
+      tags:
+        - Producers
+      summary: Crear nuevo productor (Admin)
+      operationId: createProducer
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProducerInput'
+      responses:
+        '201':
+          description: Productor creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producer'
+        '400':
+          description: Datos inválidos
+        '403':
+          description: No tienes permisos
+
+  /producers/{producerId}:
+    get:
+      tags:
+        - Producers
+      summary: Obtener detalles del productor
+      operationId: getProducer
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: producerId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles del productor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProducerDetail'
+        '404':
+          description: Productor no encontrado
+
+    put:
+      tags:
+        - Producers
+      summary: Actualizar perfil del productor
+      operationId: updateProducer
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: producerId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProducerInput'
+      responses:
+        '200':
+          description: Productor actualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producer'
+        '404':
+          description: Productor no encontrado
+        '403':
+          description: No tienes permisos
+
+  # ============================================================================
+  # FARMS ENDPOINTS
+  # ============================================================================
+  /farms:
+    post:
+      tags:
+        - Farms
+      summary: Crear nueva finca
+      operationId: createFarm
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmInput'
+      responses:
+        '201':
+          description: Finca creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+        '400':
+          description: Datos inválidos
+        '401':
+          description: No autenticado
+
+  /farms/{farmId}:
+    get:
+      tags:
+        - Farms
+      summary: Obtener detalles de la finca
+      operationId: getFarm
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: farmId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de la finca
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmDetail'
+        '404':
+          description: Finca no encontrada
+
+    put:
+      tags:
+        - Farms
+      summary: Actualizar finca
+      operationId: updateFarm
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: farmId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmInput'
+      responses:
+        '200':
+          description: Finca actualizada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+        '404':
+          description: Finca no encontrada
+
+    delete:
+      tags:
+        - Farms
+      summary: Eliminar finca (soft delete)
+      operationId: deleteFarm
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: farmId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Finca eliminada
+        '404':
+          description: Finca no encontrada
+
+  /producers/{producerId}/farms:
+    get:
+      tags:
+        - Farms
+      summary: Listar fincas de un productor
+      operationId: listProducerFarms
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: producerId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Lista de fincas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Farm'
+
+  # ============================================================================
+  # PLOTS ENDPOINTS
+  # ============================================================================
+  /plots:
+    post:
+      tags:
+        - Plots
+      summary: Crear nuevo lote
+      operationId: createPlot
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlotInput'
+      responses:
+        '201':
+          description: Lote creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plot'
+        '400':
+          description: Datos inválidos
+
+  /plots/{plotId}:
+    get:
+      tags:
+        - Plots
+      summary: Obtener detalles del lote
+      operationId: getPlot
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: plotId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles del lote
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlotDetail'
+        '404':
+          description: Lote no encontrado
+
+    put:
+      tags:
+        - Plots
+      summary: Actualizar lote
+      operationId: updatePlot
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: plotId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlotInput'
+      responses:
+        '200':
+          description: Lote actualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plot'
+
+  /farms/{farmId}/plots:
+    get:
+      tags:
+        - Plots
+      summary: Listar lotes de una finca
+      operationId: listFarmPlots
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: farmId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Lista de lotes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Plot'
+
+  # ============================================================================
+  # ACTIVITIES ENDPOINTS
+  # ============================================================================
+  /activities:
+    post:
+      tags:
+        - Activities
+      summary: Registrar nueva actividad agrícola
+      operationId: createActivity
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityInput'
+      responses:
+        '201':
+          description: Actividad registrada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          description: Datos inválidos
+
+  /activities/{activityId}:
+    get:
+      tags:
+        - Activities
+      summary: Obtener detalles de actividad
+      operationId: getActivity
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: activityId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de la actividad
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityDetail'
+        '404':
+          description: Actividad no encontrada
+
+  /plots/{plotId}/activities:
+    get:
+      tags:
+        - Activities
+      summary: Listar actividades de un lote
+      operationId: listPlotActivities
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: plotId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Lista de actividades
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+
+  # ============================================================================
+  # QR ENDPOINTS
+  # ============================================================================
+  /qr/generate:
+    post:
+      tags:
+        - QR
+      summary: Generar código QR para un lote
+      operationId: generateQR
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - plotId
+              properties:
+                plotId:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Código QR generado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                  code:
+                    type: string
+                    description: Valor del código QR
+                  url:
+                    type: string
+                    description: URL pública para consultar trazabilidad
+                  plotId:
+                    type: string
+                    format: uuid
+                  generatedAt:
+                    type: string
+                    format: date-time
+        '400':
+          description: Lote inválido
+
+  /qr/{qrCode}:
+    get:
+      tags:
+        - QR
+      summary: Obtener información del código QR
+      operationId: getQRInfo
+      parameters:
+        - name: qrCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Información del QR
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  code:
+                    type: string
+                  plot:
+                    $ref: '#/components/schemas/Plot'
+                  generatedAt:
+                    type: string
+                    format: date-time
+        '404':
+          description: Código QR no encontrado
+
+  # ============================================================================
+  # TRACEABILITY ENDPOINTS (Públicos)
+  # ============================================================================
+  /traceability/{qrCode}:
+    get:
+      tags:
+        - Traceability
+      summary: Consultar trazabilidad por código QR (PÚBLICO)
+      operationId: getTraceability
+      description: Endpoint público para consultar la trazabilidad completa de un lote
+      parameters:
+        - name: qrCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Información de trazabilidad completa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TraceabilityDetail'
+        '404':
+          description: Código QR no encontrado
+
+  /traceability/plot/{plotId}:
+    get:
+      tags:
+        - Traceability
+      summary: Consultar trazabilidad por ID de lote (requiere autenticación)
+      operationId: getTraceabilityByPlot
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: plotId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Información de trazabilidad completa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TraceabilityDetail'
+        '404':
+          description: Lote no encontrado
+
+  # ============================================================================
+  # CERTIFICATES ENDPOINTS
+  # ============================================================================
+  /certificates:
+    post:
+      tags:
+        - Certificates
+      summary: Crear certificación
+      operationId: createCertificate
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateInput'
+      responses:
+        '201':
+          description: Certificación creada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Certificate'
+
+  /certificates/{certificateId}:
+    get:
+      tags:
+        - Certificates
+      summary: Obtener certificación
+      operationId: getCertificate
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: certificateId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles de certificación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Certificate'
+        '404':
+          description: Certificación no encontrada
+
+  /plots/{plotId}/certificates:
+    get:
+      tags:
+        - Certificates
+      summary: Listar certificaciones de un lote
+      operationId: listPlotCertificates
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: plotId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Lista de certificaciones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Certificate'
+
+  # ============================================================================
+  # ADMIN ENDPOINTS
+  # ============================================================================
+  /admin/users:
+    get:
+      tags:
+        - Admin
+      summary: Listar todos los usuarios (Admin)
+      operationId: adminListUsers
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de usuarios
+        '403':
+          description: No tienes permisos de admin
+
+  /admin/audit-logs:
+    get:
+      tags:
+        - Admin
+      summary: Obtener logs de auditoría
+      operationId: getAuditLogs
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: userId
+          in: query
+          schema:
+            type: string
+        - name: action
+          in: query
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Logs de auditoría
+        '403':
+          description: No tienes permisos
+
+  /admin/statistics:
+    get:
+      tags:
+        - Admin
+      summary: Obtener estadísticas del sistema
+      operationId: getStatistics
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Estadísticas del sistema
+        '403':
+          description: No tienes permisos
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        fullName:
+          type: string
+        role:
+          type: string
+          enum: [producer, cooperative, exporter, buyer, admin]
+        phone:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Producer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        fullName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        organization:
+          type: string
+          nullable: true
+        role:
+          type: string
+        farmsCount:
+          type: integer
+        createdAt:
+          type: string
+          format: date-time
+
+    ProducerInput:
+      type: object
+      required:
+        - fullName
+        - email
+        - phone
+      properties:
+        fullName:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        organization:
+          type: string
+
+    ProducerDetail:
+      allOf:
+        - $ref: '#/components/schemas/Producer'
+        - type: object
+          properties:
+            farms:
+              type: array
+              items:
+                $ref: '#/components/schemas/Farm'
+            statistics:
+              type: object
+              properties:
+                totalFarms:
+                  type: integer
+                totalPlots:
+                  type: integer
+                totalActivities:
+                  type: integer
+
+    Farm:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        producerId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        municipality:
+          type: string
+        vereda:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        mainCrop:
+          type: string
+        area:
+          type: number
+          description: Área en hectáreas
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    FarmInput:
+      type: object
+      required:
+        - name
+        - municipality
+        - latitude
+        - longitude
+        - mainCrop
+      properties:
+        name:
+          type: string
+        municipality:
+          type: string
+        vereda:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        mainCrop:
+          type: string
+        area:
+          type: number
+
+    FarmDetail:
+      allOf:
+        - $ref: '#/components/schemas/Farm'
+        - type: object
+          properties:
+            plots:
+              type: array
+              items:
+                $ref: '#/components/schemas/Plot'
+            plotsCount:
+              type: integer
+
+    Plot:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        farmId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        crop:
+          type: string
+        area:
+          type: number
+        sowingDate:
+          type: string
+          format: date
+        expectedHarvestDate:
+          type: string
+          format: date
+        status:
+          type: string
+          enum: [planning, growing, ready, harvested]
+        createdAt:
+          type: string
+          format: date-time
+
+    PlotInput:
+      type: object
+      required:
+        - farmId
+        - name
+        - crop
+        - sowingDate
+      properties:
+        farmId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        crop:
+          type: string
+        area:
+          type: number
+        sowingDate:
+          type: string
+          format: date
+        expectedHarvestDate:
+          type: string
+          format: date
+
+    PlotDetail:
+      allOf:
+        - $ref: '#/components/schemas/Plot'
+        - type: object
+          properties:
+            activities:
+              type: array
+              items:
+                $ref: '#/components/schemas/Activity'
+            qrCodes:
+              type: array
+              items:
+                type: object
+            certificates:
+              type: array
+              items:
+                $ref: '#/components/schemas/Certificate'
+
+    Activity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        plotId:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: [sowing, fertilization, irrigation, pest_control, harvest, other]
+        date:
+          type: string
+          format: date
+        notes:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+            description: URL de imagen
+        createdAt:
+          type: string
+          format: date-time
+
+    ActivityInput:
+      type: object
+      required:
+        - plotId
+        - type
+        - date
+      properties:
+        plotId:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: [sowing, fertilization, irrigation, pest_control, harvest, other]
+        date:
+          type: string
+          format: date
+        notes:
+          type: string
+        imageUrls:
+          type: array
+          items:
+            type: string
+
+    ActivityDetail:
+      allOf:
+        - $ref: '#/components/schemas/Activity'
+        - type: object
+          properties:
+            plot:
+              $ref: '#/components/schemas/Plot'
+
+    Certificate:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        plotId:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: [organic, fair_trade, ica, rainforest, other]
+        issueDate:
+          type: string
+          format: date
+        expiryDate:
+          type: string
+          format: date
+        documentUrl:
+          type: string
+        status:
+          type: string
+          enum: [pending, verified, expired, revoked]
+        createdAt:
+          type: string
+          format: date-time
+
+    CertificateInput:
+      type: object
+      required:
+        - plotId
+        - type
+        - issueDate
+      properties:
+        plotId:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: [organic, fair_trade, ica, rainforest, other]
+        issueDate:
+          type: string
+          format: date
+        expiryDate:
+          type: string
+          format: date
+        documentUrl:
+          type: string
+
+    TraceabilityDetail:
+      type: object
+      properties:
+        plot:
+          $ref: '#/components/schemas/PlotDetail'
+        farm:
+          $ref: '#/components/schemas/Farm'
+        producer:
+          type: object
+          properties:
+            fullName:
+              type: string
+            organization:
+              type: string
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
+        certificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/Certificate'
+        qrCode:
+          type: object
+          properties:
+            id:
+              type: string
+            code:
+              type: string
+            generatedAt:
+              type: string
+              format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        totalPages:
+          type: integer
+        hasNextPage:
+          type: boolean
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Token JWT obtenido en login
+
+security:
+  - BearerAuth: []
