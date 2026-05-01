@@ -21,7 +21,7 @@ Especificaciones completas y planificación del Producto Mínimo Viable (MVP), i
 
 **Duración**: 6 semanas | **Presupuesto**: ≈ $2.7M – $4.8M COP
 
-**Lee Primero**: Comienza con [01-preparacion-mvp/LEEME.md](01-preparacion-mvp/LEEME.md)
+**Lee Primero**: Comienza con [01-preparacion-mvp/README.md](01-preparacion-mvp/README.md)
 
 ### [02-documentacion-tecnica](02-documentacion-tecnica/)
 
@@ -39,13 +39,13 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 ## Inicio Rápido
 
-1. **Para Partes Interesadas del Negocio**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/)
+1. **Para Partes Interesadas del Negocio**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/)
 
-2. **Para Diseñadores**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/)
+2. **Para Diseñadores**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/)
 
-3. **Para Desarrolladores**: Comienza con [Documentación Técnica](02-documentacion-tecnica/LEEME.md) → [Arquitectura Técnica](01-preparacion-mvp/05-arquitectura-tecnica/) → [Diseño de Base de Datos](02-documentacion-tecnica/02-base-de-datos/)
+3. **Para Desarrolladores**: Comienza con [Documentación Técnica](02-documentacion-tecnica/README.md) → [Arquitectura Técnica](01-preparacion-mvp/05-arquitectura-tecnica/) → [Diseño de Base de Datos](02-documentacion-tecnica/02-base-de-datos/)
 
-4. **Para Gestores de Proyectos**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/) → [Control de Presupuesto](01-preparacion-mvp/08-presupuesto-inversion/)
+4. **Para Gestores de Proyectos**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/) → [Control de Presupuesto](01-preparacion-mvp/08-presupuesto-inversion/)
 
 ## Hoja de Ruta Fase 1
 
