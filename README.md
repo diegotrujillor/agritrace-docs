@@ -1,178 +1,127 @@
-# 🌾 AgriTrace (Fase1)
+# AgriTrace Documentation Repository
 
-**Fecha:** 12 de octubre de 2025
+Complete documentation for AgriTrace - a digital platform for agricultural traceability, sustainability certification, and international trade connections.
 
-# 📘 Fase 1 — Preparación del MVP AgriTrace
+**Project Overview**: AgriTrace enables agricultural producers (cocoa, coffee, exotic fruits) to digitalize complete crop traceability from planting through export, certify sustainable processes, and connect directly with international buyers.
 
-### **🌍 Concepto**
+## Repository Structure
 
-Una **plataforma integral para productores agrícolas** (ej. cacao, café, frutas exóticas) que:
+This repository is organized by project phase and topic for easy navigation and sequential reading.
 
-- **Digitaliza la trazabilidad completa del cultivo:** desde la siembra, riego, fertilización, cosecha, hasta la exportación.
-- **Certifica los procesos sostenibles** (con geolocalización, sensores IoT y blockchain (estos 2 últimos a largo plazo)).
-- **Conecta directamente productores certificados con compradores internacionales** (Europa, Asia, EE.UU.) que buscan productos “con historia”.
+### [Phase 1: MVP Preparation](phase-1-mvp/)
 
-## 🎯 Objetivo general
+Complete specifications and planning for the Minimum Viable Product (MVP), including:
+- Stakeholder survey and requirements
+- Functional and non-functional requirements
+- UI/UX design specifications
+- Technical architecture
+- Infrastructure setup plans
+- Project roadmap and timeline
+- Budget and investment tracking
 
-Definir el alcance funcional, la arquitectura técnica, el diseño UI/UX, la infraestructura inicial y el plan de gestión del proyecto para iniciar el desarrollo del MVP de **AgriTrace**, una plataforma de trazabilidad y exportación agrícola sostenible.
+**Duration**: 6 weeks | **Budget**: ≈ $2.7M – $4.8M COP
 
----
+**Read First**: Start with [phase-1-mvp/README.md](phase-1-mvp/README.md)
 
-## 🗂️ 1. Análisis funcional y definición del MVP
+### [Technical Documentation](technical-docs/)
 
-**Duración:** 1 semana
+Detailed technical specifications for developers and architects:
+- System analysis and design
+- Database specifications
+- API documentation
+- Development guidelines
+- Deployment procedures
 
-**Costo estimado:** $300.000 – $500.000 COP
+### [Assets](assets/)
 
-**Responsable:** Diego Trujillo (con apoyo documental)
+Shared resources including diagrams, images, icons, and brand guidelines.
 
-### ✅ Entregables
+### [Structure Reference](estructura_recomendada.md)
 
-- Definición “MVP Scope v1.0”
-- Diagrama de flujo funcional y de usuario
-- Lista priorizada de funcionalidades (MoSCoW)
+Complete documentation of the recommended repository structure, naming conventions, and organization principles.
 
-### 🧩 Tareas
+## Quick Start
 
-- [x]  Reunión de levantamiento de requerimientos
-- [x]  Mapa funcional (registro de finca, trazabilidad, QR)
-- [x]  Definición de flujos de usuario (productor, comprador, admin)
-- [x]  Documento de requerimientos funcionales (DRF)
+1. **For Business Stakeholders**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [Functional Requirements](phase-1-mvp/02-requirements/) → [Project Management](phase-1-mvp/07-project-management/)
 
----
+2. **For Designers**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [UI/UX Design](phase-1-mvp/04-ui-ux-design/)
 
-## 🎨 2. Diseño UI/UX y branding
+3. **For Developers**: Start with [Technical Documentation](technical-docs/README.md) → [Technical Architecture](phase-1-mvp/05-technical-architecture/) → [Database Design](technical-docs/02-database/)
 
-**Duración:** 1–2 semanas
+4. **For Project Managers**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [Project Management](phase-1-mvp/07-project-management/) → [Budget Control](phase-1-mvp/99-budget-investment/)
 
-**Costo estimado:** $800.000 – $1.200.000 COP
+## Phase 1 Roadmap
 
-**Responsable:** Diseñador UX/UI + Diego Trujillo
+| Phase | Timeline | Focus |
+|-------|----------|-------|
+| 1 | Week 1 | Functional analysis and scope definition |
+| 2-3 | Weeks 2-3 | UI/UX design and branding |
+| 3 | Week 3 | Technical architecture and database design |
+| 4 | Week 4 | Infrastructure provisioning |
+| 5-6 | Weeks 5-6 | Project management and roadmap |
 
-### ✅ Entregables
+## Key Deliverables
 
-- Logo y paleta cromática
-- Prototipo navegable en Figma (5–8 pantallas)
-- Manual de identidad visual (tipografía, íconos)
-- Activos gráficos exportados (SVG/PNG)
+Phase 1 will produce:
 
-### 🧩 Tareas
+✅ Functional and non-functional requirements documentation  
+✅ Complete UI/UX design in Figma with interactive prototype  
+✅ Technical architecture diagrams and database design  
+✅ Operational infrastructure on OpenStack/VPS  
+✅ 6-month development roadmap with backlog and KPIs  
+✅ Brand identity and design system  
+✅ Complete documentation for Phase 2 development kickoff  
 
-- [x]  Brief de marca y estilo visual
-- [x]  Diseño de logo y colores
-- [x]  Creación de pantallas clave (inicio, dashboard, QR, marketplace)
-- [x]  Prototipo Figma y validación interna
+## File Organization
 
----
+All files are organized with the following conventions:
 
-## 🧠 3. Arquitectura técnica y de datos
+- **Folder names**: English, lowercase with hyphens (e.g., `ui-ux-design`)
+- **File names**: English, lowercase with hyphens and numeric prefixes (e.g., `01-functional-requirements.md`)
+- **No emojis in filenames**: Emojis used only in headers for visual organization
+- **Sequential numbering**: Indicates reading order within each section
 
-**Duración:** 1 semana
+See [estructura_recomendada.md](estructura_recomendada.md) for detailed structure information.
 
-**Costo estimado:** $0 – $600.000 COP
+## Navigation Tips
 
-**Responsable:** Diego Trujillo
+- Each major section has a **README.md** file that explains the content and provides reading order
+- Files are **numbered sequentially** to indicate recommended reading order
+- **Subsections are organized hierarchically** by topic
+- **Cross-references** link between related documents
 
-### ✅ Entregables
+## Contributing
 
-- Documento técnico “Arquitectura AgriTrace MVP”
-- Diagrama entidad-relación (ERD)
-- Arquitectura lógica y física del sistema
-- Repositorio Git inicial (GitHub o GitLab)
+When adding new documentation:
 
-### 🧩 Tareas
+1. Place content in the appropriate phase or technical section
+2. Use English names in kebab-case with numeric prefixes
+3. Create or update README.md files for new sections
+4. Update this main README if adding major sections
+5. Follow the structure defined in [estructura_recomendada.md](estructura_recomendada.md)
 
-- [ ]  Selección del stack tecnológico (Node, React Native, PostgreSQL, OpenStack)
-- [ ]  Diseño de modelo de datos (ERD)
-- [ ]  Diagramas de arquitectura (API, Data Flow, Infra)
-- [ ]  Configuración de repositorio base
+## Related Repositories
 
----
+- **agritrace-backend**: Backend API implementation (Node.js)
+- **agritrace-frontend**: Frontend application (React Native)
+- **agritrace-infrastructure**: Infrastructure as Code (OpenStack/Docker)
 
-## ☁️ 4. Configuración de infraestructura (OpenStack / VPS)
+## Document Translations
 
-**Duración:** 1 semana
+Some documents may reference Spanish terminology from the planning phase:
 
-**Costo estimado:** $1.400.000 – $2.100.000 COP
+- **DRF** = Documento de Requerimientos Funcionales (Functional Requirements Document)
+- **DRnF** = Documento de Requerimientos no Funcionales (Non-Functional Requirements Document)
+- **Mapa Funcional** = Functional Map (use cases and flows)
+- **Fase 1** = Phase 1
 
-**Responsable:** Diego Trujillo
+## Questions or Updates?
 
-### ✅ Entregables
-
-- Servidores operativos en OpenStack (API, DB, staging)
-- Dominio + SSL + correo empresarial
-- Sistema de backups y monitoreo básico
-
-### 🧩 Tareas
-
-- [ ]  Adquirir dominio (.com o .co) y configurar DNS
-- [ ]  Aprovisionar instancias en OpenStack (2vCPU/4GB/100GB)
-- [ ]  Instalar Docker/Docker Compose
-- [ ]  Configurar PostgreSQL y SSL (Let’s Encrypt)
-- [ ]  Crear script de backup diario
-
----
-
-## 📜 5. Plan de gestión del proyecto y roadmap
-
-**Duración:** 3–5 días
-
-**Costo estimado:** $200.000 – $400.000 COP
-
-**Responsable:** Diego Trujillo
-
-### ✅ Entregables
-
-- Roadmap visual 6 meses
-- Backlog técnico y de producto
-- KPIs y cuadro de mando básico (Excel o Notion)
-- Cronograma en Trello/Notion
-
-### 🧩 Tareas
-
-- [ ]  Crear tablero de proyecto (Trello o Notion)
-- [ ]  Definir backlog (épicas, tareas, fechas)
-- [ ]  Establecer KPIs de desarrollo y negocio
-- [ ]  Crear dashboard de seguimiento
+- Review [estructura_recomendada.md](estructura_recomendada.md) for organization questions
+- Check the README.md in each major section for topic-specific guidance
+- See individual documents for detailed specifications
 
 ---
 
-## 💵 Resumen de costos estimados Fase 1
-
-| Rubro | Costo estimado (COP) |
-| --- | --- |
-| Análisis funcional y alcance | 300.000 – 500.000 |
-| Diseño UI/UX y branding | 800.000 – 1.200.000 |
-| Arquitectura técnica y datos | 0 – 600.000 |
-| Infraestructura (OpenStack/Dominio) | 1.400.000 – 2.100.000 |
-| Plan de gestión y roadmap | 200.000 – 400.000 |
-| **Total estimado Fase 1** | **≈ $2.700.000 – $4.800.000 COP** |
-
----
-
-## ⏱️ Cronograma sugerido (6 semanas)
-
-| Semana | Actividad principal | Entregables |
-| --- | --- | --- |
-| 1 | Análisis funcional y alcance del MVP | Definición “MVP Scope” |
-| 2–3 | Diseño UI/UX y branding | Prototipo en Figma y manual visual |
-| 3 | Arquitectura técnica y datos | Diagramas y repositorio base |
-| 4 | Configuración de infraestructura | Servidores + dominio + SSL |
-| 5–6 | Plan de gestión y roadmap | Cronograma + KPIs definidos |
-
----
-
-## ✅ Resultado esperado
-
-Al finalizar la fase 1 tendrás:
-- Identidad visual y diseño funcional del MVP listos.
-
-- Arquitectura y base de datos definidas.
-
-- Infraestructura operativa en OpenStack.
-
-- Cronograma de ejecución 6 meses + KPIs iniciales.
-
-- Documentación base completa para iniciar desarrollo (Fase 2).
-
-[🚀 MVP](%F0%9F%8C%BE%20AgriTrace%20(Fase1)/%F0%9F%9A%80%20MVP%202ac25cc7465f801d9f4ef26b2c461f2b.md)
+**Last Updated**: April 2026  
+**Status**: Phase 1 Preparation (In Progress)
