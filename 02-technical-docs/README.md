@@ -22,7 +22,13 @@ Documentation standards and guidelines for code, APIs, and user-facing content.
 ### [06-deployment](06-deployment/)
 Deployment procedures, release management, and operational guidelines.
 
+## Repository Structure Guide
+
+### [00-repository-structure-guide.md](00-repository-structure-guide.md)
+Complete documentation of the recommended repository structure, naming conventions, and organization principles.
+
 ## Related Documentation
 
-- See [../phase-1-mvp/](../phase-1-mvp/) for Phase 1 MVP specifications and planning
-- See [../assets/](../assets/) for diagrams, images, and other resources
+- See [../01-phase-1-mvp/](../01-phase-1-mvp/) for Phase 1 MVP specifications and planning
+- See [../03-assets/](../03-assets/) for diagrams, images, and other resources
+- See [../04-archive/](../04-archive/) for historical documents

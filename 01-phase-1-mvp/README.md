@@ -6,25 +6,25 @@ This phase covers the complete preparation and planning for the AgriTrace MVP (M
 
 Follow this sequence to understand the complete Phase 1 scope:
 
-1. **01-survey**: Stakeholder feedback and initial requirements gathering
-2. **02-requirements**: Detailed functional and non-functional requirements
+1. **01-stakeholder-survey**: Stakeholder feedback and initial requirements gathering
+2. **02-functional-requirements**: Detailed functional and non-functional requirements
 3. **03-functional-mapping**: System use cases and user flows
 4. **04-ui-ux-design**: User interface and experience design specifications
 5. **05-technical-architecture**: System architecture and database design
 6. **06-infrastructure**: Infrastructure and deployment setup
 7. **07-project-management**: Project roadmap, backlog, and timeline
-8. **99-budget-investment**: Budget tracking and investment control
+8. **08-budget-investment**: Budget tracking and investment control
 
 ## Sections
 
-### [01-survey](01-survey/)
+### [01-stakeholder-survey](01-stakeholder-survey/)
 Initial stakeholder survey and feedback collection to validate business requirements.
 
-### [02-requirements](02-requirements/)
+### [02-functional-requirements](02-functional-requirements/)
 Functional Requirements Document (DRF) and Non-Functional Requirements (DRnF) that define the MVP scope.
 
 ### [03-functional-mapping](03-functional-mapping/)
-Mapa Funcional - User flows, use cases, and functional mappings for the system.
+Functional mapping - User flows, use cases, and functional mappings for the system.
 
 ### [04-ui-ux-design](04-ui-ux-design/)
 Complete UI/UX design specifications including:
@@ -55,7 +55,7 @@ Project management artifacts:
 - KPI dashboard and metrics
 - Schedule and timeline
 
-### [99-budget-investment](99-budget-investment/)
+### [08-budget-investment](08-budget-investment/)
 Budget tracking and investment control for Phase 1 execution.
 
 ## Key Deliverables
@@ -91,4 +91,4 @@ Total Phase 1 Budget: **≈ $2,700,000 – $4,800,000 COP**
 - Infrastructure setup: $1,400,000 – $2,100,000
 - Project management: $200,000 – $400,000
 
-See [99-budget-investment](99-budget-investment/) for detailed breakdown.
+See [08-budget-investment](08-budget-investment/) for detailed breakdown.

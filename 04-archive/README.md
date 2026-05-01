@@ -19,8 +19,8 @@ Additional documentation or reference materials. Extract and review as needed fo
 
 The main documentation repository has been reorganized to:
 - Use English naming for international collaboration
-- Follow a phase-based structure (phase-1-mvp, etc.)
+- Follow a numbered phase-based structure (01-phase-1-mvp, 02-technical-docs, etc.)
 - Include numbered sequential files for clear reading order
 - Use kebab-case naming for CLI compatibility
 
-See the root [README.md](../README.md) and [estructura_recomendada.md](../estructura_recomendada.md) for the current organization.
+See the root [README.md](../README.md) and [02-technical-docs/00-repository-structure-guide.md](../02-technical-docs/00-repository-structure-guide.md) for the current organization.

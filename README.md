@@ -6,9 +6,9 @@ Complete documentation for AgriTrace - a digital platform for agricultural trace
 
 ## Repository Structure
 
-This repository is organized by project phase and topic for easy navigation and sequential reading.
+This repository is organized by project phase and topic for easy navigation and sequential reading. Numbered folders indicate browsing order.
 
-### [Phase 1: MVP Preparation](phase-1-mvp/)
+### [01-phase-1-mvp](01-phase-1-mvp/)
 
 Complete specifications and planning for the Minimum Viable Product (MVP), including:
 - Stakeholder survey and requirements
@@ -21,9 +21,9 @@ Complete specifications and planning for the Minimum Viable Product (MVP), inclu
 
 **Duration**: 6 weeks | **Budget**: ≈ $2.7M – $4.8M COP
 
-**Read First**: Start with [phase-1-mvp/README.md](phase-1-mvp/README.md)
+**Read First**: Start with [01-phase-1-mvp/README.md](01-phase-1-mvp/README.md)
 
-### [Technical Documentation](technical-docs/)
+### [02-technical-docs](02-technical-docs/)
 
 Detailed technical specifications for developers and architects:
 - System analysis and design
@@ -31,24 +31,25 @@ Detailed technical specifications for developers and architects:
 - API documentation
 - Development guidelines
 - Deployment procedures
+- Repository structure guide
 
-### [Assets](assets/)
+### [03-assets](03-assets/)
 
 Shared resources including diagrams, images, icons, and brand guidelines.
 
-### [Structure Reference](estructura_recomendada.md)
+### [04-archive](04-archive/)
 
-Complete documentation of the recommended repository structure, naming conventions, and organization principles.
+Historical documents and previous structure proposals.
 
 ## Quick Start
 
-1. **For Business Stakeholders**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [Functional Requirements](phase-1-mvp/02-requirements/) → [Project Management](phase-1-mvp/07-project-management/)
+1. **For Business Stakeholders**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [Functional Requirements](01-phase-1-mvp/02-functional-requirements/) → [Project Management](01-phase-1-mvp/07-project-management/)
 
-2. **For Designers**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [UI/UX Design](phase-1-mvp/04-ui-ux-design/)
+2. **For Designers**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [UI/UX Design](01-phase-1-mvp/04-ui-ux-design/)
 
-3. **For Developers**: Start with [Technical Documentation](technical-docs/README.md) → [Technical Architecture](phase-1-mvp/05-technical-architecture/) → [Database Design](technical-docs/02-database/)
+3. **For Developers**: Start with [Technical Documentation](02-technical-docs/README.md) → [Technical Architecture](01-phase-1-mvp/05-technical-architecture/) → [Database Design](02-technical-docs/02-database/)
 
-4. **For Project Managers**: Start with [Phase 1 MVP Overview](phase-1-mvp/README.md) → [Project Management](phase-1-mvp/07-project-management/) → [Budget Control](phase-1-mvp/99-budget-investment/)
+4. **For Project Managers**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [Project Management](01-phase-1-mvp/07-project-management/) → [Budget Control](01-phase-1-mvp/08-budget-investment/)
 
 ## Phase 1 Roadmap
 
@@ -76,12 +77,12 @@ Phase 1 will produce:
 
 All files are organized with the following conventions:
 
-- **Folder names**: English, lowercase with hyphens (e.g., `ui-ux-design`)
+- **Folder names**: English, lowercase with hyphens, numbered for sequential browsing (e.g., `01-phase-1-mvp`, `02-technical-docs`)
 - **File names**: English, lowercase with hyphens and numeric prefixes (e.g., `01-functional-requirements.md`)
 - **No emojis in filenames**: Emojis used only in headers for visual organization
 - **Sequential numbering**: Indicates reading order within each section
 
-See [estructura_recomendada.md](estructura_recomendada.md) for detailed structure information.
+See [02-technical-docs/00-repository-structure-guide.md](02-technical-docs/00-repository-structure-guide.md) for detailed structure information.
 
 ## Navigation Tips
 
@@ -117,7 +118,7 @@ Some documents may reference Spanish terminology from the planning phase:
 
 ## Questions or Updates?
 
-- Review [estructura_recomendada.md](estructura_recomendada.md) for organization questions
+- Review [02-technical-docs/00-repository-structure-guide.md](02-technical-docs/00-repository-structure-guide.md) for organization questions
 - Check the README.md in each major section for topic-specific guidance
 - See individual documents for detailed specifications
 
