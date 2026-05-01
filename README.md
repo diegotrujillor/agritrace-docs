@@ -1,128 +1,115 @@
-# AgriTrace Documentation Repository
+# Repositorio de Documentación AgriTrace
 
-Complete documentation for AgriTrace - a digital platform for agricultural traceability, sustainability certification, and international trade connections.
+Documentación completa de AgriTrace - una plataforma digital para trazabilidad agrícola, certificación de sostenibilidad y conexiones comerciales internacionales.
 
-**Project Overview**: AgriTrace enables agricultural producers (cocoa, coffee, exotic fruits) to digitalize complete crop traceability from planting through export, certify sustainable processes, and connect directly with international buyers.
+**Descripción del Proyecto**: AgriTrace permite a productores agrícolas (cacao, café, frutas exóticas) digitalizar la trazabilidad completa del cultivo desde la siembra hasta la exportación, certificar procesos sostenibles y conectar directamente con compradores internacionales.
 
-## Repository Structure
+## Estructura del Repositorio
 
-This repository is organized by project phase and topic for easy navigation and sequential reading. Numbered folders indicate browsing order.
+Este repositorio está organizado por fase del proyecto y tema para facilitar la navegación y lectura secuencial. Las carpetas numeradas indican el orden de exploración.
 
-### [01-phase-1-mvp](01-phase-1-mvp/)
+### [01-preparacion-mvp](01-preparacion-mvp/)
 
-Complete specifications and planning for the Minimum Viable Product (MVP), including:
-- Stakeholder survey and requirements
-- Functional and non-functional requirements
-- UI/UX design specifications
-- Technical architecture
-- Infrastructure setup plans
-- Project roadmap and timeline
-- Budget and investment tracking
+Especificaciones completas y planificación del Producto Mínimo Viable (MVP), incluyendo:
+- Encuesta de partes interesadas y requerimientos
+- Requerimientos funcionales y no funcionales
+- Especificaciones de diseño UI/UX
+- Arquitectura técnica
+- Planes de configuración de infraestructura
+- Cronograma del proyecto y línea de tiempo
+- Seguimiento de presupuesto e inversión
 
-**Duration**: 6 weeks | **Budget**: ≈ $2.7M – $4.8M COP
+**Duración**: 6 semanas | **Presupuesto**: ≈ $2.7M – $4.8M COP
 
-**Read First**: Start with [01-phase-1-mvp/README.md](01-phase-1-mvp/README.md)
+**Lee Primero**: Comienza con [01-preparacion-mvp/LEEME.md](01-preparacion-mvp/LEEME.md)
 
-### [02-technical-docs](02-technical-docs/)
+### [02-documentacion-tecnica](02-documentacion-tecnica/)
 
-Detailed technical specifications for developers and architects:
-- System analysis and design
-- Database specifications
-- API documentation
-- Development guidelines
-- Deployment procedures
-- Repository structure guide
+Especificaciones técnicas detalladas para desarrolladores y arquitectos:
+- Análisis y diseño del sistema
+- Especificaciones de base de datos
+- Documentación de API
+- Directrices de desarrollo
+- Procedimientos de despliegue
+- Guía de estructura del repositorio
 
-### [03-assets](03-assets/)
+### [03-recursos](03-recursos/)
 
-Shared resources including diagrams, images, icons, and brand guidelines.
+Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de marca.
 
-### [04-archive](04-archive/)
+## Inicio Rápido
 
-Historical documents and previous structure proposals.
+1. **Para Partes Interesadas del Negocio**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/)
 
-## Quick Start
+2. **Para Diseñadores**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/)
 
-1. **For Business Stakeholders**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [Functional Requirements](01-phase-1-mvp/02-functional-requirements/) → [Project Management](01-phase-1-mvp/07-project-management/)
+3. **Para Desarrolladores**: Comienza con [Documentación Técnica](02-documentacion-tecnica/LEEME.md) → [Arquitectura Técnica](01-preparacion-mvp/05-arquitectura-tecnica/) → [Diseño de Base de Datos](02-documentacion-tecnica/02-base-de-datos/)
 
-2. **For Designers**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [UI/UX Design](01-phase-1-mvp/04-ui-ux-design/)
+4. **Para Gestores de Proyectos**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/LEEME.md) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/) → [Control de Presupuesto](01-preparacion-mvp/08-presupuesto-inversion/)
 
-3. **For Developers**: Start with [Technical Documentation](02-technical-docs/README.md) → [Technical Architecture](01-phase-1-mvp/05-technical-architecture/) → [Database Design](02-technical-docs/02-database/)
+## Hoja de Ruta Fase 1
 
-4. **For Project Managers**: Start with [Phase 1 MVP Overview](01-phase-1-mvp/README.md) → [Project Management](01-phase-1-mvp/07-project-management/) → [Budget Control](01-phase-1-mvp/08-budget-investment/)
+| Fase | Cronograma | Enfoque |
+|------|-----------|---------|
+| 1 | Semana 1 | Análisis funcional y definición del alcance |
+| 2-3 | Semanas 2-3 | Diseño UI/UX y marca |
+| 3 | Semana 3 | Arquitectura técnica y diseño de base de datos |
+| 4 | Semana 4 | Provisión de infraestructura |
+| 5-6 | Semanas 5-6 | Gestión de proyectos y hoja de ruta |
 
-## Phase 1 Roadmap
+## Entregables Clave
 
-| Phase | Timeline | Focus |
-|-------|----------|-------|
-| 1 | Week 1 | Functional analysis and scope definition |
-| 2-3 | Weeks 2-3 | UI/UX design and branding |
-| 3 | Week 3 | Technical architecture and database design |
-| 4 | Week 4 | Infrastructure provisioning |
-| 5-6 | Weeks 5-6 | Project management and roadmap |
+La Fase 1 producirá:
 
-## Key Deliverables
+✅ Documentación de requerimientos funcionales y no funcionales  
+✅ Diseño UI/UX completo en Figma con prototipo interactivo  
+✅ Diagramas de arquitectura técnica y diseño de base de datos  
+✅ Infraestructura operativa en OpenStack/VPS  
+✅ Hoja de ruta de desarrollo de 6 meses con backlog y KPIs  
+✅ Identidad de marca y sistema de diseño  
+✅ Documentación completa para el inicio de Fase 2
 
-Phase 1 will produce:
+## Organización de Archivos
 
-✅ Functional and non-functional requirements documentation  
-✅ Complete UI/UX design in Figma with interactive prototype  
-✅ Technical architecture diagrams and database design  
-✅ Operational infrastructure on OpenStack/VPS  
-✅ 6-month development roadmap with backlog and KPIs  
-✅ Brand identity and design system  
-✅ Complete documentation for Phase 2 development kickoff  
+Todos los archivos están organizados siguiendo estas convenciones:
 
-## File Organization
+- **Nombres de carpetas**: Español, minúsculas con guiones, numeradas para orden de exploración secuencial (ej. `01-preparacion-mvp`, `02-documentacion-tecnica`)
+- **Nombres de archivos**: Español, minúsculas con guiones y prefijos numéricos (ej. `01-requerimientos-funcionales.md`)
+- **Sin emojis en nombres de archivos**: Los emojis se utilizan solo en encabezados para organización visual
+- **Numeración secuencial**: Indica el orden de lectura recomendado dentro de cada sección
 
-All files are organized with the following conventions:
+Ver [02-documentacion-tecnica/00-guia-estructura-repositorio.md](02-documentacion-tecnica/00-guia-estructura-repositorio.md) para información detallada de la estructura.
 
-- **Folder names**: English, lowercase with hyphens, numbered for sequential browsing (e.g., `01-phase-1-mvp`, `02-technical-docs`)
-- **File names**: English, lowercase with hyphens and numeric prefixes (e.g., `01-functional-requirements.md`)
-- **No emojis in filenames**: Emojis used only in headers for visual organization
-- **Sequential numbering**: Indicates reading order within each section
+## Consejos de Navegación
 
-See [02-technical-docs/00-repository-structure-guide.md](02-technical-docs/00-repository-structure-guide.md) for detailed structure information.
+- Cada sección importante tiene un archivo **LEEME.md** que explica el contenido y proporciona orden de lectura
+- Los archivos están **numerados secuencialmente** para indicar orden de lectura recomendado
+- **Las subsecciones están organizadas jerárquicamente** por tema
+- **Las referencias cruzadas** vinculan entre documentos relacionados
 
-## Navigation Tips
+## Contribuyendo
 
-- Each major section has a **README.md** file that explains the content and provides reading order
-- Files are **numbered sequentially** to indicate recommended reading order
-- **Subsections are organized hierarchically** by topic
-- **Cross-references** link between related documents
+Al agregar nueva documentación:
 
-## Contributing
+1. Coloca el contenido en la fase o sección técnica apropiada
+2. Utiliza nombres en español en minúsculas con guiones y prefijos numéricos
+3. Crea o actualiza archivos LEEME.md para nuevas secciones
+4. Actualiza este README principal si agregas secciones importantes
+5. Sigue la estructura definida en [02-documentacion-tecnica/00-guia-estructura-repositorio.md](02-documentacion-tecnica/00-guia-estructura-repositorio.md)
 
-When adding new documentation:
+## Repositorios Relacionados
 
-1. Place content in the appropriate phase or technical section
-2. Use English names in kebab-case with numeric prefixes
-3. Create or update README.md files for new sections
-4. Update this main README if adding major sections
-5. Follow the structure defined in [estructura_recomendada.md](estructura_recomendada.md)
+- **agritrace-backend**: Implementación del API de Backend (Node.js)
+- **agritrace-frontend**: Aplicación Frontend (React Native)
+- **agritrace-infrastructure**: Infraestructura como Código (OpenStack/Docker)
 
-## Related Repositories
+## Preguntas o Actualizaciones
 
-- **agritrace-backend**: Backend API implementation (Node.js)
-- **agritrace-frontend**: Frontend application (React Native)
-- **agritrace-infrastructure**: Infrastructure as Code (OpenStack/Docker)
-
-## Document Translations
-
-Some documents may reference Spanish terminology from the planning phase:
-
-- **DRF** = Documento de Requerimientos Funcionales (Functional Requirements Document)
-- **DRnF** = Documento de Requerimientos no Funcionales (Non-Functional Requirements Document)
-- **Mapa Funcional** = Functional Map (use cases and flows)
-- **Fase 1** = Phase 1
-
-## Questions or Updates?
-
-- Review [02-technical-docs/00-repository-structure-guide.md](02-technical-docs/00-repository-structure-guide.md) for organization questions
-- Check the README.md in each major section for topic-specific guidance
-- See individual documents for detailed specifications
+- Revisa [02-documentacion-tecnica/00-guia-estructura-repositorio.md](02-documentacion-tecnica/00-guia-estructura-repositorio.md) para preguntas sobre organización
+- Consulta el archivo LEEME.md en cada sección principal para orientación específica del tema
+- Ver documentos individuales para especificaciones detalladas
 
 ---
 
-**Last Updated**: April 2026  
-**Status**: Phase 1 Preparation (In Progress)
+**Última Actualización**: Mayo 2026  
+**Estado**: Preparación Fase 1 (En Progreso)
