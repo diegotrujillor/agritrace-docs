@@ -1,16 +1,16 @@
-# Budget and Investment Control
+# Presupuesto e Inversión
 
-Phase 1 budget tracking and investment control documentation.
+Documentación de seguimiento presupuestario y control de inversión para la ejecución de Fase 1.
 
-## Contents
+## Contenido
 
-Investment tracking, budget allocations, and cost control measures for Phase 1 execution.
+Seguimiento de inversión, asignaciones presupuestarias y medidas de control de costos para la ejecución de Fase 1.
 
-Total Phase 1 Budget: **≈ $2,700,000 – $4,800,000 COP**
+**Presupuesto Total Fase 1: ≈ $2.700.000 – $4.800.000 COP**
 
-Breakdown by category:
-- Functional analysis and scope: $300,000 – $500,000
-- UI/UX design and branding: $800,000 – $1,200,000
-- Technical architecture: $0 – $600,000
-- Infrastructure setup: $1,400,000 – $2,100,000
-- Project management: $200,000 – $400,000
+Desglose por categoría:
+- Análisis funcional y alcance: $300.000 – $500.000
+- Diseño UI/UX y marca: $800.000 – $1.200.000
+- Arquitectura técnica: $0 – $600.000
+- Configuración de infraestructura: $1.400.000 – $2.100.000
+- Gestión de proyectos: $200.000 – $400.000
