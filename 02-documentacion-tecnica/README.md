@@ -24,7 +24,7 @@ Procedimientos de despliegue, gestión de versiones y directrices operativas.
 
 ## Guía de Estructura del Repositorio
 
-### [00-guia-estructura-repositorio.md](00-guia-estructura-repositorio.md)
+### [00-referencia/01-guia-estructura-repositorio.md](../00-referencia/01-guia-estructura-repositorio.md)
 Documentación completa de la estructura de repositorio recomendada, convenciones de nombres y principios de organización.
 
 ## Documentación Relacionada
