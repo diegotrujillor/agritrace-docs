@@ -105,15 +105,79 @@
 
 ---
 
-## Hitos de Desarrollo
+## Flujo de Desarrollo por Semana
 
-| Semana | Pantallas | Features |
-|--------|-----------|----------|
-| **1-2** | 1, 2, 3, 4, 5, 6, 7, 8 | Auth, onboarding, farm/plot management |
-| **3** | 9, 10 | Activity log + timeline (core MVP) |
-| **4** | 9 refinement | Alerts, offline indicator, SMS fallback |
-| **5** | Testing & refinement | Field test con 5 farmers |
-| **6** | Bug fixes & launch prep | MVP release candidate |
+### Semana 1-2 — Autenticación y Onboarding (Pantallas 1-3)
+
+| Pantalla | Flujo | Detalle |
+|----------|-------|---------|
+| 1. Bienvenida | App abre → Hero con CTA | Logo + 3 slides con beneficios + botones "Ingresar" / "Crear cuenta" |
+| 2. Registro | Crear cuenta productor | Nombre, email, teléfono, contraseña. Verificación SMS. Rol = Productor. |
+| 3. Login | Acceso recurrente | Email + contraseña. Link "recuperar contraseña". |
+
+**Hito:** Usuario autenticado puede acceder al dashboard vacío.
+
+---
+
+### Semana 2-3 — Gestión de Fincas y Lotes (Pantallas 4-8)
+
+| Pantalla | Flujo | Detalle |
+|----------|-------|---------|
+| 4. Dashboard vacío | Primera visita post-login | Ilustración + CTA "Registra tu primera finca". Funciona offline. |
+| 5. Dashboard con fincas | Listado de propiedades | Tarjetas: nombre, municipio, cultivo principal. |
+| 6. Registrar finca | Crear finca nueva | Nombre, municipio/vereda, GPS (entrada manual como alternativa), cultivo, área. |
+| 7. Vista finca | Ver finca + lotes | Nombre, coordenadas, botón "Registrar lote", lista de lotes. |
+| 8. Registrar lote | Crear lote en finca | Nombre, cultivo, área, foto opcional. |
+
+**Hito:** Agricultor crea 1 finca + 1-3 lotes y puede navegar la estructura.
+
+---
+
+### Semana 3-4 — Registro de Actividades + Timeline (Pantallas 9-10) ⭐ CORE MVP
+
+| Pantalla | Flujo | Detalle |
+|----------|-------|---------|
+| 9. Vista lote + timeline | Ver historial de actividades | Timeline vertical cronológico, botones "Registrar actividad" y "Generar QR". **Pantalla más usada del MVP.** |
+| 10. Registrar actividad | Log con foto, notas y fecha | Selector de tipo → fecha (pre-llenada) → insumo/dosis → notas → foto → guardar. **Funciona 100% sin conexión.** |
+
+**Hito:** Agricultor registra siembra, fertilización, cosecha con fotos. Timeline actualiza. Datos persisten offline.
+
+---
+
+### Semana 4 — Sincronización + Indicadores de Conectividad
+
+| Feature | Pantallas afectadas | Detalle |
+|---------|---------------------|---------|
+| Motor de sincronización (push/pull) | Todas | WatermelonDB sincroniza automáticamente al recuperar conexión. |
+| Indicador offline/sincronizando | 9, 10 | Header muestra estado claro: "Sin conexión" o "Sincronizando...". |
+| SMS/USSD fallback para alertas | Sistema | Alertas por SMS para agricultores sin smartphone (R1, R3 del survey). |
+
+**Hito:** Sincronización bidireccional funcionando. El agricultor trabaja 14+ días sin conexión sin perder datos.
+
+---
+
+### Semana 4-5 — Refinamiento UI/UX + Pruebas
+
+| Tarea | Pantallas | Criterio |
+|-------|-----------|----------|
+| Refinamiento UX activity log | 9, 10 | Simple como cuaderno (SUS score > 60) |
+| Prueba de flujo offline completo | 6-10 | 14+ días sin conexión, 0 pérdida de datos |
+| Compresión de fotos | 8, 10 | Auto-resize para conexión lenta |
+| Validación de formularios | Todos | Mensajes amigables, tooltips contextuales |
+
+**Hito:** Todas las pantallas funcionales y pulidas para field test.
+
+---
+
+### Semana 5-6 — Field Test + Preparación de Lanzamiento
+
+| Actividad | Enfoque | Resultado esperado |
+|-----------|---------|-------------------|
+| Field test con 5 agricultores | Pantallas 6-10 en uso real | 10+ actividades registradas/agricultor en 2 semanas |
+| Corrección de bugs | Todas las pantallas | Cero crashes, tiempo de carga < 5 seg offline |
+| Checklist de lanzamiento | Todo el sistema | API keys, migraciones DB, documentación de despliegue lista |
+
+**Hito:** Beta release. MVP listo para piloto con 1 cooperativa.
 
 ---
 
@@ -127,6 +191,25 @@
 | UX registro de actividades (SUS score) | > 60 | MUST |
 | Sincronización correcta | 100% de registros sincronizados, 0 pérdidas | MUST |
 | Tiempo para registrar actividad | < 3 minutos (Pantalla 10) | SHOULD |
+
+---
+
+## Qué NO incluye el MVP (Diferido a Phase 2)
+
+| Feature / Pantalla | Razón | Phase |
+|--------------------|-------|-------|
+| Pantalla 11: Generar QR | Marketplace feature; cero demanda en stakeholders (2/4 dicen que compradores no piden trazabilidad) | 2 |
+| Pantalla 12: QR Fullscreen | Buyer-facing feature sin demanda validada | 2 |
+| Pantalla 13: Landing pública de trazabilidad | Requiere validación con 5+ compradores/exportadores | 2 |
+| Dashboard Cooperativa | Modelo B2B no es imperativo para MVP; agregar si partners lo requieren | 2 |
+| Validación de certificaciones | Requiere partner con cuerpo certificador (Rainforest Alliance, etc.) | 2 |
+| Panel Administrador | Solo autenticación básica en MVP; admin panel en versión posterior | 2+ |
+| Mensajería comprador-productor | Sin señal de demanda en ningún stakeholder | 2 |
+| Reportes y analíticas avanzadas | Mantener reportes simples (export PDF del activity log) | 2+ |
+| App web / web responsive | Decisión mobile-first — solo Flutter | Nunca (MVP) |
+| Modo entrada por agente de campo | Agrega complejidad de onboarding innecesaria en MVP | 2 |
+| Flujo cooperativa (invitación masiva, gestión de productores) | B2B: diferir hasta tener 1 cooperativa partner confirmada | 2 |
+| Flujo exportador/comprador (búsqueda, contacto) | Marketplace: diferir hasta validar demanda del lado comprador | 2 |
 
 ---
 
