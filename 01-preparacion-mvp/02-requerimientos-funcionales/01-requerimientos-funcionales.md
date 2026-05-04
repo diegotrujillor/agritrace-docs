@@ -74,7 +74,7 @@ Luis (cooperativa):
 
 RF: 01, 02, 03 y 04
 
-FNF: 01 y 02
+RNF: 01 y 02
 
 ### **2️⃣ — Registro de actividades y trazabilidad**
 
@@ -88,7 +88,7 @@ Carlos (exportador):
 
 RF: 05, 06, 07 y 08
 
-FNF: 03 y 04
+RNF: 03 y 04
 
 ### **3️⃣ — Control de calidad y certificación**
 

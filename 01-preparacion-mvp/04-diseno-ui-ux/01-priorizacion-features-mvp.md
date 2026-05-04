@@ -10,7 +10,7 @@
 
 **Alcance**: 10 pantallas móviles de flujo productor. Marketplace y flujos cooperativa/comprador diferidos a Phase 2.
 
-**Suposición clave**: Los agricultores adoptarán smartphones graduamente. El app es solo móvil (no web).
+**Suposición clave**: Los agricultores adoptarán smartphones gradualmente. El app es solo móvil (no web).
 
 ---
 
