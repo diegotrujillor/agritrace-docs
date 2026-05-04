@@ -1,8 +1,8 @@
 # 🌱 3.4 Platform Design
 
-![image.png](%F0%9F%8C%B1%203%204%20Platform%20Design/image.png)
+> 📐 *Diagrama de diseño de plataforma disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
-![image.png](%F0%9F%8C%B1%203%204%20Platform%20Design/image%201.png)
+> 📐 *Diagrama de diseño de plataforma disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ## **✅ Paquete de marca**
 

@@ -21,6 +21,6 @@
 
 ### 1. **Diagrama de Arquitectura del Sistema**
 
-![image.png](%F0%9F%8F%97%EF%B8%8F%204%20Arquitectura%20T%C3%A9cnica%20y%20de%20Datos/image.png)
+> 📐 *Diagrama de arquitectura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ### 2. **Modelo de Datos Relacional (PostgreSQL)**

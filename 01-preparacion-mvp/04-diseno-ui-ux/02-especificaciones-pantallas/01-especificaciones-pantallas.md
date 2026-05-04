@@ -2,7 +2,7 @@
 
 # **1. 🧭 Arquitectura de Información (IA)**
 
-![image.png](%F0%9F%94%97%203%201%20UI%20IX%20(adicionales)/image.png)
+> 📐 *Diagrama de arquitectura de información disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 # **2. 🗺️ Recorridos de Usuario Completos (User Flows)**
 

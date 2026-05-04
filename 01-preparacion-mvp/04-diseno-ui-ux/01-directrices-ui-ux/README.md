@@ -329,7 +329,7 @@ animation: rotate 1s linear infinite;`
 
 # 9. 🖼️ **Mockups (solo a modo de ejemplo)**
 
-![image.png](%F0%9F%96%A5%EF%B8%8F%203%20Documento%20UI%20UX/image.png)
+> 📐 *Imagen de directrices UI/UX disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 [🔗 3.1 UI/IX (adicionales)](%F0%9F%96%A5%EF%B8%8F%203%20Documento%20UI%20UX/%F0%9F%94%97%203%201%20UI%20IX%20(adicionales)%202af25cc7465f80debda1e8e4e8e03ac3.md)
 

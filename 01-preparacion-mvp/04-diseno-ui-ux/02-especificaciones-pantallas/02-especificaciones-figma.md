@@ -2,13 +2,14 @@
 
 **Versión:** 1.0 - MVP
 
-**Plataforma:** Mobile-first (iOS y Android)
+**Plataforma:** Mobile únicamente (iOS y Android — sin web, sin desktop)
 
 **Resoluciones base:**
 
 - Mobile: 375x812px (iPhone SE referencia)
 - Tablet: 768x1024px
-- Desktop: 1440x900px
+
+> 📱 **Nota sobre imágenes:** Los mockups de cada pantalla están disponibles en el repositorio del prototipo: **[agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)**. Las imágenes referenciadas abajo provienen de exportaciones de Notion y no están disponibles localmente — ver el repo del prototipo para capturas actualizadas.
 
 ---
 
@@ -82,7 +83,7 @@
 
 **Elementos:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Colores:**
 
@@ -98,7 +99,7 @@
 
 **Elementos:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%201.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Slide 2/3:** "Genera códigos QR" + ilustración de QR
 **Slide 3/3:** "Accede a mercados premium" + ilustración de exportación
@@ -115,7 +116,7 @@
 
 **Elementos:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%202.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Validaciones:**
 
@@ -131,7 +132,7 @@
 
 **Paso 1/2:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%203.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Paso 2/2:** Contraseña, confirmar contraseña, términos y condiciones
 
@@ -143,15 +144,15 @@
 
 **Header:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%204.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Tarjetas de resumen:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%205.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Lista de fincas:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%206.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **FAB (Floating Action Button):**
 
@@ -170,7 +171,7 @@
 
 **Layout:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%207.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Paso 2:** Ubicación (mapa interactivo)
 **Paso 3:** Certificaciones disponibles (opcional)
@@ -181,7 +182,7 @@
 
 **Componentes:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%208.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Interacciones:**
 
@@ -195,11 +196,11 @@
 
 **Layout:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%209.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Modal "Nuevo lote":**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2010.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -207,11 +208,11 @@
 
 **Header con imagen:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2011.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Tabs de navegación:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2012.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -219,11 +220,11 @@
 
 **Selector de tipo (Paso 1):**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2013.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Formulario (Paso 2 - Ejemplo: Fertilización):**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2014.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -231,11 +232,11 @@
 
 **Layout:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2015.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Card expandida:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2016.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -243,7 +244,7 @@
 
 **Pantalla principal:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2017.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -251,7 +252,7 @@
 
 **Bottom sheet:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2018.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -259,11 +260,11 @@
 
 **Header:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2019.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 **Tabs:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2020.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -271,7 +272,7 @@
 
 **Pantalla de revisión:**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2021.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
 
 ---
 
@@ -279,4 +280,4 @@
 
 **Vista pública (web responsive):**
 
-![image.png](%F0%9F%96%BC%EF%B8%8F%203%202%20Especificaciones%20de%20Pantallas%20para%20Figma/image%2022.png)
+> 📱 *Captura disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*

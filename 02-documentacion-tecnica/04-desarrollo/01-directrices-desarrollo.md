@@ -104,59 +104,74 @@ agritrace-backend/
 └── README.md
 ```
 
-### Frontend Mobile (React Native)
+### Frontend Mobile (Flutter / Dart)
 ```
-agritrace-mobile/
-├── src/
+agritrace-prototype/
+├── lib/
 │   ├── screens/
 │   │   ├── auth/
-│   │   │   ├── LoginScreen.tsx
-│   │   │   ├── RegisterScreen.tsx
-│   │   │   └── styles.ts
+│   │   │   ├── welcome_screen.dart
+│   │   │   ├── login_screen.dart
+│   │   │   └── register_screen.dart
 │   │   ├── farms/
+│   │   │   ├── dashboard_screen.dart
+│   │   │   ├── farm_form_screen.dart
+│   │   │   └── farm_detail_screen.dart
 │   │   ├── plots/
+│   │   │   ├── plot_form_screen.dart
+│   │   │   └── plot_detail_screen.dart
 │   │   └── activities/
+│   │       ├── activity_form_screen.dart
+│   │       └── activity_timeline_screen.dart
 │   │
-│   ├── components/
+│   ├── widgets/
 │   │   ├── common/
-│   │   │   ├── Button/
-│   │   │   ├── Input/
-│   │   │   ├── Card/
-│   │   │   └── ...
+│   │   │   ├── app_button.dart
+│   │   │   ├── app_input.dart
+│   │   │   ├── app_card.dart
+│   │   │   └── offline_indicator.dart
 │   │   └── domain/
-│   │       ├── FarmCard/
-│   │       └── ActivityList/
+│   │       ├── farm_card.dart
+│   │       └── activity_list_item.dart
 │   │
 │   ├── navigation/
-│   │   ├── RootNavigator.tsx
-│   │   └── types.ts
+│   │   ├── app_router.dart
+│   │   └── route_names.dart
 │   │
 │   ├── services/
-│   │   ├── api.ts
-│   │   ├── auth.service.ts
-│   │   ├── storage.ts
-│   │   └── sync.ts
+│   │   ├── api_service.dart
+│   │   ├── auth_service.dart
+│   │   ├── sync_service.dart
+│   │   └── storage_service.dart
 │   │
-│   ├── store/                    # Redux o Zustand
-│   │   ├── auth.store.ts
-│   │   ├── farms.store.ts
-│   │   └── sync.store.ts
+│   ├── database/
+│   │   ├── database.dart              # WatermelonDB setup
+│   │   ├── models/
+│   │   │   ├── farm.dart
+│   │   │   ├── plot.dart
+│   │   │   └── activity.dart
+│   │   └── migrations/
+│   │       └── schema.dart
+│   │
+│   ├── providers/                     # Estado (Provider / Riverpod)
+│   │   ├── auth_provider.dart
+│   │   ├── farms_provider.dart
+│   │   └── sync_provider.dart
 │   │
 │   ├── utils/
-│   │   ├── validators.ts
-│   │   ├── formatters.ts
-│   │   └── constants.ts
+│   │   ├── validators.dart
+│   │   ├── formatters.dart
+│   │   └── constants.dart
 │   │
-│   ├── types/
-│   │   └── index.ts
-│   │
-│   └── App.tsx
+│   └── main.dart
 │
-├── tests/
+├── test/
 │   ├── unit/
-│   └── integration/
+│   └── widget/
 │
-└── package.json
+├── pubspec.yaml
+├── pubspec.lock
+└── README.md
 ```
 
 ---
@@ -279,102 +294,91 @@ export const middleware = (req, res, next) => {
 };
 ```
 
-### Frontend
+### Frontend (Flutter / Dart)
 
-#### Componentes
-- [ ] Naming: `PascalCase` para componentes funcionales
-- [ ] Destructurar props
-- [ ] Usar TypeScript interfaces para props
-- [ ] Evitar lógica compleja en JSX
-- [ ] Documentados con JSDoc
+#### Widgets
+- [ ] Naming: `PascalCase` para widgets
+- [ ] Preferir `StatelessWidget` cuando sea posible
+- [ ] Usar parámetros tipados en constructores
+- [ ] Evitar lógica compleja en `build()`
+- [ ] Documentar con comentarios `///`
 
-```typescript
+```dart
 // ✅ CORRECTO
-interface ActivityCardProps {
-  activity: Activity;
-  onPress: (id: string) => void;
-  isLoading?: boolean;
+/// Tarjeta de actividad agrícola
+/// Muestra fecha, tipo, notas e imágenes
+class ActivityCard extends StatelessWidget {
+  const ActivityCard({
+    super.key,
+    required this.activity,
+    required this.onTap,
+    this.isLoading = false,
+  });
+
+  final Activity activity;
+  final VoidCallback onTap;
+  final bool isLoading;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: isLoading ? null : onTap,
+      child: Card(
+        child: Column(
+          children: [
+            Text(activity.type),
+            Text(activity.date.toString()),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-/**
- * Tarjeta de actividad agrícola
- * Muestra fecha, tipo, notas e imágenes
- */
-export const ActivityCard: React.FC<ActivityCardProps> = ({
-  activity,
-  onPress,
-  isLoading = false,
-}) => {
-  const handlePress = () => {
-    if (!isLoading) {
-      onPress(activity.id);
-    }
-  };
-
-  return (
-    <TouchableOpacity 
-      onPress={handlePress}
-      disabled={isLoading}
-    >
-      <Text>{activity.type}</Text>
-      <Text>{format(activity.date, 'dd/MM/yyyy')}</Text>
-    </TouchableOpacity>
-  );
-};
-
 // ❌ INCORRECTO
-export const Card = (props) => {
-  return (
-    <View>
-      <Text>{props.a}</Text>
-      {props.items.map((i) => <Text key={i.id}>{i.name}</Text>)}
-    </View>
-  );
-};
+class Card extends StatelessWidget {
+  final dynamic props; // Sin tipos
+  @override
+  Widget build(BuildContext context) => Text(props.a); // Lógica acoplada
+}
 ```
 
-#### Hooks Personalizados
-- [ ] Prefijo `use`
-- [ ] Extraer lógica compleja
+#### Providers (Estado con Riverpod / Provider)
+- [ ] Un provider por dominio
+- [ ] Extraer lógica de negocio fuera del widget
+- [ ] Manejar estados: loading, data, error
 - [ ] Documentar dependencias
-- [ ] Manejar errores
 
-```typescript
+```dart
 // ✅ CORRECTO
-/**
- * Hook para obtener las fincas del usuario actual
- * Sincroniza con BD local (WatermelonDB) y remota
- */
-export const useFarms = () => {
-  const [farms, setFarms] = useState<Farm[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+/// Provider para fincas del usuario actual
+/// Sincroniza con WatermelonDB local y backend remoto
+final farmsProvider = AsyncNotifierProvider<FarmsNotifier, List<Farm>>(
+  FarmsNotifier.new,
+);
 
-  useEffect(() => {
-    const fetchFarms = async () => {
-      try {
-        setIsLoading(true);
-        const data = await farmService.getMyFarms();
-        setFarms(data);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+class FarmsNotifier extends AsyncNotifier<List<Farm>> {
+  @override
+  Future<List<Farm>> build() async {
+    return ref.read(farmServiceProvider).getMyFarms();
+  }
 
-    fetchFarms();
-  }, []);  // Dependencias explícitas
-
-  return { farms, isLoading, error };
-};
+  Future<void> addFarm(FarmInput input) async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(
+      () => ref.read(farmServiceProvider).create(input),
+    ).then((_) => build());
+  }
+}
 
 // ❌ INCORRECTO
-const getFarms = async (userId) => {
-  // Demasiada lógica, no es reutilizable
-  const response = await fetch(`/api/farms?userId=${userId}`);
-  return response.json();
-};
+// Lógica de negocio dentro del widget — no testeable, no reutilizable
+class FarmsScreen extends StatefulWidget {
+  Future<void> _loadFarms() async {
+    final response = await http.get(Uri.parse('/api/farms'));
+    // ...
+  }
+}
 ```
 
 ---
