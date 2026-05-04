@@ -117,6 +117,19 @@
 
 ---
 
+## KPIs MVP (Semana 5 — Field Test)
+
+| Métrica | Objetivo | Criticidad |
+|---------|----------|------------|
+| Agricultores activos en field test | 5 agricultores | MUST |
+| Actividades registradas | 10+ por agricultor en 2 semanas | MUST |
+| Resiliencia offline | App funciona 14+ días sin conexión, 0 pérdida de datos | MUST |
+| UX registro de actividades (SUS score) | > 60 | MUST |
+| Sincronización correcta | 100% de registros sincronizados, 0 pérdidas | MUST |
+| Tiempo para registrar actividad | < 3 minutos (Pantalla 10) | SHOULD |
+
+---
+
 ## Notas para Desarrolladores
 
 1. **Activity log (Pantalla 9) es la pantalla más importante**: Invierta tiempo en UX. Debe ser tan simple como escribir en un cuaderno (notebook mental model).
