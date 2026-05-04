@@ -39,13 +39,15 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 ## Inicio Rápido
 
-1. **Para Partes Interesadas del Negocio**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/)
+**⚡ MVP Strategy: App móvil solo para agricultores (farmer-first, offline-first). Marketplace con compradores es Phase 2.**
 
-2. **Para Diseñadores**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/)
+1. **Para Partes Interesadas del Negocio**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/)
 
-3. **Para Desarrolladores**: Comienza con [Documentación Técnica](02-documentacion-tecnica/README.md) → [Arquitectura Técnica](01-preparacion-mvp/05-arquitectura-tecnica/) → [Diseño de Base de Datos](02-documentacion-tecnica/02-base-de-datos/)
+2. **Para Diseñadores**: Comienza con [Priorización Features](01-preparacion-mvp/04-diseno-ui-ux/01-priorizacion-features-mvp.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/) → [Especificaciones de Pantallas](01-preparacion-mvp/04-diseno-ui-ux/02-especificaciones-pantallas/)
 
-4. **Para Gestores de Proyectos**: Comienza con [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Gestión de Proyectos](01-preparacion-mvp/07-gestion-de-proyectos/) → [Control de Presupuesto](01-preparacion-mvp/08-presupuesto-inversion/)
+3. **Para Desarrolladores**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Documentación Técnica](02-documentacion-tecnica/README.md) → [Arquitectura Técnica](01-preparacion-mvp/05-arquitectura-tecnica/) → [Decisión Offline Storage](01-preparacion-mvp/04-diseno-ui-ux/offline-storage-decision.md) → [Configuración Docker](02-documentacion-tecnica/docker-compose-dev.md)
+
+4. **Para Gestores de Proyectos**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Cronograma](01-preparacion-mvp/README.md)
 
 ## Hoja de Ruta Fase 1
 

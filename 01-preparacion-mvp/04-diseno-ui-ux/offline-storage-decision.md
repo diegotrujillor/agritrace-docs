@@ -190,16 +190,19 @@ Cliente A:
 - [ ] Integrar WatermelonDB en proyecto Flutter
 - [ ] Crear modelos para Finca, Lote, Actividad
 - [ ] Implementar sincronización básica (push de cambios)
+- [ ] **NEW**: SMS/USSD fallback para alertas (2 de 4 stakeholders sin smartphone)
 
 ### Fase 2 (Semana 3)
 - [ ] Implementar descarga de cambios remotos
 - [ ] Agregar resolución de conflictos
 - [ ] Testing de sincronización offline-online
+- [ ] **NEW**: Indicador visual de estado offline/syncing
 
 ### Fase 3 (Semana 4+)
 - [ ] Encriptación de datos locales
 - [ ] Compresión de media (fotos) antes de sincronizar
 - [ ] Análisis de uso de almacenamiento
+- [ ] **NEW**: Climate alerts integration (if partner API available)
 
 ## Endpoints API Requeridos para Sincronización
 
