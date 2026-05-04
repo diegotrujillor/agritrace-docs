@@ -41,7 +41,7 @@
 **Actividades**
 | Pantalla | Descripción | P0 Rationale |
 |----------|-------------|--------------|
-| 9 | Vista lote + timeline actividades | **Pantalla más importante**: activity log with dates, chemicals, fertilization (R1, R2, R4 pain) |
+| 9 | Vista lote + timeline actividades | **Pantalla más importante**: registro de actividades con fechas, químicos, fertilización (dolor punto R1, R2, R4 de survey Oct 2025) |
 | 10 | Registrar actividad | Log entries with photos, notes, timestamps |
 
 ---
@@ -80,10 +80,10 @@
 
 | Feature | Timeline |
 |---------|----------|
-| SMS/USSD alert fallback (for R1, R3 sin smartphone) | Week 4 (MVP o post-launch) |
-| Settings/connectivity UI (offline/syncing indicator) | Week 3 |
-| Climate alerts (R1, R4: 2/4) | Week 4 |
-| Crop calendar/harvest reminders | Week 4 |
+| SMS/USSD fallback para alertas (respondents R1, R3 sin smartphone) | Week 4 (MVP o post-launch) |
+| UI estado de conectividad (indicador offline/sincronizando) | Week 3 |
+| Alertas de clima (respondents R1, R4: 2/4) | Week 4 |
+| Calendario de cultivos/recordatorios cosecha | Week 4 |
 
 ### Could (Explorar después)
 
@@ -98,10 +98,10 @@
 
 | Feature | Razón |
 |---------|-------|
-| Web app | Mobile-first decision |
-| Field agent proxy mode | Adds onboarding complexity |
-| Multi-user/cooperative hierarchy | Defer to B2B in Phase 2 |
-| Blockchain/ledger | Zero stakeholder signal |
+| App web | Decisión mobile-first (solo Flutter) |
+| Modo entrada por agente de campo | Agrega complejidad de onboarding |
+| Jerarquía multi-usuario/cooperativa | Defer a B2B en Phase 2 |
+| Blockchain/ledger | Cero demanda en stakeholders |
 
 ---
 

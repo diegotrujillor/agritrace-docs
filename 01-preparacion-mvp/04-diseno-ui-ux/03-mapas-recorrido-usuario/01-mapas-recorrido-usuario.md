@@ -33,7 +33,7 @@ Juan escucha sobre AgriTrace en una capacitación de su cooperativa. Le prometen
 
 1. **Descarga de app** (Play Store/App Store)
 2. **Pantalla de bienvenida**
-    - Mensaje: "Certifica tu café y accede a mercados premium"
+    - Mensaje: "Certifica tus cultivos y accede a mercados premium"
     - 3 slides con beneficios visuales
 3. **Registro inicial**
     - Nombre completo
@@ -177,7 +177,9 @@ Juan está listo para cosechar y quiere generar el QR para su comprador internac
 
 ---
 
-## 2. Journey Map: Cooperativa (Validador)
+## 2. Journey Map: Cooperativa (Validador) — ⏸️ PHASE 2
+
+> **Nota:** Este flujo es Phase 2. El MVP se enfoca solo en el productor (Section 1).
 
 ### 👤 Persona: María López
 
@@ -280,7 +282,9 @@ María necesita generar reportes para auditorías externas.
 
 ---
 
-## 3. Journey Map: Comprador/Exportador
+## 3. Journey Map: Comprador/Exportador — ⏸️ PHASE 2
+
+> **Nota:** Este flujo es Phase 2. El MVP no incluye funcionalidad de comprador/marketplace.
 
 ### 👤 Persona: Thomas Müller
 
@@ -355,7 +359,9 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-## 4. Journey Map: Administrador del Sistema
+## 4. Journey Map: Administrador del Sistema — ⏸️ PHASE 2+
+
+> **Nota:** Este flujo es Phase 2+. El MVP usa autenticación básica; admin panel se agrega después.
 
 ### 👤 Persona: Carlos Ramírez
 
@@ -442,28 +448,129 @@ graph TD
 
 ---
 
-## 7. Próximos Pasos: Priorización de Pantallas
+## 7. 🎯 PRIORIZACIÓN DE PANTALLAS MVP (ENTRADA PRINCIPAL PARA DESARROLLO)
 
-### 🚀 Fase 1 (Semanas 1-2)
+**Este es el plan de desarrollo ejecutable para el MVP. Contrasta con `01-priorizacion-features-mvp.md` para validar alineamiento feature-screen.**
 
-1. Login / Registro
-2. Dashboard productor
-3. Formulario de finca y lotes
-4. Registro de actividad (básico)
-5. Generación de QR
+### ⚡ MVP = 10 Pantallas en 6 Semanas (Flujo Productor Solamente)
 
-### ⚙️ Fase 2 (Semanas 3-4)
+**Status:** Aprobado para desarrollo kickoff
+**Pilot Region:** Valle del Cauca o Eje Cafetero (Huila, Tolima, Caldas)
+**Plataforma:** Mobile only (Flutter)
 
-1. Timeline de actividades
-2. Vista pública QR (landing)
-3. Dashboard cooperativa
-4. Validación de certificaciones
+---
 
-### 🔮 Fase 3 (Futuro)
+### 🚀 **SEMANA 1-2: Autenticación e Onboarding (3 pantallas)**
 
-1. Reportes avanzados
-2. Panel de administración
-3. Marketplace (post-MVP)
+| Pantalla | Flujo | Prioridad | Notes |
+|----------|-------|-----------|-------|
+| **1. Bienvenida** | App abre → Hero con CTA | P0 | Logo + 3 slides beneficios + "Ingresar" / "Crear cuenta" |
+| **2. Registro** | Crear cuenta productor | P0 | Nombre, email, teléfono, contraseña. Verificación SMS. Rol = Productor. |
+| **3. Login** | Acceso recurrente | P0 | Email + password. Link "recuperar contraseña". |
+
+**Hito:** Usuario autenticado, puede acceder a dashboard vacío
+
+---
+
+### 🌾 **SEMANA 2-3: Gestión de Fincas y Lotes (5 pantallas)**
+
+| Pantalla | Flujo | Prioridad | Notes |
+|----------|-------|-----------|-------|
+| **4. Dashboard Vacío** | Primera visita post-login | P0 | Ilustración + "Registra tu primera finca" CTA. Offline-aware. |
+| **5. Dashboard con Fincas** | Listado de propiedades | P0 | Cards: Nombre finca, municipio, cultivo principal, badges certificaciones (si existen). |
+| **6. Registrar Finca** | Crear finca nueva | P0 | Form: Nombre, municipio/vereda, GPS (manual fallback), cultivo principal, área. Guardar → Vista Finca. |
+| **7. Vista Finca** | Ver finca + lotes | P0 | Nombre, mapa/coords, botón "Registrar lote", lista de lotes (vacía inicialmente). |
+| **8. Registrar Lote** | Crear lote en finca | P0 | Form: Nombre lote, cultivo, área, foto opcional. Guardar → Vista Lote. |
+
+**Hito:** Agricultor ha creado 1 finca + 1-3 lotes, puede navegar estructura farm/plot.
+
+---
+
+### 📝 **SEMANA 3-4: Activity Logging + Timeline (2 pantallas) — ⭐ CORE MVP**
+
+| Pantalla | Flujo | Prioridad | Notes |
+|----------|-------|-----------|-------|
+| **9. Vista Lote + Timeline** | Ver lote + historial actividades | **P0 CRÍTICA** | Muestra: Nombre lote, cultivo, área, **timeline vertical de actividades** (vacía inicialmente), 2 botones: "Registrar actividad" + "Generar QR". **Esta es la pantalla más usada en MVP.** |
+| **10. Registrar Actividad** | Log activity con foto + notas | **P0 CRÍTICA** | Form dinámico según tipo: Selector tipo (siembra/riego/fertilización/cosecha/otro) → Fecha (pre-filled hoy) → Insumo/dosis → Notas (opcional) → **Botón foto "Tomar evidencia"** → Preview → Guardar. **Debe funcionar 100% offline.** |
+
+**Hito:** Agricultor puede registrar múltiples actividades (siembra, fertilización, etc) con fotos. Timeline se actualiza. Datos se guardanclocalmente sin conexión.
+
+---
+
+### 🔄 **SEMANA 4: Sincronización + Indicadores Offline (Integración WatermelonDB)**
+
+| Feature | Pantalla Afectada | Priority | Notes |
+|---------|------------------|----------|-------|
+| Sync engine (push/pull) | Todas | P0 | Cuando hay conexión, sincroniza automáticamente. WatermelonDB detecta cambios. |
+| Offline indicator | 9, 10 | P0 | Mostrar "📡 Offline" o "🔄 Sincronizando" en header. Critical para transparencia con usuario sin conexión. |
+| SMS/USSD alert fallback | Sistema (no pantalla) | Should | Para usuarios R1, R3 (sin smartphone). Alertas por SMS si disponible. |
+
+**Hito:** Sync bidireccional funcionando. Usuario puede trabajar 14+ días sin conexión sin perder datos.
+
+---
+
+### ⚠️ **SEMANA 4-5: Refinamiento UI/UX + Testing**
+
+| Tarea | Pantallas | Priority |
+|-------|-----------|----------|
+| Activity log UX refinement | 9, 10 | P0 | Asegurar que es "simple como cuaderno". Notebook mental model. SUS score > 60. |
+| Offline workflow testing | 6-10 | P0 | Test sin conexión 14+ días. Sync correctness. |
+| Photo compression | 8, 10 | P0 | Auto-resize fotos para conexión lenta. |
+| Form validation | All forms | P0 | Mensajes amigables, tooltips contextuales. |
+
+**Hito:** Todas las pantallas funcionales, UI pulida, listas para field test.
+
+---
+
+### 🧪 **SEMANA 5-6: Field Test + Launch Prep**
+
+| Actividad | Focus | Expected |
+|-----------|-------|----------|
+| Field test con 5 farmers | Pantallas 6-10 core usage | 10+ actividades registradas/farmer en 2 semanas sin conexión |
+| Bug fixes + refinement | All screens | Zero crashes, <5 sec load time offline |
+| Launch checklist | All | API keys, DB migrations, deployment docs ready |
+
+**Hito:** Beta release. MVP listo para pilotar con 1 cooperativa.
+
+---
+
+### 🚫 **QUE NO INCLUYE MVP (Diferido a Phase 2)**
+
+| Screen/Feature | Razón | Phase |
+|---|---|---|
+| Pantalla 11: Generar QR | Marketplace feature; 0 demand signal | 2 |
+| Pantalla 12: QR Fullscreen | Buyer-facing feature | 2 |
+| Pantalla 13: Landing pública (comprador) | Requiere buyer validation | 2 |
+| Dashboard Cooperativa | B2B feature, deferred | 2 |
+| Validación de certificaciones | Requiere partner certificador | 2 |
+| Panel Administrador | Phase 2+ (solo auth básica MVP) | 2+ |
+
+---
+
+### 📊 **KPIs MVP (Semana 5 Field Test)**
+
+| Métrica | Target | Criticidad |
+|---------|--------|-----------|
+| Farmers activos en field test | 5 farmers | MUST |
+| Actividades registradas | 10+ por farmer en 2 semanas | MUST |
+| Offline resilience | 14+ días sin conexión, 0 data loss | MUST |
+| Activity log SUS score | > 60 | MUST |
+| Sync correctness | 100%, 0 lost records | MUST |
+| Time to register activity | < 3 min (Pantalla 10) | SHOULD |
+
+---
+
+### 📌 **Relación con `01-priorizacion-features-mvp.md`**
+
+Ese documento define **QUÉ features** incluir (MoSCoW: Must/Should/Could/Won't).
+**Este documento (Section 7)** define **CUÁNDO y EN QUÉ PANTALLA** construir cada feature.
+
+**Validación cruzada requerida antes de kickoff:**
+- ✅ Ambos documentos dicen "10 pantallas MVP" 
+- ✅ Ambos dicen "Activity logging + offline + alerts"
+- ✅ Ambos defer "QR/marketplace/cooperativa a Phase 2"
+
+**Si hay conflicto, reconciliar AHORA antes de dev kickoff.**
 
 ---
 

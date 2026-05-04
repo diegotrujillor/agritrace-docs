@@ -8,7 +8,7 @@
 
 ## 🎯 PRINCIPIOS FUNDAMENTALES
 
-1. **Mobile-First:** Funcionalidad de móvil primero, después web
+1. **Mobile-First:** App móvil con Flutter (Dart) únicamente. Sin web app, sin React Native. Mobile-only MVP.
 2. **Offline-First:** El app debe funcionar sin conexión, sincronizar cuando hay conexión
 3. **Security by Default:** Autenticación y autorización en cada request
 4. **Simplicity:** Código simple > código clever
