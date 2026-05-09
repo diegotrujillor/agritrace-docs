@@ -4,6 +4,51 @@ Documentación completa de AgriTrace - una plataforma digital para trazabilidad 
 
 **Descripción del Proyecto**: AgriTrace permite a productores agrícolas (cacao, café, frutas exóticas) digitalizar la trazabilidad completa del cultivo desde la siembra hasta la exportación, certificar procesos sostenibles y conectar directamente con compradores internacionales.
 
+## Visión General — MVP Phase 1
+
+> 📍 **Estado**: MVP Phase 1 (versión inicial). Este diagrama evolucionará en fases futuras (marketplace, certificaciones digitales, dashboards de cooperativa y comprador).
+
+```mermaid
+flowchart TD
+    A["👨‍🌾 Pequeño productor<br/>Valle del Cauca<br/>5 a 50 hectáreas"]
+    B["📱 Abre app AgriTrace<br/>en su celular"]
+    C["📝 Registra cada actividad<br/>de la finca:<br/>• siembra<br/>• riego / fumigación<br/>• aplicación de químicos<br/>• cosecha<br/>con fecha + foto + nota"]
+    D["💾 Datos guardados<br/>en el celular<br/>(funciona SIN internet)"]
+    E["🔄 Al llegar a zona<br/>con señal, los datos<br/>suben solos al servidor"]
+    F["☁️ Servidor seguro<br/>en Colombia<br/>(Ley 1581 cumplida)"]
+    G["📄 Productor exporta<br/>reporte PDF de<br/>trazabilidad cuando<br/>lo necesite"]
+    H["🤝 Muestra el reporte<br/>al comprador,<br/>cooperativa o<br/>certificador"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+
+    %% Phase 2 — futuras evoluciones (no incluidas en MVP)
+    P2A["🌐 Marketplace<br/>con compradores<br/>internacionales"]
+    P2B["🏢 Dashboard para<br/>cooperativas"]
+    P2C["🏆 Certificaciones<br/>digitales automáticas"]
+    P2D["📊 Analítica avanzada<br/>+ predicción de<br/>cosecha"]
+
+    F -.->|"⏳ Phase 2"| P2A
+    F -.->|"⏳ Phase 2"| P2B
+    F -.->|"⏳ Phase 2"| P2C
+    F -.->|"⏳ Phase 2"| P2D
+
+    classDef mvp fill:#E8F5E9,stroke:#2D7A3E,stroke-width:2px,color:#1B5028
+    classDef phase2 fill:#F4F4F4,stroke:#999,stroke-dasharray:5 5,color:#666
+
+    class A,B,C,D,E,F,G,H mvp
+    class P2A,P2B,P2C,P2D phase2
+```
+
+**¿Qué resuelve?** Hoy los pequeños productores registran lo que hacen en cuadernos, almanaques o de memoria. Cuando un comprador o certificador les pide pruebas, no las tienen organizadas. AgriTrace convierte el celular en su cuaderno digital — funciona sin internet, sincroniza solo cuando hay señal, y genera reportes listos para mostrar.
+
+**¿Qué NO incluye el MVP Phase 1?** Marketplace de compradores, dashboard de cooperativas, certificaciones digitales y analítica avanzada están planeadas para Phase 2 (líneas punteadas en el diagrama). Phase 1 valida primero que el productor adopte la app.
+
 ## Estructura del Repositorio
 
 Este repositorio está organizado por fase del proyecto y tema para facilitar la navegación y lectura secuencial. Las carpetas numeradas indican el orden de exploración.
