@@ -21,10 +21,10 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 |----------|------------|
 | **Quién** | Pequeños y medianos agricultores (5-50 hectáreas) en Colombia |
 | **Dolor principal** | Dificultad registrar fechas de siembra, fertilización, aplicación de químicos (actualmente: cuadernos, Excel, almanaque + lápiz) |
-| **Geografía** | Piloto: 1 región (recomendado Eje Cafetero para acceso a cooperativas) |
+| **Geografía** | Piloto exclusivo: **Valle del Cauca**. Razón: foco geográfico del founder, cooperativas y gremios accesibles, validación más rápida con menos variables. Ver [`10-comercial-gtm/01-icp-y-segmentacion.md`](10-comercial-gtm/01-icp-y-segmentacion.md). |
 | **Dispositivo** | Smartphone (eventual); actualmente 50% tienen básicos o lapicero+cuaderno |
 | **Conectividad** | Intermitente (3G/4G rural); 1 de 4 nunca tiene conexión |
-| **Disposición a pagar** | Baja (promedio 2.25/5 en escala Likert). Business model alternativo: B2B via cooperativas o buyer-subsidized |
+| **Disposición a pagar** | Encuesta n=4 dio 2.25/5 (baja confianza por sesgo de muestra). MVP usa modelo híbrido: **Mes 1 gratis con commitment contract → Mes 2 = $29.990 COP/mes** para validar willingness real. Si patrón muestra rechazo, pivotar a B2B-via-coop o B2B2C. Ver [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
 
 ---
 
@@ -85,8 +85,8 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 | **Agricultores adoptarán smartphones**: Hoy 50% usan básicos/nada. Asumimos gradual adoption. | **Baja (⚠️)** | Agregar SMS/USSD fallback; evaluar web-responsive para laptops en Phase 2. |
 | **Offline-first es correcta arquitectura**: 4/4 dijeron "sí" a offline pero solo 2/4 tienen siempre conexión. | **Alta (✅)** | Validado. Todos los screens deben funcionar offline 14+ días. |
 | **Activity log + alerts es el wedge**: Stakeholders no pidieron marketplace/buyer dashboard. | **Media (⚠️)** | Validar con 10+ más agricultores en Weeks 1-2. Ajustar prioridades si marketplace tiene demanda oculta. |
-| **Farmers won't pay directo por SaaS**: Promedio willingness 2.25/5 (max 3/5). | **Alta (✅)** | Business model pivote necesario (B2B via coop, buyer-subsidized, freemium, o NGO subsidy). MVP no incluye paywall. |
-| **1 región es suficiente para MVP**: No intentar ser nacional día 1. | **Alta (✅)** | Go-live en Eje Cafetero (Huila, Tolima, Caldas) con 1 cooperativa partner. |
+| **Farmers won't pay directo por SaaS**: Encuesta n=4 dio willingness 2.25/5 (sesgo conocido). | **Media (⚠️)** | MVP valida con modelo híbrido (Mes 1 gratis + commitment + $29.990 COP Mes 2). Si <2 de 5 pilotos pagan, pivotar a B2B-via-coop / B2B2C. Detalle: [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
+| **1 región es suficiente para MVP**: No intentar ser nacional día 1. | **Alta (✅)** | Go-live en **Valle del Cauca** con 2+ pilotos firmados. Detalle: [`10-comercial-gtm/01-icp-y-segmentacion.md`](10-comercial-gtm/01-icp-y-segmentacion.md). |
 
 ---
 
@@ -157,6 +157,29 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 - ✅ **Equipo Producto**: Scope aprobado, features priorizadas, marketplace diferido
 - ✅ **Equipo Técnico**: Architecture viable (Flutter + WatermelonDB + Node.js API)
 - 🔲 **Stakeholder/Cooperativa**: Pending — identificar partner para pilot
+
+---
+
+## 11. Validación Comercial (Track Paralelo)
+
+El alcance técnico de este documento debe ejecutarse en paralelo con el track de validación comercial documentado en [`10-comercial-gtm/`](10-comercial-gtm/).
+
+| Track | Cubre | Owner |
+|-------|-------|-------|
+| Técnico (este documento) | Construcción del MVP, sprints 1-6 | Diego (dev) |
+| Comercial ([`10-comercial-gtm/`](10-comercial-gtm/)) | ICP, canales, pitch, validación con productores Valle, pricing | Diego + Esposa |
+
+**Hitos comerciales que afectan al desarrollo**:
+- Semana 3 comercial: 2+ pilotos firmados → backend debe tener onboarding manual operativo
+- Semana 4 comercial: pilotos usando app → mobile build distribuible (TestFlight/APK directo)
+- Semana 8 comercial (cierre Mes 1 piloto): decisión de pricing → afecta priorización de pasarela de pago en Phase 2
+
+**Si validación comercial falla** (0 pilotos pagarían):
+- Pausar Phase 2 (cooperativas, marketplace)
+- Re-evaluar problema-solución
+- Considerar pivote de segmento o pricing
+
+Detalle de validación: [`10-comercial-gtm/README.md`](10-comercial-gtm/README.md)
 
 ---
 

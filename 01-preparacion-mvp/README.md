@@ -14,6 +14,8 @@ Sigue esta secuencia para comprender el alcance completo de la Fase 1:
 6. **06-infraestructura**: Configuración y despliegue de infraestructura
 7. **07-gestion-de-proyectos**: Hoja de ruta del proyecto, backlog y cronograma
 8. **08-presupuesto-inversion**: Seguimiento de presupuesto e inversión
+9. **09-scope-mvp.md**: Declaración consolidada de alcance MVP
+10. **10-comercial-gtm**: Capa comercial — ICP, canales, pitch, pricing y validación con productores Valle del Cauca
 
 ## Secciones
 
@@ -58,6 +60,22 @@ Artefactos de gestión de proyectos:
 ### [08-presupuesto-inversion](08-presupuesto-inversion/)
 Seguimiento de presupuesto e inversión para la ejecución de la Fase 1.
 
+### [09-scope-mvp.md](09-scope-mvp.md)
+Declaración consolidada del alcance MVP: visión, target user, scope in/out, métricas de éxito, aprobaciones.
+
+### [10-comercial-gtm](10-comercial-gtm/)
+Capa comercial / Go-to-Market para validación del MVP en Valle del Cauca:
+- ICP y segmentación (3 sub-segmentos: cacao, caña panelera, hortalizas)
+- Canales de acceso (cooperativas, ferias, gremios)
+- Pitch de 30s y 2min
+- Lista de 20 prospectos
+- Guion de call de validación
+- Modelo de pricing híbrido (Mes 1 gratis + $29.990 COP/mes Mes 2)
+- Contrato de feedback para piloto
+- Análisis de riesgo "robo de idea"
+- Cronograma de validación de 4 semanas
+- Métricas y KPIs
+
 ## Entregables Clave
 
 Al final de la Fase 1, los siguientes items deben estar completados:
@@ -68,6 +86,7 @@ Al final de la Fase 1, los siguientes items deben estar completados:
 - ✅ Infraestructura aprovisionada y lista
 - ✅ Hoja de ruta del proyecto y cronograma definidos
 - ✅ Sistema de seguimiento de presupuesto en su lugar
+- ✅ Validación comercial: 20 prospectos contactados, 5+ calls completadas, 2+ pilotos firmados ([`10-comercial-gtm/`](10-comercial-gtm/))
 
 ## Cronograma
 

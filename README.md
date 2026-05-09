@@ -49,6 +49,8 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 4. **Para Gestores de Proyectos**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Cronograma](01-preparacion-mvp/README.md)
 
+5. **Para Founders no-vendedores (capa comercial)**: Comienza con [Comercial / GTM README](01-preparacion-mvp/10-comercial-gtm/README.md) → [ICP y segmentación](01-preparacion-mvp/10-comercial-gtm/01-icp-y-segmentacion.md) → [Pitch 30s/2min](01-preparacion-mvp/10-comercial-gtm/03-pitch-30s-y-2min.md) → [Cronograma 4 semanas](01-preparacion-mvp/10-comercial-gtm/09-cronograma-validacion-4-semanas.md)
+
 ## Hoja de Ruta Fase 1
 
 | Fase | Cronograma | Enfoque |
