@@ -1,0 +1,21 @@
+id,nombre,organizacion_o_finca,cultivo,telefono,email,canal,fuente,notas,fecha_contacto_inicial,status
+01,(gerente por confirmar),Asociación de Productores de Cacao del Centro del Valle,cacao,602-2311663,,Llamada,Cooperativa - Tuluá,"Sede en Bocas de Tuluá. Punto de partida para referidos del norte/centro Valle.",,pendiente
+02,(gerente por confirmar),Asociación de Productores de Cacao del Municipio de Caicedonia,cacao,,,Llamada,Cooperativa - Caicedonia,"Dirección: CR 16 13 05 P3 Caicedonia. Investigar teléfono via Cámara Comercio Cali.",,pendiente
+03,Luis Alfonso Tello Moreno,Aspat - Asociación de Paneleros de Atuncela,caña panelera,,,Llamada,Cooperativa - Dagua,"Representante legal conocido. Aspat es referencia panelera Valle. Investigar teléfono por gobernación.",,pendiente
+04,(gerente por confirmar),Asoc. Productores Transformadores y Comercializadores de Frutas y Hortalizas,hortalizas frutas,322-2799808,,WhatsApp,Cooperativa - El Cerrito,"Sede: Escuela Antonio Ricaurte Carrera Santa Elena El Cerrito. Mix transformación + comercialización.",,pendiente
+05,(gerente por confirmar),Cooperativa cafetera Valle (a identificar via Comité Cafeteros),cafe,602-6615561,FacElectronica.Valle@cafedecolombia.com,Email,Cooperativa - via Comité,"Pedir referido a Comité de Cafeteros para 1 cooperativa pequeña del Valle.",,pendiente
+06,(representante legal por confirmar),Productor formalizado Valle - Confecámaras CIIU 0127 cacao,cacao,,,Email,Confecámaras Cali,"Buscar en https://sii.confecamaras.co o Cámara Comercio Cali ccc.org.co. CIIU 0127.",,pendiente
+07,(representante legal por confirmar),Productor formalizado Valle - Confecámaras CIIU 0125 frutas,frutas,,,Email,Confecámaras Cali,"Buscar en sii.confecamaras.co. CIIU 0125.",,pendiente
+08,(representante legal por confirmar),Productor formalizado Valle - Confecámaras CIIU 0113 hortalizas,hortalizas,,,Email,Confecámaras Cali,"Buscar en sii.confecamaras.co. CIIU 0113.",,pendiente
+09,(representante legal por confirmar),Productor formalizado Valle - Confecámaras CIIU 0128 caña,caña panelera,,,Email,Confecámaras Cali,"Buscar en sii.confecamaras.co. CIIU 0128.",,pendiente
+10,(representante legal por confirmar),Productor formalizado Valle - DANE Directorio,otro,,,Email,DANE Geoportal,"https://geoportal.dane.gov.co/geovisores/economia/directorio-estadistico-de-empresas/",,pendiente
+11,(coordinador regional),FEDECACAO Unidad Técnica Valle,cacao,327-3000,info@fedecacao.com.co,Email,Gremio - FEDECACAO,"Pedir referido de 2-3 cacaoteros pequeños Valle. Llamar PBX nacional para ubicar Unidad Técnica regional.",,pendiente
+12,(coordinador Valle),FEDEPANELA - Federación Nacional de Productores de Panela,caña panelera,601-6222066,,Email,Gremio - FEDEPANELA,"Pedir nombre + contacto del coordinador regional Valle. Mencionar Aspat como referencia.",,pendiente
+13,(director hortifrutícola Valle),ASOHOFRUCOL Valle del Cauca,hortalizas frutas,312-5482583,prensa@asohofrucol.com.co,WhatsApp,Gremio - ASOHOFRUCOL,"Twitter @AsohofrucolV activo. Pedir contacto del Comité Departamental Valle.",,pendiente
+14,(coordinador AGROSAVIA Palmira),AGROSAVIA Centro Palmira,otro,,mslopez@agrosavia.co,Email,Gremio - AGROSAVIA,"Diagonal Cra 36A con Calle 23 Palmira. Ext 2514/2515. Pedir referidos de proyectos piloto con productores.",,pendiente
+15,(subsecretario agropecuario),Secretaría de Agricultura Valle del Cauca,otro,,,Email,Gremio - Sec. Agricultura,"https://www.valledelcauca.gov.co - buscar Subsecretaría Agropecuaria. Pedir referidos pilot.",,pendiente
+16,(esposa),Líder grupo FB - Productores Valle del Cauca,otro,,,Facebook,FB grupo - tarea esposa,Identificar admin o usuario activo del grupo.,,pendiente
+17,(esposa),Líder grupo FB - Agricultores Cali,otro,,,Facebook,FB grupo - tarea esposa,Identificar admin o usuario activo del grupo.,,pendiente
+18,(esposa),Líder grupo FB - Cacao Colombia Valle,cacao,,,Facebook,FB grupo - tarea esposa,Identificar admin o usuario activo del grupo.,,pendiente
+19,(esposa),Líder grupo FB - Hortalizas Cali,hortalizas,,,Facebook,FB grupo - tarea esposa,Identificar admin o usuario activo del grupo.,,pendiente
+20,(esposa),Líder grupo FB - Panela Valle,caña panelera,,,Facebook,FB grupo - tarea esposa,Identificar admin o usuario activo del grupo.,,pendiente
