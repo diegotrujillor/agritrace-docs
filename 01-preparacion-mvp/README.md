@@ -1,10 +1,10 @@
-# Fase 1 - Preparación del MVP
+# MVP - Preparación del MVP
 
 Esta fase cubre la preparación y planificación completa del MVP (Producto Mínimo Viable) de AgriTrace. Incluye análisis funcional, diseño UI/UX, arquitectura técnica, configuración de infraestructura y gestión de proyectos.
 
 ## Orden de Lectura
 
-Sigue esta secuencia para comprender el alcance completo de la Fase 1:
+Sigue esta secuencia para comprender el alcance completo de la MVP:
 
 1. **01-encuesta-partes-interesadas**: Retroalimentación de partes interesadas y recopilación de requerimientos iniciales
 2. **02-requerimientos-funcionales**: Requerimientos funcionales y no funcionales detallados
@@ -58,7 +58,7 @@ Artefactos de gestión de proyectos:
 - Cronograma e hitos
 
 ### [08-presupuesto-inversion](08-presupuesto-inversion/)
-Seguimiento de presupuesto e inversión para la ejecución de la Fase 1.
+Seguimiento de presupuesto e inversión para la ejecución de la MVP.
 
 ### [09-scope-mvp.md](09-scope-mvp.md)
 Declaración consolidada del alcance MVP: visión, target user, scope in/out, métricas de éxito, aprobaciones.
@@ -78,7 +78,7 @@ Capa comercial / Go-to-Market para validación del MVP en Valle del Cauca:
 
 ## Entregables Clave
 
-Al final de la Fase 1, los siguientes items deben estar completados:
+Al final de la MVP, los siguientes items deben estar completados:
 
 - ✅ Requerimientos funcionales y no funcionales documentados
 - ✅ Diseño UI/UX y marca establecidos
@@ -102,7 +102,7 @@ Duración total: 6 semanas
 
 ## Presupuesto Estimado
 
-Presupuesto Total Fase 1: **≈ $2.700.000 – $4.800.000 COP**
+Presupuesto Total MVP: **≈ $2.700.000 – $4.800.000 COP**
 
 - Análisis y alcance: $300.000 – $500.000
 - Diseño UI/UX y marca: $800.000 – $1.200.000

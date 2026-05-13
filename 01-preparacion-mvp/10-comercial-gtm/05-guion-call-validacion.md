@@ -80,7 +80,7 @@ Antes de mostrarle nada, cuénteme un poco:
 **Notas importantes**:
 - **No respondas tú** sus preguntas durante este bloque. Si hace una pregunta, contesta corto y vuelve a preguntar.
 - **Anota textualmente** frases del productor (luego son oro para iterar pitch).
-- Si menciona problemas que tu MVP NO resuelve, anótalo. Es validación de Phase 2.
+- Si menciona problemas que tu MVP NO resuelve, anótalo. Es validación de iteración futura.
 
 ---
 
@@ -108,7 +108,7 @@ en 2 minutos qué construimos y le muestro:
 **Si pregunta sobre algo que NO está en MVP**:
 
 ```
-Buena pregunta. Eso lo tenemos en Phase 2 [/ próximamente / aún
+Buena pregunta. Eso lo tenemos en iteración futura [/ próximamente / aún
 no está]. Por ahora el MVP se enfoca en registrar actividades.
 ¿Eso le serviría primero, o sin lo otro no le sirve?
 ```
@@ -155,7 +155,7 @@ no está]. Por ahora el MVP se enfoca en registrar actividades.
 | Respuesta a P6 | Significado | Acción |
 |----------------|-------------|--------|
 | "La cooperativa" | Modelo B2B-via-coop validado | Pedir contacto en la coop |
-| "El comprador" | Modelo B2B2C validado | Anotar; explorar Phase 2 |
+| "El comprador" | Modelo B2B2C validado | Anotar; explorar iteración futura |
 | "Nadie pagaría" | Producto no tiene mercado a este precio | Reflexionar después |
 
 ---

@@ -48,7 +48,7 @@ Detalle del compromiso: [`07-contrato-feedback-piloto.md`](07-contrato-feedback-
 - PSE (productor formalizado)
 - Pago en efectivo via cooperativa (si hay convenio)
 
-**No incluido en Phase 1**: pasarela de pago automática, suscripción tipo Netflix, plan anual con descuento. Esos llegan en Phase 2 cuando haya volumen.
+**No incluido en MVP**: pasarela de pago automática, suscripción tipo Netflix, plan anual con descuento. Esos llegan en iteración futura cuando haya volumen.
 
 ---
 
@@ -92,7 +92,7 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 
 ### Si patrón muestra alta sensibilidad de precio (mayoría dice "$10.000 max")
 
-**Acción**: bajar precio a $14.990 COP/mes para Phase 2 + reformular value prop.
+**Acción**: bajar precio a $14.990 COP/mes para iteración futura + reformular value prop.
 
 **Riesgo**: ARPU baja → necesitas más volumen → presión sobre canales de adquisición.
 
@@ -107,11 +107,11 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 
 ### Si patrón muestra disposición buyer-side (B2B2C)
 
-**Acción**: explorar Phase 1.5 con un comprador/exportador:
+**Acción**: explorar intermediate iteration con un comprador/exportador:
 - Comprador paga por acceso a datos de trazabilidad de su red de productores
 - Productor mantiene acceso gratis
 
-**Riesgo**: requiere construir feature de buyer access (Phase 2 ya planeada). Hold off hasta validar.
+**Riesgo**: requiere construir feature de buyer access (iteración futura ya planeada). Hold off hasta validar.
 
 ### Si patrón muestra "nadie paga" (peor escenario)
 
@@ -182,7 +182,7 @@ Con base en el patrón observado:
 
 | Patrón observado | Decisión |
 |-------------------|----------|
-| ≥ 2 de 5 pilotos pagan $29.990 | Continuar con plan original. Empezar Phase 2 (cooperativas). |
+| ≥ 2 de 5 pilotos pagan $29.990 | Continuar con plan original. Empezar iteración futura (cooperativas). |
 | 1 de 5 pagaría $29.990 | Tibio. Validar más con 5 pilotos adicionales antes de pivotar. |
 | 0 de 5 a precio $29.990 pero ≥ 3 a precio menor | Bajar precio a $14.990 y reintentar 1 mes. |
 | 0 de 5 a cualquier precio individual, pero ≥ 3 dicen "lo pagaría la coop" | Pivote a B2B-via-coop. |

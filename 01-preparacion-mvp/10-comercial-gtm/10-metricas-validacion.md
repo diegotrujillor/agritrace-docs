@@ -1,6 +1,6 @@
 # 10 - Métricas y KPIs de Validación
 
-**Objetivo**: definir las métricas que nos dirán si la validación del MVP en Phase 1 fue exitosa o no.
+**Objetivo**: definir las métricas que nos dirán si la validación del MVP en MVP fue exitosa o no.
 
 **Principio**: pocas métricas, claras, accionables. Si una métrica no cambia una decisión, no la midas.
 
@@ -120,7 +120,7 @@ Una sola hoja con pestañas:
 
 ### Dashboard simple (opcional)
 
-Para Phase 2: si volumen crece, mover a Notion / Airtable / Metabase. Phase 1 NO lo necesita; un Sheet bien organizado es suficiente.
+Para iteración futura: si volumen crece, mover a Notion / Airtable / Metabase. MVP NO lo necesita; un Sheet bien organizado es suficiente.
 
 ---
 
@@ -131,7 +131,7 @@ Con base en [`06-modelo-pricing-validacion.md`](06-modelo-pricing-validacion.md)
 ```
 SI (pilotos_pagan_29990 >= 2) ENTONCES
     Veredicto: "Validación FUERTE"
-    Acción: continuar plan original, escalar a Phase 2 con cooperativas
+    Acción: continuar plan original, escalar a iteración futura con cooperativas
 ELSE SI (pilotos_pagan_29990 == 1) ENTONCES
     Veredicto: "Validación TIBIA"
     Acción: validar 5 pilotos adicionales antes de pivotar
@@ -155,7 +155,7 @@ Al cierre de Semana 4 + Mes 1 piloto, generar 1 página con:
 
 ```
 ─────────────────────────────────────────────────────
-AgriTrace - Reporte Validación Phase 1
+AgriTrace - Reporte Validación MVP
 Fecha: YYYY-MM-DD
 ─────────────────────────────────────────────────────
 
@@ -172,7 +172,7 @@ NÚMEROS DUROS
 DOLOR PRINCIPAL VALIDADO
 "[cita textual del dolor más recurrente]"
 
-FEATURE MÁS PEDIDO (Phase 2)
+FEATURE MÁS PEDIDO (iteración futura)
 [descripción + frecuencia]
 
 VEREDICTO

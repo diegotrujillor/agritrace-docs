@@ -56,7 +56,7 @@ Productor registra finca → crea lotes → registra actividades
 #### Should Have (Deseables)
 - RF-09 a RF-13: Certificaciones, dashboard, reportes
 - RNF-06 a RNF-08, RNF-10: Multilenguaje, performance, escalabilidad
-- **Impacto:** Ampliarían funcionalidad en Fase 2
+- **Impacto:** Ampliarían funcionalidad en iteración futura
 
 #### Could Have (Nice to have)
 - RF-14 a RF-18: Marketplace, chat, alertas, gamificación
@@ -199,7 +199,7 @@ Basándome en tu documentación, veo **varias direcciones posibles**:
 Cambiar de QR simple → QR que apunta a certificado blockchain
 - Pro: Mayor diferenciación, seguridad
 - Contra: Complejidad, costo de implementación
-- Viabilidad: Media (Fase 2 realista)
+- Viabilidad: Media (iteración futura realista)
 
 ### **Opción B: Enfoque en "Marketplace Directo"**
 Cambiar de trazabilidad pasiva → Plataforma activa de conexión productor↔comprador
@@ -211,7 +211,7 @@ Cambiar de trazabilidad pasiva → Plataforma activa de conexión productor↔co
 Cambiar de registro manual → Integración con sensores (humedad, temp, pH)
 - Pro: Trazabilidad más objetiva, automatización
 - Contra: Hardware requerido, complejidad
-- Viabilidad: Baja para MVP, Si para Fase 2+
+- Viabilidad: Baja para MVP, Si para iteración futura
 
 ### **Opción D: Enfoque en "Certificaciones Digitales"**
 Cambiar de almacenamiento pasivo → Emisión de certificados digitales verificables
@@ -223,7 +223,7 @@ Cambiar de almacenamiento pasivo → Emisión de certificados digitales verifica
 Cambiar de registro simple → Dashboard inteligente con scoring de sostenibilidad
 - Pro: Valor agregado para compradores, gamificación
 - Contra: Requerimientos complejos de cálculo
-- Viabilidad: Alta (Fase 2 realista)
+- Viabilidad: Alta (iteración futura realista)
 
 ---
 
@@ -259,7 +259,7 @@ Cambiar de registro simple → Dashboard inteligente con scoring de sostenibilid
 - [ ] CI/CD básico (GitHub Actions)
 ```
 
-### **Desarrollo - Fase 1 (4-6 semanas)**
+### **Desarrollo - MVP (4-6 semanas)**
 
 **Sprint 1: Backend Core (2 semanas)**
 - Auth service (login, register, JWT)
@@ -306,7 +306,7 @@ Cambiar de registro simple → Dashboard inteligente con scoring de sostenibilid
 2. Setup del entorno de desarrollo
 3. Inicio de desarrollo backend
 
-### **Largo plazo (Visión Fase 2):**
+### **Largo plazo (Visión iteración futura):**
 - Blockchain/certificaciones
 - Marketplace
 - Integración IoT

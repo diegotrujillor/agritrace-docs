@@ -10,12 +10,12 @@ Este documento define la estructura organizada del repositorio de documentación
 agritrace-docs/
 ├── README.md                           (Índice principal)
 ├── 00-referencia/                      (Documentos de referencia)
-├── 01-preparacion-mvp/                 (Fase 1: Preparación del MVP)
+├── 01-preparacion-mvp/                 (MVP: Preparación del MVP)
 ├── 02-documentacion-tecnica/           (Documentación Técnica)
 └── 03-recursos/                        (Recursos compartidos e imágenes)
 ```
 
-## Fase 1: Preparación del MVP (`01-preparacion-mvp/`)
+## MVP: Preparación del MVP (`01-preparacion-mvp/`)
 
 Cubre análisis, diseño, arquitectura, infraestructura y gestión de proyectos para el MVP.
 
@@ -146,7 +146,7 @@ Los archivos incluyen referencias a:
 
 ### Para Stakeholders de Negocio
 1. [README.md](../README.md) → Descripción General
-2. [01-preparacion-mvp/README.md](../01-preparacion-mvp/README.md) → Fase 1 MVP
+2. [01-preparacion-mvp/README.md](../01-preparacion-mvp/README.md) → MVP
 3. [01-preparacion-mvp/02-requerimientos-funcionales/](../01-preparacion-mvp/02-requerimientos-funcionales/) → Requerimientos
 4. [01-preparacion-mvp/07-gestion-de-proyectos/](../01-preparacion-mvp/07-gestion-de-proyectos/) → Cronograma y Roadmap
 
@@ -165,7 +165,7 @@ Los archivos incluyen referencias a:
 
 ### Para Gestores de Proyectos
 1. [README.md](../README.md) → Descripción General
-2. [01-preparacion-mvp/README.md](../01-preparacion-mvp/README.md) → Fase 1 MVP
+2. [01-preparacion-mvp/README.md](../01-preparacion-mvp/README.md) → MVP
 3. [01-preparacion-mvp/07-gestion-de-proyectos/](../01-preparacion-mvp/07-gestion-de-proyectos/) → Gestión de Proyectos
 4. [01-preparacion-mvp/08-presupuesto-inversion/](../01-preparacion-mvp/08-presupuesto-inversion/) → Presupuesto
 

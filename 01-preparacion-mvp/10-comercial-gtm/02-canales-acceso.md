@@ -202,9 +202,9 @@ diegotrujillor@gmail.com / WhatsApp: +57-XXX-XXX-XXXX
 
 ---
 
-## Lo que NO es canal en Phase 1
+## Lo que NO es canal en MVP
 
-| Canal | Por qué descartado en Phase 1 |
+| Canal | Por qué descartado en MVP |
 |-------|--------------------------------|
 | LinkedIn ads / Google Ads | Costo + perfil ICP no busca soluciones digitales activamente |
 | Cold email masivo | Sin lista validada; baja conversión; ruido |
@@ -214,7 +214,7 @@ diegotrujillor@gmail.com / WhatsApp: +57-XXX-XXX-XXXX
 | Influencers agro | No hay influencers agro Valle con audiencia validada |
 | Eventos generales de tech (Demo Days, hackatons) | Audiencia equivocada |
 
-**Reconsiderar en Phase 2** después de validar product-market fit.
+**Reconsiderar en iteración futura** después de validar product-market fit.
 
 ---
 

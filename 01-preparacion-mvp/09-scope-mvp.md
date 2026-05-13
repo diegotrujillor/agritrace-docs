@@ -11,11 +11,11 @@
 
 **Crear una app móvil simple que permita a agricultores registrar digitalmente sus actividades de cultivo offline, recibir alertas automáticas, y eventualmente conectar con compradores de EU.**
 
-El MVP valida el problema (agricultores necesitan mejor registro de actividades) y comienza a construir la base para la propuesta de valor diferenciadora (conexión con compradores internacionales). La validación de mercado ocurre con usuarios reales durante Phase 1.
+El MVP valida el problema (agricultores necesitan mejor registro de actividades) y comienza a construir la base para la propuesta de valor diferenciadora (conexión con compradores internacionales). La validación de mercado ocurre con usuarios reales durante MVP.
 
 ---
 
-## 2. Target User (Fase 1)
+## 2. Target User (MVP)
 
 | Atributo | Descripción |
 |----------|------------|
@@ -61,20 +61,20 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 ---
 
-## 4. Scope: Qué NO incluye (Phase 2+)
+## 4. Scope: Qué NO incluye (iteración futura)
 
 ### Features Deferidas (Razón)
 
 | Feature | Razón diferencia |
 |---------|-----------------|
-| **Generar QR y compartir trazabilidad** | Marketplace feature; cero demanda en stakeholders (2/4 dicen "compradores no piden traceability"). Validar en Phase 1.5 con 5+ compradores. |
-| **Dashboard para cooperativas** | B2B no es imperative; Phase 2 si partners (Federacafé, etc.) lo requieren. |
+| **Generar QR y compartir trazabilidad** | Marketplace feature; cero demanda en stakeholders (2/4 dicen "compradores no piden traceability"). Validar en intermediate iteration con 5+ compradores. |
+| **Dashboard para cooperativas** | B2B no es imperative; iteración futura si partners (Federacafé, etc.) lo requieren. |
 | **Dashboard para exportadores/compradores** | Zero buyer respondents. Validar demanda antes de invertir. |
-| **Certificaciones digitales** | 3/4 agricultores valoran certs pero ninguno las tiene hoy. Requiere partner con cuerpo certificador. Phase 2. |
-| **Chat/messaging con compradores** | Sin demanda. Phase 2 si marketplace se valida. |
+| **Certificaciones digitales** | 3/4 agricultores valoran certs pero ninguno las tiene hoy. Requiere partner con cuerpo certificador. iteración futura. |
+| **Chat/messaging con compradores** | Sin demanda. iteración futura si marketplace se valida. |
 | **Web app** | Mobile-first. Laptops pueden acceder vía responsive mobile web, pero no es prioridad. |
-| **Field agent / proxy data entry** | Agrega complejidad de onboarding. Defer a Phase 2 si cooperativas requieren. |
-| **Analytics dashboard avanzado** | Keep reports simple (PDF export de activity log). Dashboards analytics son Phase 2+. |
+| **Field agent / proxy data entry** | Agrega complejidad de onboarding. Defer a iteración futura si cooperativas requieren. |
+| **Analytics dashboard avanzado** | Keep reports simple (PDF export de activity log). Dashboards analytics son iteración futura. |
 
 ---
 
@@ -82,7 +82,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 | Suposición | Confianza | Plan si falla |
 |-----------|-----------|-----------------|
-| **Agricultores adoptarán smartphones**: Hoy 50% usan básicos/nada. Asumimos gradual adoption. | **Baja (⚠️)** | Agregar SMS/USSD fallback; evaluar web-responsive para laptops en Phase 2. |
+| **Agricultores adoptarán smartphones**: Hoy 50% usan básicos/nada. Asumimos gradual adoption. | **Baja (⚠️)** | Agregar SMS/USSD fallback; evaluar web-responsive para laptops en iteración futura. |
 | **Offline-first es correcta arquitectura**: 4/4 dijeron "sí" a offline pero solo 2/4 tienen siempre conexión. | **Alta (✅)** | Validado. Todos los screens deben funcionar offline 14+ días. |
 | **Activity log + alerts es el wedge**: Stakeholders no pidieron marketplace/buyer dashboard. | **Media (⚠️)** | Validar con 10+ más agricultores en Weeks 1-2. Ajustar prioridades si marketplace tiene demanda oculta. |
 | **Farmers won't pay directo por SaaS**: Encuesta n=4 dio willingness 2.25/5 (sesgo conocido). | **Media (⚠️)** | MVP valida con modelo híbrido (Mes 1 gratis + commitment + $29.990 COP Mes 2). Si <2 de 5 pilotos pagan, pivotar a B2B-via-coop / B2B2C. Detalle: [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
@@ -116,7 +116,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 ## 7. Timeline
 
-**6 semanas (Fase 1 aún aplicable):**
+**6 semanas (MVP aún aplicable):**
 
 | Semana | Hito |
 |--------|------|
@@ -172,10 +172,10 @@ El alcance técnico de este documento debe ejecutarse en paralelo con el track d
 **Hitos comerciales que afectan al desarrollo**:
 - Semana 3 comercial: 2+ pilotos firmados → backend debe tener onboarding manual operativo
 - Semana 4 comercial: pilotos usando app → mobile build distribuible (TestFlight/APK directo)
-- Semana 8 comercial (cierre Mes 1 piloto): decisión de pricing → afecta priorización de pasarela de pago en Phase 2
+- Semana 8 comercial (cierre Mes 1 piloto): decisión de pricing → afecta priorización de pasarela de pago en iteración futura
 
 **Si validación comercial falla** (0 pilotos pagarían):
-- Pausar Phase 2 (cooperativas, marketplace)
+- Pausar iteración futura (cooperativas, marketplace)
 - Re-evaluar problema-solución
 - Considerar pivote de segmento o pricing
 

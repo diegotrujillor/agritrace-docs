@@ -8,13 +8,13 @@
 
 **Objetivo**: App móvil simple que permita a agricultores registrar actividades offline y recibir alertas. La conexión con compradores de EU es la propuesta de valor innovadora, pero se valida en el mercado durante MVP (no es feature obligatoria día 1).
 
-**Alcance**: 10 pantallas móviles de flujo productor. Marketplace y flujos cooperativa/comprador diferidos a Phase 2.
+**Alcance**: 10 pantallas móviles de flujo productor. Marketplace y flujos cooperativa/comprador diferidos a iteración futura.
 
 **Suposición clave**: Los agricultores adoptarán smartphones gradualmente. El app es solo móvil (no web).
 
 ---
 
-## Pantallas: MVP vs. Phase 2
+## Pantallas: MVP vs. iteración futura
 
 ### ✅ MVP (Incluidas — 10 pantallas)
 
@@ -46,7 +46,7 @@
 
 ---
 
-### ⏸️ Phase 2 (Diferidas)
+### ⏸️ iteración futura (Diferidas)
 
 **Marketplace/Trazabilidad**
 | Pantalla | Descripción | Razón diferencia |
@@ -58,8 +58,8 @@
 **Flujos no-MVP**
 | Flujo | Razón diferencia |
 |------|-----------------|
-| Flow B (Cooperativa) | B2B model no imperative; Phase 2 si partners requieren |
-| Flow C (Exportador/Comprador) | Zero buyer respondents; validar Phase 1.5 |
+| Flow B (Cooperativa) | B2B model no imperative; iteración futura si partners requieren |
+| Flow C (Exportador/Comprador) | Zero buyer respondents; validar intermediate iteration |
 
 ---
 
@@ -67,7 +67,7 @@
 
 ### Must (MVP puede completarse sin estos — MVP puede fallar con estos)
 
-| Feature | Must | Phase 2 |
+| Feature | Must | iteración futura |
 |---------|------|---------|
 | Offline activity logging (R1-R4: 4/4 respondents) | ✅ | |
 | Dates/fertilization tracking (R1, R2, R4: 3/4) | ✅ | |
@@ -89,10 +89,10 @@
 
 | Feature | Phase |
 |---------|-------|
-| QR generation | Phase 2 |
-| In-app buyer messaging | Phase 2 |
-| Certifications workflow | Phase 2 |
-| Analytics dashboards | Phase 2 |
+| QR generation | iteración futura |
+| In-app buyer messaging | iteración futura |
+| Certifications workflow | iteración futura |
+| Analytics dashboards | iteración futura |
 
 ### Won't (Out of scope)
 
@@ -100,7 +100,7 @@
 |---------|-------|
 | App web | Decisión mobile-first (solo Flutter) |
 | Modo entrada por agente de campo | Agrega complejidad de onboarding |
-| Jerarquía multi-usuario/cooperativa | Defer a B2B en Phase 2 |
+| Jerarquía multi-usuario/cooperativa | Defer a B2B en iteración futura |
 | Blockchain/ledger | Cero demanda en stakeholders |
 
 ---
@@ -194,7 +194,7 @@
 
 ---
 
-## Qué NO incluye el MVP (Diferido a Phase 2)
+## Qué NO incluye el MVP (Diferido a iteración futura)
 
 | Feature / Pantalla | Razón | Phase |
 |--------------------|-------|-------|
@@ -221,7 +221,7 @@
 
 3. **Alertas basadas en SMS/USSD**: 2 de 4 stakeholders no tienen smartphone. Fallback crítico.
 
-4. **Marketplace features (QR, buyer dashboard) son Phase 2**: La validación de mercado ocurre durante MVP con farmers reales usando el app. Si los compradores de EU realmente demandan traceability, agregue Phase 2.
+4. **Marketplace features (QR, buyer dashboard) son iteración futura**: La validación de mercado ocurre durante MVP con farmers reales usando el app. Si los compradores de EU realmente demandan traceability, agregue iteración futura.
 
 ---
 

@@ -22,7 +22,7 @@ Resultados completos: [`02-encuesta-partes-interesadas-respuestas.md`](02-encues
 |----------|-----------|----------------|
 | 4/4 dijeron que usarían app si funciona offline | Alta | Validó decisión de offline-first |
 | 4/4 hoy registran en cuaderno/Excel/almanaque (NO en apps) | Alta | Confirma que el dolor existe |
-| Trazabilidad y certificaciones aparecen como interés futuro pero no demanda actual | Media | Justifica diferir Phase 2 (marketplace) |
+| Trazabilidad y certificaciones aparecen como interés futuro pero no demanda actual | Media | Justifica diferir iteración futura (marketplace) |
 | Conectividad: 1 de 4 NUNCA tiene conexión, 1 de 4 a veces, 2 de 4 siempre | Alta | Refuerza criticidad de offline |
 | Disposición a pagar promedio: 2.25/5 (rango 1-3) | **BAJA** | Insuficiente para definir precio |
 | Dispositivos mixtos: lapicero+cuaderno, computador portátil, celular básico | Media | Considerar SMS/USSD fallback (mantener en Should-Have) |
@@ -82,7 +82,7 @@ Resultados completos: [`02-encuesta-partes-interesadas-respuestas.md`](02-encues
 | Decisión candidata | Razón para esperar |
 |---------------------|----------------------|
 | Pricing definitivo ($X.XXX/mes) | Necesita 5-10 datos adicionales de willingness real |
-| Phase 2 marketplace prioridad | Encuesta dijo "no demanda" pero n=4 puede ocultar segmentos demandantes |
+| iteración futura marketplace prioridad | Encuesta dijo "no demanda" pero n=4 puede ocultar segmentos demandantes |
 | Inversión en SMS fallback | 50% mencionó "celular básico" pero pequeño n |
 | Canal preferido (FB vs WhatsApp vs Email) | Sin data confiable |
 
@@ -93,7 +93,7 @@ Resultados completos: [`02-encuesta-partes-interesadas-respuestas.md`](02-encues
 | Decisión | Razón |
 |----------|-------|
 | Offline-first es no-negociable | 4/4 unanimidad |
-| App debe ser para productores (no buyers) en Phase 1 | 4/4 hoy son productores |
+| App debe ser para productores (no buyers) en MVP | 4/4 hoy son productores |
 | Pitch debe mencionar "registrar lo que pasa en la finca" | Cuaderno/Excel mentioned by 4/4 |
 | Spanish only para MVP | 4/4 son colombianos |
 | Diferir certificaciones como feature | 0/4 las tienen hoy |

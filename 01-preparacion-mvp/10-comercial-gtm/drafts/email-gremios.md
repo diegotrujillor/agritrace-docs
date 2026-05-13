@@ -245,6 +245,6 @@ Diego
 
 ## Plantilla de cierre limpio (día 8 sin respuesta)
 
-NO enviar mensaje de cierre. Solo marcar `descartado` en el Google Sheet con fecha y nota: "no respondió 8 días, mover a re-evaluar Phase 1.5".
+NO enviar mensaje de cierre. Solo marcar `descartado` en el Google Sheet con fecha y nota: "no respondió 8 días, mover a re-evaluar intermediate iteration".
 
-Si en 3 meses Phase 1 va bien, retomar con email distinto.
+Si en 3 meses MVP va bien, retomar con email distinto.

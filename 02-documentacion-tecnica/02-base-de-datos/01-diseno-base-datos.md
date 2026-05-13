@@ -568,7 +568,7 @@ CREATE POLICY producer_own_farms ON farms
 
 ## 📈 ESCALABILIDAD
 
-### Futuro (Fase 2+)
+### Futuro (iteración futura)
 - **Sharding:** Por `producer_id` si crece mucho
 - **Read Replicas:** Para consultas (trazabilidad pública)
 - **TimescaleDB:** Si hay muchas actividades (timeseries data)

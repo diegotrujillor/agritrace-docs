@@ -25,7 +25,7 @@ Una idea de software ("app móvil de trazabilidad agrícola para pequeños produ
 | Red de productores firmados | ✅✅ | Toma años construir |
 | Datos históricos de productores | ✅✅✅ | Imposible replicar sin acceso |
 
-Tu MVP en Phase 1 está construyendo los activos defensibles 4-6, no el 1.
+Tu MVP en MVP está construyendo los activos defensibles 4-6, no el 1.
 
 ---
 
@@ -75,7 +75,7 @@ Cualquiera de estos tres elementos es difícil de copiar rápidamente.
 | **El producto no resuelve dolor real (no había mercado)** | Media | El "robo de idea" no aplica si nadie quiere comprarla. |
 | **Quemarse antes de validar** | Media | Founder solo + introvertido + zero ventas = quemarse en Semana 6. |
 | **Demoras técnicas que retrasan demo** | Media | Si Semana 3 no hay demo funcional, pierdes momentum con prospectos. |
-| **Disonancia entre Phase 1 (registro) y expectativas (marketplace)** | Baja-Media | Productor espera "exportar" y descubre que solo "registra". |
+| **Disonancia entre MVP (registro) y expectativas (marketplace)** | Baja-Media | Productor espera "exportar" y descubre que solo "registra". |
 
 Compara la columna probabilidad: el "robo de idea" estaría en el último puesto.
 
@@ -122,12 +122,12 @@ Compara la columna probabilidad: el "robo de idea" estaría en el último puesto
 
 ### Mitigación 6: IP defensible — solo cuando exista
 
-**Acción** (NO Phase 1):
-- Si en Phase 2 desarrollas algoritmo único (predicción de cosecha, scoring de calidad), considera registro
+**Acción** (NO MVP):
+- Si en iteración futura desarrollas algoritmo único (predicción de cosecha, scoring de calidad), considera registro
 - Si construyes marca con tracción, considera registrar marca en SIC
 - Patentes raramente aplican a software de gestión
 
-**Costo en Phase 1**: cero. **Pasos a tomar**: cero.
+**Costo en MVP**: cero. **Pasos a tomar**: cero.
 
 ---
 
@@ -148,7 +148,7 @@ Compara la columna probabilidad: el "robo de idea" estaría en el último puesto
 
 **Continuar el plan de validación tal como está documentado en [`09-cronograma-validacion-4-semanas.md`](09-cronograma-validacion-4-semanas.md), sin agregar fricción defensiva.**
 
-**Si en algún momento durante Phase 1 se detecta señal real de copia** (ej: un competidor lanza algo casi idéntico con mismo nombre y mismo segmento), reevaluar mitigaciones legales (registro de marca, asesoría legal puntual).
+**Si en algún momento durante MVP se detecta señal real de copia** (ej: un competidor lanza algo casi idéntico con mismo nombre y mismo segmento), reevaluar mitigaciones legales (registro de marca, asesoría legal puntual).
 
 **Mientras tanto, el riesgo dominante es el inverso**: no validar suficientemente rápido. Cada semana sin pilotos firmados es peor que 100 semanas mostrando el demo abiertamente.
 

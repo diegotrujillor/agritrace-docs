@@ -23,7 +23,7 @@
 
 ---
 
-### 📱 Fase 1: Descubrimiento y Onboarding
+### 📱 MVP: Descubrimiento y Onboarding
 
 ### Contexto
 
@@ -57,7 +57,7 @@ Juan escucha sobre AgriTrace en una capacitación de su cooperativa. Le prometen
 
 ---
 
-### 📍 Fase 2: Configuración de Finca
+### 📍 iteración futura: Configuración de Finca
 
 ### Contexto
 
@@ -100,7 +100,7 @@ Juan necesita registrar su finca "La Esperanza" con sus 3 lotes de café.
 
 ---
 
-### 🌱 Fase 3: Registro de Actividades (Uso Recurrente)
+### 🌱 Etapa 3: Registro de Actividades (Uso Recurrente)
 
 ### Contexto
 
@@ -141,7 +141,7 @@ Juan realiza fertilización orgánica en el "Lote Norte" y quiere documentarlo.
 
 ---
 
-### 🏆 Fase 4: Generación de QR y Venta
+### 🏆 Etapa 4: Generación de QR y Venta
 
 ### Contexto
 
@@ -177,9 +177,9 @@ Juan está listo para cosechar y quiere generar el QR para su comprador internac
 
 ---
 
-## 2. Journey Map: Cooperativa (Validador) — ⏸️ PHASE 2
+## 2. Journey Map: Cooperativa (Validador) — ⏸️ Diferido
 
-> **Nota:** Este flujo es Phase 2. El MVP se enfoca solo en el productor (Section 1).
+> **Nota:** Este flujo es iteración futura. El MVP se enfoca solo en el productor (Section 1).
 
 ### 👤 Persona: María López
 
@@ -193,7 +193,7 @@ Juan está listo para cosechar y quiere generar el QR para su comprador internac
 
 ---
 
-### 📊 Fase 1: Onboarding Cooperativa
+### 📊 MVP: Onboarding Cooperativa
 
 ### Contexto
 
@@ -218,7 +218,7 @@ La cooperativa adopta AgriTrace para certificar a sus 120 productores asociados.
 
 ---
 
-### ✅ Fase 2: Validación de Certificaciones
+### ✅ iteración futura: Validación de Certificaciones
 
 ### Contexto
 
@@ -254,7 +254,7 @@ María debe revisar y aprobar las certificaciones de productores.
 
 ---
 
-### 📈 Fase 3: Monitoreo Continuo
+### 📈 Etapa 3: Monitoreo Continuo
 
 ### Contexto
 
@@ -282,9 +282,9 @@ María necesita generar reportes para auditorías externas.
 
 ---
 
-## 3. Journey Map: Comprador/Exportador — ⏸️ PHASE 2
+## 3. Journey Map: Comprador/Exportador — ⏸️ Diferido
 
-> **Nota:** Este flujo es Phase 2. El MVP no incluye funcionalidad de comprador/marketplace.
+> **Nota:** Este flujo es iteración futura. El MVP no incluye funcionalidad de comprador/marketplace.
 
 ### 👤 Persona: Thomas Müller
 
@@ -297,7 +297,7 @@ María necesita generar reportes para auditorías externas.
 
 ---
 
-### 🔍 Fase 1: Consulta de Trazabilidad (Experiencia Pública)
+### 🔍 MVP: Consulta de Trazabilidad (Experiencia Pública)
 
 ### Contexto
 
@@ -340,7 +340,7 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-### 📧 Fase 2: Contacto con Productor
+### 📧 iteración futura: Contacto con Productor
 
 ### Flujo
 
@@ -359,9 +359,9 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-## 4. Journey Map: Administrador del Sistema — ⏸️ PHASE 2+
+## 4. Journey Map: Administrador del Sistema — ⏸️ Diferido
 
-> **Nota:** Este flujo es Phase 2+. El MVP usa autenticación básica; admin panel se agrega después.
+> **Nota:** Este flujo es iteración futura. El MVP usa autenticación básica; admin panel se agrega después.
 
 ### 👤 Persona: Carlos Ramírez
 
@@ -373,7 +373,7 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-### 🛡️ Fase 1: Gestión de Usuarios
+### 🛡️ MVP: Gestión de Usuarios
 
 ### Flujo
 
@@ -388,7 +388,7 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-### 📊 Fase 2: Auditoría y Seguridad
+### 📊 iteración futura: Auditoría y Seguridad
 
 ### Flujo
 

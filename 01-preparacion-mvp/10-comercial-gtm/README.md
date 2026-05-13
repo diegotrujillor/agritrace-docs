@@ -10,7 +10,7 @@
 
 ## Propósito
 
-Cubrir la capa comercial faltante del MVP Phase 1 de AgriTrace. La capa técnica ya está documentada (carpetas 01-09); este folder documenta **a quién contactar, qué decir, cómo validar, cuánto cobrar y cómo medir** durante las primeras 4 semanas de validación de mercado.
+Cubrir la capa comercial faltante del MVP de AgriTrace. La capa técnica ya está documentada (carpetas 01-09); este folder documenta **a quién contactar, qué decir, cómo validar, cuánto cobrar y cómo medir** durante las primeras 4 semanas de validación de mercado.
 
 **Enfoque honesto**: el founder es ingeniero introvertido, no vendedor. Esta guía está diseñada para que un fundador técnico pueda ejecutar la validación inicial sin contratar terceros, sin sociedades, y sin pretender ser un vendedor profesional.
 
@@ -26,7 +26,7 @@ Cubrir la capa comercial faltante del MVP Phase 1 de AgriTrace. La capa técnica
 
 ## Alcance Geográfico
 
-**Valle del Cauca, Colombia** (exclusivamente para Phase 1).
+**Valle del Cauca, Colombia** (exclusivamente para MVP).
 
 No expandir a Eje Cafetero, Antioquia ni otras regiones hasta validar adopción en Valle. Razón: foco geográfico permite optimizar canales (cooperativas locales, ferias regionales, gremios departamentales) y reducir costo de adquisición.
 

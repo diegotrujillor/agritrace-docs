@@ -1,6 +1,6 @@
 # 01 - Cliente Ideal (ICP) y Segmentación
 
-**Objetivo**: definir con precisión a quién apunta el MVP en Phase 1, y dividirlo en 3 sub-segmentos accionables para personalizar el contacto.
+**Objetivo**: definir con precisión a quién apunta el MVP en MVP, y dividirlo en 3 sub-segmentos accionables para personalizar el contacto.
 
 **Alcance geográfico**: **Valle del Cauca, Colombia** (exclusivo). No Eje Cafetero, no Antioquia, no nacional.
 
@@ -40,7 +40,7 @@
 |----------|------------------|
 | Lleva registros HOY (cuaderno, almanaque, Excel) | Si no registra nada, hay un problema cultural antes que técnico |
 | Le ha pasado al menos 1 vez perder oportunidad por falta de pruebas | Tiene dolor concreto |
-| Está dispuesto a aprender herramienta nueva | Productor cerrado a tecnología no es ICP en Phase 1 |
+| Está dispuesto a aprender herramienta nueva | Productor cerrado a tecnología no es ICP en MVP |
 | Conoce o pertenece a alguna cooperativa | Acceso a red existente |
 | Ha exportado o piensa exportar (incluso indirectamente) | Genera interés en trazabilidad |
 
@@ -177,13 +177,13 @@ Este "Carlos" es tu prospecto promedio. Cuando dudes, pregúntate: "¿Carlos pag
 
 ---
 
-## Decisión: NO incluir en Phase 1
+## Decisión: NO incluir en MVP
 
 | Segmento | Razón |
 |----------|-------|
-| Cooperativas como cliente directo | Phase 2 (B2B). Phase 1 valida producto con productor, después escalas vía coop. |
-| Compradores / exportadores | Phase 2 (B2B2C). No demanda probada, marketplace deferido. |
-| Productores café | Cubierto saturado por Comité de Cafeteros con apps propias. Validar gap en Phase 1.5. |
+| Cooperativas como cliente directo | iteración futura (B2B). MVP valida producto con productor, después escalas vía coop. |
+| Compradores / exportadores | iteración futura (B2B2C). No demanda probada, marketplace deferido. |
+| Productores café | Cubierto saturado por Comité de Cafeteros con apps propias. Validar gap en intermediate iteration. |
 | Latifundistas | Tienen ERPs. Otro producto, otra organización de venta. |
 
 ---

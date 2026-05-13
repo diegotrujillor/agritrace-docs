@@ -4,9 +4,9 @@ Documentación completa de AgriTrace - una plataforma digital para trazabilidad 
 
 **Descripción del Proyecto**: AgriTrace permite a productores agrícolas (cacao, café, frutas exóticas) digitalizar la trazabilidad completa del cultivo desde la siembra hasta la exportación, certificar procesos sostenibles y conectar directamente con compradores internacionales.
 
-## Visión General — MVP Phase 1
+## Visión General — MVP
 
-> 📍 **Estado**: MVP Phase 1 (versión inicial). Este diagrama evolucionará en fases futuras (marketplace, certificaciones digitales, dashboards de cooperativa y comprador).
+> 📍 **Estado**: MVP (versión inicial). Este diagrama evolucionará en fases futuras (marketplace, certificaciones digitales, dashboards de cooperativa y comprador).
 
 ```mermaid
 flowchart TD
@@ -27,27 +27,27 @@ flowchart TD
     F --> G
     G --> H
 
-    %% Phase 2 — futuras evoluciones (no incluidas en MVP)
+    %% iteración futura — futuras evoluciones (no incluidas en MVP)
     P2A["🌐 Marketplace<br/>con compradores<br/>internacionales"]
     P2B["🏢 Dashboard para<br/>cooperativas"]
     P2C["🏆 Certificaciones<br/>digitales automáticas"]
     P2D["📊 Analítica avanzada<br/>+ predicción de<br/>cosecha"]
 
-    F -.->|"⏳ Phase 2"| P2A
-    F -.->|"⏳ Phase 2"| P2B
-    F -.->|"⏳ Phase 2"| P2C
-    F -.->|"⏳ Phase 2"| P2D
+    F -.->|"⏳ iteración futura"| P2A
+    F -.->|"⏳ iteración futura"| P2B
+    F -.->|"⏳ iteración futura"| P2C
+    F -.->|"⏳ iteración futura"| P2D
 
     classDef mvp fill:#E8F5E9,stroke:#2D7A3E,stroke-width:2px,color:#1B5028
-    classDef phase2 fill:#F4F4F4,stroke:#999,stroke-dasharray:5 5,color:#666
+    classDef deferred fill:#F4F4F4,stroke:#999,stroke-dasharray:5 5,color:#666
 
     class A,B,C,D,E,F,G,H mvp
-    class P2A,P2B,P2C,P2D phase2
+    class P2A,P2B,P2C,P2D deferred
 ```
 
 **¿Qué resuelve?** Hoy los pequeños productores registran lo que hacen en cuadernos, almanaques o de memoria. Cuando un comprador o certificador les pide pruebas, no las tienen organizadas. AgriTrace convierte el celular en su cuaderno digital — funciona sin internet, sincroniza solo cuando hay señal, y genera reportes listos para mostrar.
 
-**¿Qué NO incluye el MVP Phase 1?** Marketplace de compradores, dashboard de cooperativas, certificaciones digitales y analítica avanzada están planeadas para Phase 2 (líneas punteadas en el diagrama). Phase 1 valida primero que el productor adopte la app.
+**¿Qué NO incluye el MVP?** Marketplace de compradores, dashboard de cooperativas, certificaciones digitales y analítica avanzada están planeadas para iteración futura (líneas punteadas en el diagrama). MVP valida primero que el productor adopte la app.
 
 ## Estructura del Repositorio
 
@@ -84,9 +84,9 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 ## Inicio Rápido
 
-**⚡ MVP Strategy: App móvil solo para agricultores (farmer-first, offline-first). Marketplace con compradores es Phase 2.**
+**⚡ MVP Strategy: App móvil solo para agricultores (farmer-first, offline-first). Marketplace con compradores es iteración futura.**
 
-1. **Para Partes Interesadas del Negocio**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Descripción General Fase 1 MVP](01-preparacion-mvp/README.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/)
+1. **Para Partes Interesadas del Negocio**: Comienza con [Alcance MVP](01-preparacion-mvp/09-scope-mvp.md) → [Descripción General MVP](01-preparacion-mvp/README.md) → [Requerimientos Funcionales](01-preparacion-mvp/02-requerimientos-funcionales/)
 
 2. **Para Diseñadores**: Comienza con [Priorización Features](01-preparacion-mvp/04-diseno-ui-ux/01-priorizacion-features-mvp.md) → [Diseño UI/UX](01-preparacion-mvp/04-diseno-ui-ux/) → [Especificaciones de Pantallas](01-preparacion-mvp/04-diseno-ui-ux/02-especificaciones-pantallas/)
 
@@ -96,7 +96,7 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 5. **Para Founders no-vendedores (capa comercial)**: Comienza con [Comercial / GTM README](01-preparacion-mvp/10-comercial-gtm/README.md) → [ICP y segmentación](01-preparacion-mvp/10-comercial-gtm/01-icp-y-segmentacion.md) → [Pitch 30s/2min](01-preparacion-mvp/10-comercial-gtm/03-pitch-30s-y-2min.md) → [Cronograma 4 semanas](01-preparacion-mvp/10-comercial-gtm/09-cronograma-validacion-4-semanas.md)
 
-## Hoja de Ruta Fase 1
+## Hoja de Ruta MVP
 
 | Fase | Cronograma | Enfoque |
 |------|-----------|---------|
@@ -108,7 +108,7 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 ## Entregables Clave
 
-La Fase 1 producirá:
+La MVP producirá:
 
 ✅ Documentación de requerimientos funcionales y no funcionales  
 ✅ Diseño UI/UX completo en Figma con prototipo interactivo  
@@ -116,7 +116,7 @@ La Fase 1 producirá:
 ✅ Infraestructura operativa en OpenStack/VPS  
 ✅ Hoja de ruta de desarrollo de 6 meses con backlog y KPIs  
 ✅ Identidad de marca y sistema de diseño  
-✅ Documentación completa para el inicio de Fase 2
+✅ Documentación completa para el inicio de iteración futura
 
 ## Organización de Archivos
 
@@ -161,4 +161,4 @@ Al agregar nueva documentación:
 ---
 
 **Última Actualización**: Mayo 2026  
-**Estado**: Preparación Fase 1 (En Progreso)
+**Estado**: Preparación MVP (En Progreso)
