@@ -2,7 +2,7 @@
 
 Documentación completa de AgriTrace - una plataforma digital para trazabilidad agrícola, certificación de sostenibilidad y conexiones comerciales internacionales.
 
-**Descripción del Proyecto**: AgriTrace permite a productores agrícolas (cacao, café, frutas exóticas) digitalizar la trazabilidad completa del cultivo desde la siembra hasta la exportación, certificar procesos sostenibles y conectar directamente con compradores internacionales.
+**Descripción del Proyecto**: AgriTrace permite a productores agrícolas (cacao, café, aguacate y frutas exóticas) digitalizar la trazabilidad completa del cultivo desde la siembra hasta la exportación, certificar procesos sostenibles y conectar directamente con compradores internacionales.
 
 ## Visión General — MVP
 
