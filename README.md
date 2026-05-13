@@ -45,7 +45,7 @@ flowchart TD
     class P2A,P2B,P2C,P2D deferred
 ```
 
-**¿Qué resuelve?** Hoy los pequeños productores registran lo que hacen en cuadernos, almanaques o de memoria. Cuando un comprador o certificador les pide pruebas, no las tienen organizadas. AgriTrace convierte el celular en su cuaderno digital — funciona sin internet, sincroniza solo cuando hay señal, y genera reportes listos para mostrar.
+**¿Qué resuelve?** Hoy los pequeños productores registran lo que hacen en cuadernos, almanaques o de memoria. Cuando un comprador o certificador(cooperativa) les pide pruebas, no las tienen organizadas. AgriTrace convierte el celular en su cuaderno digital — funciona sin internet, sincroniza solo cuando hay señal, y genera reportes listos para mostrar.
 
 **¿Qué NO incluye el MVP?** Marketplace de compradores, dashboard de cooperativas, certificaciones digitales y analítica avanzada están planeadas para iteración futura (líneas punteadas en el diagrama). MVP valida primero que el productor adopte la app.
 
