@@ -56,6 +56,7 @@ Este repositorio está organizado por fase del proyecto y tema para facilitar la
 ### [01-preparacion-mvp](01-preparacion-mvp/)
 
 Especificaciones completas y planificación del Producto Mínimo Viable (MVP), incluyendo:
+
 - Encuesta de partes interesadas y requerimientos
 - Requerimientos funcionales y no funcionales
 - Especificaciones de diseño UI/UX
@@ -71,6 +72,7 @@ Especificaciones completas y planificación del Producto Mínimo Viable (MVP), i
 ### [02-documentacion-tecnica](02-documentacion-tecnica/)
 
 Especificaciones técnicas detalladas para desarrolladores y arquitectos:
+
 - Análisis y diseño del sistema
 - Especificaciones de base de datos
 - Documentación de API
@@ -98,13 +100,13 @@ Recursos compartidos incluyendo diagramas, imágenes, iconos y directrices de ma
 
 ## Hoja de Ruta MVP
 
-| Fase | Cronograma | Enfoque |
-|------|-----------|---------|
-| 1 | Semana 1 | Análisis funcional y definición del alcance |
-| 2-3 | Semanas 2-3 | Diseño UI/UX y marca |
-| 3 | Semana 3 | Arquitectura técnica y diseño de base de datos |
-| 4 | Semana 4 | Provisión de infraestructura |
-| 5-6 | Semanas 5-6 | Gestión de proyectos y hoja de ruta |
+| Fase | Cronograma  | Enfoque                                        |
+| ---- | ----------- | ---------------------------------------------- |
+| 1    | Semana 1    | Análisis funcional y definición del alcance    |
+| 2-3  | Semanas 2-3 | Diseño UI/UX y marca                           |
+| 3    | Semana 3    | Arquitectura técnica y diseño de base de datos |
+| 4    | Semana 4    | Provisión de infraestructura                   |
+| 5-6  | Semanas 5-6 | Gestión de proyectos y hoja de ruta            |
 
 ## Entregables Clave
 
@@ -148,8 +150,10 @@ Al agregar nueva documentación:
 
 ## Repositorios Relacionados
 
+- **agritrace-demo**: Demo App (JavaScript)
+- **agritrace-prototype**: Prototipo Visual (Dart)
 - **agritrace-backend**: Implementación del API de Backend (Node.js)
-- **agritrace-frontend**: Aplicación Frontend (React Native)
+- **agritrace-mobile**: Aplicación Móvil (Flutter+Dart)
 - **agritrace-infrastructure**: Infraestructura como Código (OpenStack/Docker)
 
 ## Preguntas o Actualizaciones
