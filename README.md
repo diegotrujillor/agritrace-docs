@@ -154,7 +154,7 @@ Al agregar nueva documentación:
 - **agritrace-prototype**: Prototipo Visual (Dart)
 - **agritrace-backend**: Implementación del API de Backend (Node.js)
 - **agritrace-mobile**: Aplicación Móvil (Flutter+Dart)
-- **agritrace-infrastructure**: Infraestructura como Código (OpenStack/Docker)
+- **agritrace-infrastructure**: Infraestructura como Código (Bash/Docker, for now)
 
 ## Preguntas o Actualizaciones
 
