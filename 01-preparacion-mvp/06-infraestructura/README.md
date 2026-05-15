@@ -13,7 +13,7 @@ La infraestructura del MVP prioriza **costo cero**, **simplicidad operativa** y 
 | # | Documento | Estado | Descripción |
 |---|-----------|--------|-------------|
 | 01 | [Decisiones de Infraestructura](01-decisiones-infra.md) | ✅ Aprobado | Proveedor, stack mínimo, costos, compliance, riesgos |
-| 02 | `02-topologia.md` | 🔲 Pendiente | Diagrama de topología y flujo de tráfico |
+| 02 | [Topología de Infraestructura](02-topologia.md) | ✅ Aprobado | Diagrama de topología, flujos de tráfico, fronteras de red |
 | 03 | `03-secretos-y-backups.md` | 🔲 Pendiente | Gestión de `.env`, rotación, política de backups |
 | 04 | `04-costos-y-escalado.md` | 🔲 Pendiente | Modelado de costos y triggers de migración |
 
