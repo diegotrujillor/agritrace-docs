@@ -1,10 +1,11 @@
 # 🛣️ 3.3 User Journey Maps y Flujos de Usuario
 
-**Versión:** 1.0 - MVP
+**Versión:** 1.1 (alineada con [`../../09-scope-mvp.md`](../../09-scope-mvp.md) — Mayo 2026)
 
-**Fecha:** Noviembre 2025
+**Fecha original:** Noviembre 2025
+**Última revisión:** Mayo 2026
 
-**Objetivo:** Mapear experiencias de usuario y puntos de dolor para optimizar el diseño UI/UX
+**Objetivo:** Mapear experiencias de usuario y puntos de dolor para optimizar el diseño UI/UX. Este documento describe el journey del **productor** (único actor del MVP) y conserva los journeys de cooperativa, comprador y administrador como referencia de iteración futura — explícitamente marcados como tal.
 
 ---
 
@@ -141,39 +142,41 @@ Juan realiza fertilización orgánica en el "Lote Norte" y quiere documentarlo.
 
 ---
 
-### 🏆 Etapa 4: Generación de QR y Venta
+### 🏆 Etapa 4: Exportar y Compartir Reporte PDF de Trazabilidad
 
 ### Contexto
 
-Juan está listo para cosechar y quiere generar el QR para su comprador internacional.
+Juan está listo para cosechar y quiere darle a su comprador, cooperativa o certificador un documento estructurado que muestre todo el historial del lote.
 
-### Flujo
+### Flujo (MVP)
 
 1. **Revisión de trazabilidad:**
     - Lote → Botón "Ver historial completo"
     - Timeline con todas las actividades
     - Indicador de completitud: "85% documentado"
-2. **Generar QR:**
-    - Botón prominente: "Generar código QR"
-    - Modal: "Tu lote está listo para certificación"
-    - Preview del QR
+2. **Exportar PDF:**
+    - Botón prominente: "Exportar PDF de trazabilidad"
+    - Modal: "Tu reporte está listo"
+    - Preview del PDF
     - Opciones:
-        - Descargar imagen
+        - Descargar
         - Compartir por WhatsApp
-        - Imprimir
-3. **Compartir con comprador:**
-    - Mensaje pre-llenado: "Te comparto la trazabilidad de mi café certificado"
+        - Email
+3. **Compartir:**
+    - Mensaje pre-llenado: "Te comparto la trazabilidad de mi lote"
 
 ### Puntos de dolor
 
-- ❌ QR se ve pixelado al imprimir
-- ❌ No sabe cómo enviar a compradores internacionales
+- ❌ PDF muy pesado si tiene muchas fotos
+- ❌ Sin internet al momento de compartir
 
 ### Soluciones
 
-- ✅ Exportación en alta resolución (PNG, SVG)
-- ✅ Tutorial integrado: "Cómo compartir tu QR"
-- ✅ Integración directa con WhatsApp Business
+- ✅ Compresión de fotos en el PDF
+- ✅ PDF generado localmente (offline-capable)
+- ✅ Tutorial integrado: "Cómo compartir tu trazabilidad"
+
+> **Generación de QR público y página de trazabilidad escaneable** quedan diferidas a iteración futura (scope-mvp.md §4). Razón: encuesta de stakeholders mostró cero demanda firme de QR público; el reporte PDF cubre la necesidad operativa del MVP de manera más simple y verificable.
 
 ---
 
@@ -410,16 +413,25 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ## 5. Flujo de Datos: Diagrama de Integración
 
+### MVP (implementado)
+
 ```mermaid
 graph TD
-    A[Productor registra actividad] -->|Offline| B[Almacenamiento local]
-    B -->|Sync automática| C[Backend AgriTrace]
-    C --> D[Validación cooperativa]
-    D -->|Aprobada| E[Generación QR]
-    E --> F[Base de datos pública]
-    F --> G[Comprador escanea QR]
-    G --> H[Visualización trazabilidad]
+    A[Productor registra actividad] -->|Offline| B[Almacenamiento local<br/>WatermelonDB]
+    B -->|Sync automática| C[Backend AgriTrace<br/>Node.js + Postgres]
+    A -->|Cuando lo necesita| E[Exportar PDF de trazabilidad]
+    E --> F[Compartir vía WhatsApp / Email]
+```
 
+### Iteración futura (no MVP)
+
+```mermaid
+graph TD
+    C[Backend AgriTrace] -.->|Iteración futura| D[Validación cooperativa]
+    D -.->|Aprobada| G[Generación QR]
+    G -.-> H[Base de datos pública]
+    H -.-> I[Comprador escanea QR]
+    I -.-> J[Visualización trazabilidad pública]
 ```
 
 ---
@@ -459,6 +471,6 @@ graph TD
 
 ---
 
-**Fin del documento — User Journeys AgriTrace v1.0**
+**Fin del documento — User Journeys AgriTrace v1.1**
 
-© 2025 Diego Trujillo
+© 2025-2026 Diego Trujillo

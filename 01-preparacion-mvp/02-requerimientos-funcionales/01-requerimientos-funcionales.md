@@ -4,29 +4,32 @@
 
 **Proyecto:** AgriTrace — Plataforma de Trazabilidad y Exportación Sostenible
 
-**Versión:** 1.0
+**Versión:** 1.1 (alineada con [`09-scope-mvp.md`](../09-scope-mvp.md) — Mayo 2026)
 
-**Fecha:** 14 de octubre de 2025
+**Fecha original:** 14 de octubre de 2025
+**Última revisión:** Mayo 2026
 
 **Elaborado por:** Diego Trujillo
 
-**Objetivo:** Definir los requerimientos funcionales y no funcionales del MVP AgriTrace, basados en la reunión de levantamiento con actores clave del ecosistema agroexportador.
+**Objetivo:** Definir los requerimientos funcionales y no funcionales del MVP AgriTrace. Este documento se alinea con la **fuente única de verdad** del alcance: [`09-scope-mvp.md`](../09-scope-mvp.md). Requerimientos no presentes aquí como Must/Should quedan diferidos a iteración futura.
 
 ---
 
 ## 🎯 1. Contexto y propósito
 
-AgriTrace busca ofrecer una plataforma que permita a productores agrícolas, cooperativas y exportadores: **digitalizar la trazabilidad de sus cultivos**, certificar procesos sostenibles y conectar con compradores internacionales interesados en transparencia y sostenibilidad.
+AgriTrace ofrece a **pequeños y medianos agricultores del Valle del Cauca** (5-50 hectáreas) una app móvil **offline-first** para digitalizar la trazabilidad de sus cultivos (cacao, café, aguacate, frutas exóticas). El servidor cumple Ley 1581 de Habeas Data.
 
-El MVP inicial se enfocará en:
+El MVP se enfoca exclusivamente en:
 
 - Registrar productores, fincas y lotes agrícolas.
 
-- Documentar actividades de cultivo con evidencias (fotos, notas).
+- Documentar actividades de cultivo con evidencias (fotos, notas) — funciona sin internet.
 
-- Generar códigos QR de trazabilidad verificables.
+- Sincronización automática cuando hay señal.
 
-- Mostrar dashboards de rendimiento y reportes de exportación.
+- Exportar reporte PDF de trazabilidad para mostrar al comprador, cooperativa o certificador.
+
+**Lo que el MVP NO incluye** (diferido a iteración futura, ver [`09-scope-mvp.md`](../09-scope-mvp.md) §4): generación y consulta pública por QR, dashboards para cooperativas/compradores, certificaciones digitales emitidas por la plataforma, marketplace, chat con compradores, web app, multi-idioma, blockchain.
 
 ---
 
@@ -152,24 +155,29 @@ FNF: 11 y 12
 
 | Código | Descripción | Prioridad |
 | --- | --- | --- |
-| **RF-01** | Crear perfiles de productores con datos básicos (nombre, ubicación, cultivos). | Must |
+| **RF-01** | Crear perfiles de productores con datos básicos (nombre, ubicación, cultivo principal). | Must |
 | **RF-02** | Registrar lotes agrícolas y ciclos de cultivo (siembra, cosecha, fertilización). | Must |
-| **RF-03** | Adjuntar certificados y documentos escaneados (orgánico, ICA, etc.). | Must |
-| **RF-04** | Gestión multi-productor por cooperativas. | Should |
-| **RF-05** | Registrar actividades de cultivo con fecha, notas y fotos. | Must |
-| **RF-06** | Generar y asociar códigos QR únicos por lote. | Must |
-| **RF-07** | Consultar la trazabilidad completa de un lote mediante QR. | Must |
-| **RF-08** | Generar reportes automáticos (PDF/Excel). | Should |
-| **RF-09** | Subir y validar certificaciones digitales. | Should |
-| **RF-10** | Emitir certificado digital de trazabilidad. | Should |
-| **RF-11** | Compartir trazabilidad mediante enlace seguro. | Should |
-| **RF-12** | Dashboard consolidado por finca, cultivo y productor. | Should |
-| **RF-13** | Indicadores de rendimiento y avance (% cosechado, entregas). | Should |
-| **RF-14** | Marketplace interno entre productores y compradores. | Could |
-| **RF-15** | Chat o mensajería entre usuarios. | Could |
-| **RF-16** | Alertas y recordatorios automáticos (fechas, clima, fertilización). | Could |
-| **RF-17** | Registro manual de eventos climáticos. | Could |
-| **RF-18** | Generar puntaje de cumplimiento (gamificación). | Could |
+| **RF-03** | Registrar actividades de cultivo con fecha, notas y fotos. | Must |
+| **RF-04** | Visualizar historial cronológico (timeline) de actividades por lote. | Must |
+| **RF-05** | Funcionar offline por 14+ días sin pérdida de datos. | Must |
+| **RF-06** | Sincronización automática bidireccional cuando hay señal. | Must |
+| **RF-07** | Gestión de múltiples fincas y múltiples lotes por finca con GPS. | Must |
+| **RF-08** | Exportar reporte PDF de trazabilidad de un lote. | Must |
+| **RF-09** | Alertas locales de actividades programadas (recordatorios). | Should |
+| **RF-10** | Alertas climáticas simples (si hay acceso a API de clima). | Should |
+| **RF-11** | Indicador de estado de sincronización (offline / sincronizando / sincronizado). | Should |
+| **RF-12** | SMS/USSD fallback para alertas a teléfonos básicos. | Should |
+| **RF-13** | Adjuntar certificados existentes como documentos PDF al perfil. | Could |
+| **RF-14** | Generar y asociar códigos QR únicos por lote. | Iteración futura — diferido (marketplace) |
+| **RF-15** | Consultar trazabilidad pública mediante QR. | Iteración futura — diferido (marketplace) |
+| **RF-16** | Gestión multi-productor por cooperativas (dashboard). | Iteración futura — diferido |
+| **RF-17** | Emitir certificado digital de trazabilidad (firma de la plataforma). | Iteración futura — diferido (requiere partner certificador) |
+| **RF-18** | Dashboard analítico para exportadores/compradores. | Iteración futura — diferido (sin demanda validada) |
+| **RF-19** | Marketplace interno entre productores y compradores. | Iteración futura — diferido |
+| **RF-20** | Chat o mensajería entre usuarios. | Iteración futura — diferido |
+| **RF-21** | Web admin dashboard. | Iteración futura — diferido |
+
+> **Nota**: la priorización refleja la revalidación post-encuesta de partes interesadas (Mayo 2026). Funcionalidades de QR público, certificación digital y dashboards de actores no-productor se difieren porque la encuesta n=4 mostró cero demanda firme y los founders priorizan validar primero adopción del registro de actividades por agricultores ([`09-scope-mvp.md`](../09-scope-mvp.md) §4-§5).
 
 ---
 
@@ -177,18 +185,18 @@ FNF: 11 y 12
 
 | Código | Descripción | Prioridad |
 | --- | --- | --- |
-| **RNF-01** | Interfaz simple y adaptable a móviles de gama baja. | Must |
-| **RNF-02** | Modo offline con sincronización posterior. | Must |
-| **RNF-03** | Tiempo de respuesta < 2 segundos en consultas. | Must |
-| **RNF-04** | Almacenamiento seguro de datos e imágenes. | Must |
-| **RNF-05** | Cumplimiento con la Ley 1581 de protección de datos. | Must |
-| **RNF-06** | Sistema multilenguaje (español/inglés). | Should |
-| **RNF-07** | Dashboard responsive (tablet y escritorio). | Should |
-| **RNF-08** | Actualización de datos en tiempo casi real (<15min). | Should |
-| **RNF-09** | Comunicación segura (TLS + JWT). | Must |
-| **RNF-10** | Escalabilidad horizontal del sistema (microservicios). | Should |
-| **RNF-11** | Tamaño máximo de app móvil: 50MB. | Should |
-| **RNF-12** | Disponibilidad mínima del 99% mensual. | Should |
+| **RNF-01** | Interfaz simple y adaptable a móviles Android de gama baja. | Must |
+| **RNF-02** | Modo offline-first con sincronización posterior automática. | Must |
+| **RNF-03** | Tiempo de respuesta < 2 segundos en consultas locales (offline). | Must |
+| **RNF-04** | Almacenamiento seguro de datos e imágenes (cifrado en tránsito y en reposo). | Must |
+| **RNF-05** | Cumplimiento con la Ley 1581 de Habeas Data. | Must |
+| **RNF-06** | Comunicación segura (TLS 1.2+ + JWT). | Must |
+| **RNF-07** | Tamaño máximo de app móvil: 50 MB. | Should |
+| **RNF-08** | Disponibilidad mínima del 99% mensual del backend de sincronización. | Should |
+| **RNF-09** | Idioma: español (multi-idioma diferido a iteración futura). | Must |
+| **RNF-10** | Sistema multi-idioma (español/inglés). | Iteración futura — diferido |
+| **RNF-11** | Dashboard web responsive. | Iteración futura — diferido |
+| **RNF-12** | Escalabilidad horizontal del sistema (microservicios / k8s). | Iteración futura — diferido |
 
 ---
 
@@ -196,10 +204,10 @@ FNF: 11 y 12
 
 | Categoría | Definición | Requerimientos incluidos |
 | --- | --- | --- |
-| **Must Have** | Imprescindibles para MVP | RF-01 a RF-08, RNF-01 a RNF-05, RNF-09 |
-| **Should Have** | Deseables para experiencia completa | RF-09 a RF-13, RNF-06 a RNF-08, RNF-10 |
-| **Could Have** | Opcionales / futura versión | RF-14 a RF-18, RNF-11 a RNF-12 |
-| **Won’t Have (por ahora)** | Fuera del alcance MVP inicial | Marketplace avanzado, IA predictiva de rendimiento |
+| **Must Have** | Imprescindibles para MVP | RF-01 a RF-08, RNF-01 a RNF-06, RNF-09 |
+| **Should Have** | Deseables para experiencia completa | RF-09 a RF-12, RNF-07 a RNF-08 |
+| **Could Have** | Opcionales si hay tiempo | RF-13 |
+| **Won't Have (iteración futura)** | Fuera del alcance MVP inicial | RF-14 a RF-21, RNF-10 a RNF-12 (QR público, dashboards, certificación digital, marketplace, chat, web app, multi-idioma) |
 
 ---
 
@@ -220,44 +228,51 @@ FNF: 11 y 12
 
 ---
 
-### **CU-02: Registro de lote y trazabilidad**
+### **CU-02: Registro de lote y actividades (offline-first)**
 
-**Actor:** Productor / Cooperativa
+**Actor:** Productor
 
 **Flujo principal:**
-1. El usuario crea un nuevo lote y define cultivo.
+1. El usuario crea un nuevo lote y define cultivo principal (con o sin conexión).
 
-2. Registra eventos (siembra, fertilización, cosecha).
+2. Registra actividades: siembra, fertilización, aplicación de químicos, cosecha — con fecha, fotos y notas.
 
-3. El sistema asocia código QR y almacena evidencia.
+3. La app almacena todo localmente (WatermelonDB) y marca como `pending_sync`.
 
-4. Cualquier comprador puede consultar historial escaneando el QR.
+4. Cuando hay conexión, los datos se sincronizan automáticamente al backend.
 
-**Resultado:** Lote trazable con historial completo.
+5. El usuario exporta un reporte PDF de trazabilidad del lote cuando lo requiera.
+
+**Resultado:** Lote con historial completo de actividades, exportable en PDF para mostrar al comprador o cooperativa.
 
 ---
 
-### **CU-03: Consulta de trazabilidad (comprador)**
+### **CU-03: Exportar y compartir reporte de trazabilidad**
 
-**Actor:** Comprador internacional
+**Actor:** Productor
 
 **Flujo principal:**
-1. Escanea el QR impreso en el producto.
+1. Desde la vista del lote, el productor toca "Exportar PDF de trazabilidad".
 
-2. Accede a página con historial de lote, fotos, certificaciones y ubicación.
+2. La app genera un PDF con: datos del productor, finca, lote, timeline de actividades, fotos asociadas.
 
-3. Descarga certificado digital.
+3. El productor comparte el PDF vía WhatsApp / email / impresión al comprador, cooperativa o certificador.
 
-**Resultado:** Verificación de autenticidad y trazabilidad.
+**Resultado:** Comprador o cooperativa recibe un documento estructurado en vez de un cuaderno o respuesta verbal.
+
+> **CU-04 a CU-07** (consulta pública por QR, dashboard cooperativa, validación certificaciones, marketplace) quedan diferidos a iteración futura. Ver [`09-scope-mvp.md`](../09-scope-mvp.md) §4.
 
 ---
 
 ## 🧭 8. Restricciones y supuestos
 
-- MVP orientado a cultivos de exportación (cacao, frutas exóticas, café).
-- Base tecnológica: Go/Node.js (backend), Flutter (app), PostgreSQL (DB), OpenStack (infraestructura).
-- MVP prioriza Colombia, con capacidad de expansión a LATAM.
-- No incluye pasarelas de pago ni marketplace completo en versión inicial.
+- MVP orientado a cultivos de pequeño/mediano productor del **Valle del Cauca**: cacao, café, aguacate, frutas exóticas.
+- Tamaño de finca objetivo: 5-50 hectáreas.
+- Conectividad rural intermitente — la app debe funcionar 14+ días sin internet.
+- Base tecnológica: Node.js (backend), Flutter+Dart (app móvil), WatermelonDB (almacenamiento local móvil), PostgreSQL (DB del servidor), Docker (infraestructura — proveedor exacto en [`/01-preparacion-mvp/06-infraestructura/01-decisiones-infra.md`](../06-infraestructura/01-decisiones-infra.md)).
+- MVP en una sola región (Valle del Cauca). Expansión nacional o LATAM queda diferida.
+- No incluye pasarelas de pago, marketplace, certificación digital ni dashboards para actores no-productor en MVP.
+- Cumplimiento Ley 1581 (Habeas Data Colombia) con aviso de privacidad y consentimiento explícito.
 
 ---
 
@@ -273,13 +288,13 @@ FNF: 11 y 12
 
 ## ✅ 10. Conclusiones
 
-- El MVP debe ser **simple, usable sin conexión, y enfocado en trazabilidad y QR.**
-- Productores valoran la facilidad y los recordatorios automáticos.
-- Exportadores y compradores priorizan **confianza, transparencia y certificados verificables.**
-- La fase siguiente consistirá en **diagramar los flujos UX/UI y modelo de datos** para pasar a desarrollo.
+- El MVP debe ser **simple, usable sin conexión y enfocado en el registro de actividades del productor.**
+- El "wedge" validado por encuesta es el **registro digital de actividades + sincronización offline**, no la trazabilidad pública.
+- Funcionalidades dirigidas a compradores, cooperativas y certificadores quedan diferidas hasta validar adopción real del productor.
+- La siguiente fase consiste en validación comercial paralela ([`../10-comercial-gtm/`](../10-comercial-gtm/)) y construcción del backend + app móvil con las 10 pantallas priorizadas en [`09-scope-mvp.md`](../09-scope-mvp.md).
 
 ---
 
-**Fin del documento — DRF v1.0 (MVP AgriTrace)**
+**Fin del documento — DRF v1.1 (MVP AgriTrace)**
 
-© 2025 Diego Trujillo. Todos los derechos reservados.
+© 2025-2026 Diego Trujillo. Todos los derechos reservados.

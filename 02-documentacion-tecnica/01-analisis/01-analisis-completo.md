@@ -1,7 +1,13 @@
 # 📊 ANÁLISIS COMPLETO — AgriTrace MVP
-**Fecha del análisis:** 29 de abril de 2026  
-**Proyecto:** AgriTrace — Plataforma de Trazabilidad y Exportación Sostenible  
+**Fecha del análisis:** 29 de abril de 2026
+**Proyecto:** AgriTrace — Plataforma de Trazabilidad Agrícola (MVP)
 **Analista:** Claude (Retoma desde 2025)
+
+> ⚠️ **Documento histórico.** Este análisis precede a la decisión final de alcance MVP, capturada en [`../../01-preparacion-mvp/09-scope-mvp.md`](../../01-preparacion-mvp/09-scope-mvp.md) (Mayo 2026). Las matrices de decisión y las "opciones de giro estratégico" presentadas más abajo quedaron **superadas** por dicho documento — en particular las opciones que mencionan Blockchain, Marketplace, IoT, Certificaciones digitales y Analytics, y la ambigüedad entre React Native y Flutter. Se mantiene este archivo como referencia histórica del proceso de análisis.
+>
+> **Stack confirmado del MVP** (per scope-mvp.md): Flutter + Dart (app móvil), WatermelonDB (almacenamiento local), Node.js (backend), PostgreSQL (DB). **Sin blockchain. Sin marketplace. Sin IoT.**
+>
+> **Fuente única de verdad del alcance MVP**: [`../../01-preparacion-mvp/09-scope-mvp.md`](../../01-preparacion-mvp/09-scope-mvp.md).
 
 ---
 

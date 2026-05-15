@@ -1,5 +1,9 @@
 # 🔗 3.1 UI/IX (adicionales)
 
+**Versión:** 1.1 (alineada con [`../../09-scope-mvp.md`](../../09-scope-mvp.md) — Mayo 2026)
+
+> ⚠️ **Alcance MVP**: solo se implementan las **10 pantallas** del Flow A (Productor), Pantallas 1-10 de la sección 3. Las pantallas A8 / 11 / 12 / 13 (QR y página pública), el Flow B (Cooperativa) y el Flow C (Exportador / Comprador) quedan documentados aquí únicamente como referencia de **iteración futura**. Fuente: [`../../09-scope-mvp.md`](../../09-scope-mvp.md) §3.
+
 # **1. 🧭 Arquitectura de Información (IA)**
 
 > 📐 *Diagrama de arquitectura de información disponible en [agritrace-prototype](https://github.com/diegotrujillor/agritrace-prototype)*
@@ -86,7 +90,8 @@ Componentes:
 - Timeline de actividades
 - Botones:
     - Registrar actividad
-    - Generar QR
+    - Exportar PDF de trazabilidad
+    - ~~Generar QR~~ **(iteración futura — no MVP)**
 
 ---
 
@@ -106,7 +111,9 @@ El usuario podría registrar múltiples actividades.
 
 ---
 
-## **A8 – Generar QR**
+## **A8 – Generar QR** — ⏸️ Iteración futura (no MVP)
+
+> Pantalla documentada para roadmap; **no se implementa en MVP**. Razón: scope-mvp.md §4 difiere QR público a iteración futura (cero demanda firme en encuesta de stakeholders).
 
 - Mostrar resumen del lote
 - Certificaciones asociadas (si existen)
@@ -116,7 +123,9 @@ El usuario podría registrar múltiples actividades.
 
 ---
 
-## **2.2 FLOW B — Cooperativa (validación)**
+## **2.2 FLOW B — Cooperativa (validación)** — ⏸️ Iteración futura (no MVP)
+
+> Flow completo documentado para roadmap; **no se implementa en MVP**. Razón: scope-mvp.md §4 difiere dashboard de cooperativa.
 
 ### **B1 – Login**
 
@@ -137,7 +146,9 @@ Rol: Cooperativa
 
 ---
 
-## **2.3 FLOW C — Exportador / Comprador (público, sin login)**
+## **2.3 FLOW C — Exportador / Comprador (público, sin login)** — ⏸️ Iteración futura (no MVP)
+
+> Flow documentado para roadmap; **no se implementa en MVP**. Razón: scope-mvp.md §4 difiere consulta pública por QR (cero respondentes compradores en encuesta).
 
 ### **C1 – Escanear QR (fuera de la app)**
 
@@ -154,7 +165,7 @@ Incluye:
 - Certificaciones
 - Botón descargar certificado PDF
 
-Esta pantalla es clave para comercio internacional.
+Esta pantalla es clave para comercio internacional **en iteración futura**, una vez validada la adopción del productor en MVP.
 
 # **3. 📱 Pantallas del MVP (para Figma)**
 
@@ -233,37 +244,40 @@ Campos + foto opcional
 
 ## **3.4 Actividades**
 
-### **Pantalla 9 — Vista del Lote**
+### **Pantalla 9 — Vista del Lote** ⭐ *(pantalla más importante del MVP)*
 
 - Info del lote
-- Timeline vertical
+- Timeline vertical de actividades
 - Botones:
     - Registrar actividad
-    - Generar QR
+    - Exportar PDF de trazabilidad
+    - ~~Generar QR~~ **(iteración futura — no MVP)**
 
 ### **Pantalla 10 — Registrar actividad**
 
-Formulario dinámico
+Formulario dinámico (tipo, fecha, fotos, notas).
 
 ---
 
-## **3.5 Trazabilidad y QR**
+## **3.5 Trazabilidad y QR** — ⏸️ Iteración futura (no MVP)
 
-### **Pantalla 11 — Generar QR**
+> Pantallas 11-13 documentadas para roadmap; **no se implementan en MVP**. Razón: scope-mvp.md §4 difiere QR público y página pública de trazabilidad.
+
+### **Pantalla 11 — Generar QR** *(iteración futura)*
 
 - Resumen
 - Botón: Generar QR
 
-### **Pantalla 12 — QR Fullscreen**
+### **Pantalla 12 — QR Fullscreen** *(iteración futura)*
 
 - QR grande
 - Botones: Descargar / Compartir
 
 ---
 
-## **3.6 Página pública QR (web móvil)**
+## **3.6 Página pública QR (web móvil)** — ⏸️ Iteración futura (no MVP)
 
-### **Pantalla 13 — Trazabilidad completa**
+### **Pantalla 13 — Trazabilidad completa** *(iteración futura)*
 
 - Productor
 - Finca
@@ -276,7 +290,8 @@ Formulario dinámico
 # **4. 📏 Reglas de UX y microinteracciones**
 
 - Confirmaciones por snackbars (esquinas inferiores).
-- Indicador de sincronización cuando no hay red.
-- Carga de imágenes con preview instantánea.
+- Indicador de sincronización cuando no hay red (estado: offline / sincronizando / sincronizado).
+- Carga de imágenes con preview instantánea + compresión local.
 - Colapsar timeline cuando es extenso.
-- QR con bordes amplios y contraste alto.
+- Auto-guardado local en cada paso (offline-first).
+- Botón "Exportar PDF" visible en vista de lote (Pantalla 9).
