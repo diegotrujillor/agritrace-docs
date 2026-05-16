@@ -18,37 +18,39 @@
 **Uso**: primer contacto telefónico o por WhatsApp con un prospecto frío. Objetivo: conseguir una call de 15 minutos.
 
 ```
-Hola [nombre], buenos días. Mi nombre es Diego.
+Buenos días, [nombre].
+Mi nombre es Diego Trujillo.
 
-Soy ingeniero y construí una aplicación móvil para que productores
+Soy ingeniero de sistemas y construí una aplicación móvil para que productores
 documenten en su celular lo que hacen en la finca —siembras,
 fertilizaciones, aplicación de químicos, cosechas— con fechas,
 fotos y notas, y que funciona sin internet.
 
-Vi que ustedes [trabajan con cacao / siembran caña / venden hortalizas]
-y me gustaría mostrarle cómo funciona en 15 minutos para tener su
-opinión. ¿Tiene 15 minutos esta semana?
+Vi que ustedes [trabajan con cacao y su fermentación / procesan la caña mediante molienda y panelización /
+trabajan con cosechas semanales de hortalizas] y me gustaría
+mostrarle cómo funciona en 15 minutos para tener su opinión.
+¿Tiene 15 minutos esta semana?
 ```
 
 ### Notas sobre cada elemento
 
-| Elemento | Por qué está |
-|----------|--------------|
-| "Soy ingeniero" | Establece autoridad técnica, no comercial |
-| "Construí" | Tú lo hiciste; no es producto de otra empresa |
-| "En su celular... sin internet" | El diferenciador que más le importa al productor (conectividad rural) |
-| "Vi que ustedes [cultivo específico]" | Demuestra investigación previa, no es spam |
-| "Para tener su opinión" | Pides feedback, no estás vendiendo |
-| "¿15 minutos esta semana?" | Pregunta cerrada con bajo costo de aceptación |
+| Elemento                              | Por qué está                                                          |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| "Soy ingeniero"                       | Establece autoridad técnica, no comercial                             |
+| "Construí"                            | Tú lo hiciste; no es producto de otra empresa                         |
+| "En su celular... sin internet"       | El diferenciador que más le importa al productor (conectividad rural) |
+| "Vi que ustedes [cultivo específico]" | Demuestra investigación previa, no es spam                            |
+| "Para tener su opinión"               | Pides feedback, no estás vendiendo                                    |
+| "¿15 minutos esta semana?"            | Pregunta cerrada con bajo costo de aceptación                         |
 
 ### Variantes según canal
 
-| Canal | Ajuste |
-|-------|--------|
-| WhatsApp inicial | Mismo texto, agregar saludo `"Buenos días"` y firma `"- Diego, AgriTrace"` |
-| Llamada en frío | Reducir 1 frase si suena nervioso; ir directo al "vi que ustedes..." |
-| Después de referencia (gremio, otra coop) | Empezar: `"[Persona X] me dio su contacto y dijo que..."` |
-| Email | Mismo cuerpo pero asunto: `"15 minutos: app para registrar actividades de finca offline"` |
+| Canal                                     | Ajuste                                                                                    |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| WhatsApp inicial                          | Mismo texto, agregar saludo `"Buenos días"` y firma `"- Diego, AgriTrace"`                |
+| Llamada en frío                           | Reducir 1 frase si suena nervioso; ir directo al "vi que ustedes..."                      |
+| Después de referencia (gremio, otra coop) | Empezar: `"[Persona X] me dio su contacto y dijo que..."`                                 |
+| Email                                     | Mismo cuerpo pero asunto: `"15 minutos: app para registrar actividades de finca offline"` |
 
 ---
 
@@ -75,35 +77,35 @@ guardados en el teléfono, y cuando hay señal se sincronizan solos.
 Cuando un comprador pide pruebas de trazabilidad, está todo listo,
 exportable a PDF.
 
-Armamos un MVP. No estoy vendiendo nada todavía: necesito aprender
-qué tan útil es esto en una finca real. ¿Le muestro cómo funciona?
+Desarrollé un producto mínimo viable. No estoy vendiendo nada todavía: necesito validar
+y aprender qué tan útil es esto en una finca real. ¿Le muestro cómo funciona?
 ```
 
 ### Notas sobre cada bloque
 
-| Bloque | Función |
-|--------|---------|
-| "Pierden dinero en dos momentos" | Empieza con dolor concreto, no con feature |
-| "Calidad" + "Trazabilidad" | Conecta con dos buyer-driven needs |
-| "Cuadernos, almanaques, memoria" | Lenguaje del productor (vienes de su mundo) |
+| Bloque                                 | Función                                                |
+| -------------------------------------- | ------------------------------------------------------ |
+| "Pierden dinero en dos momentos"       | Empieza con dolor concreto, no con feature             |
+| "Calidad" + "Trazabilidad"             | Conecta con dos buyer-driven needs                     |
+| "Cuadernos, almanaques, memoria"       | Lenguaje del productor (vienes de su mundo)            |
 | "Sin internet... se sincronizan solos" | Diferenciador técnico explicado en lenguaje no-técnico |
-| "Exportable a PDF" | Concreto, tangible |
-| "No estoy vendiendo nada todavía" | Removes vendor anxiety; permite feedback honesto |
-| "¿Le muestro cómo funciona?" | Pregunta cerrada que casi siempre será "sí" |
+| "Exportable a PDF"                     | Concreto, tangible                                     |
+| "No estoy vendiendo nada todavía"      | Removes vendor anxiety; permite feedback honesto       |
+| "¿Le muestro cómo funciona?"           | Pregunta cerrada que casi siempre será "sí"            |
 
 ---
 
 ## Lo que NO debes decir
 
-| Frase prohibida | Por qué |
-|-----------------|---------|
-| "Le va a aumentar las ventas" | Promesa que no puedes sostener |
-| "Es la mejor app de Colombia" | Suena a vendedor |
-| "Vamos a transformar el agro" | Frase hueca tipo pitch deck |
-| "Por solo $X al mes" | No menciones precio en pitch inicial |
-| "Tenemos clientes como [empresa grande]" | No los tienes y se nota |
-| "Es muy fácil de usar" | Que el productor lo decida, no tú |
-| "Inteligencia artificial / blockchain" | Buzzwords que generan desconfianza |
+| Frase prohibida                          | Por qué                              |
+| ---------------------------------------- | ------------------------------------ |
+| "Le va a aumentar las ventas"            | Promesa que no puedes sostener       |
+| "Es la mejor app de Colombia"            | Suena a vendedor                     |
+| "Vamos a transformar el agro"            | Frase hueca tipo pitch deck          |
+| "Por solo $X al mes"                     | No menciones precio en pitch inicial |
+| "Tenemos clientes como [empresa grande]" | No los tienes y se nota              |
+| "Es muy fácil de usar"                   | Que el productor lo decida, no tú    |
+| "Inteligencia artificial / blockchain"   | Buzzwords que generan desconfianza   |
 
 ---
 
@@ -117,6 +119,7 @@ es una secuela leve. Si pasa, repito y seguimos. ¿Vale?
 ```
 
 Notas:
+
 - Ponerlo al inicio elimina la ansiedad de que pase a mitad de pitch
 - "Vale?" pide acuse de recibo, baja la tensión
 - No vuelvas a mencionarlo después; ya está dicho
@@ -129,12 +132,15 @@ Notas:
 Ver [`01-icp-y-segmentacion.md`](01-icp-y-segmentacion.md) para los 3 sub-segmentos. Pequeñas adaptaciones de pitch:
 
 ### Productor de cacao
+
 Reemplazar `[trabajan con cacao]`. Mencionar "fermentación" como actividad ejemplo (vocabulario propio del cultivo).
 
 ### Productor de caña panelera
+
 Reemplazar `[siembran caña]`. Mencionar "molienda" y "panelización" como actividades.
 
 ### Productor de hortalizas / frutas
+
 Reemplazar `[venden hortalizas]`. Mencionar "cosechas semanales" (frecuencia diferente a cacao/caña).
 
 ---
