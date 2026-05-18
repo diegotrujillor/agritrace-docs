@@ -153,4 +153,4 @@ de su cooperativa.
 
 1. Agendar con fecha y hora específica (Google Calendar)
 2. Enviar confirmación 24 horas antes
-3. Tener listo: link [`agritrace-demo`](https://5jq44r.csb.app/), [`07-contrato-feedback-piloto.md`](../07-contrato-feedback-piloto.md) en PDF, [`05-guion-call-validacion.md`](../05-guion-call-validacion.md) abierto
+3. Tener listo: link [`agritrace-demo`](https://agritrace-demo.vercel.app), [`07-contrato-feedback-piloto.md`](../07-contrato-feedback-piloto.md) en PDF, [`05-guion-call-validacion.md`](../05-guion-call-validacion.md) abierto
