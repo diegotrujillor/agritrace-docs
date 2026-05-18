@@ -22,6 +22,7 @@ lo convierten en activos reutilizables y versionados.
 |---|---|
 | `agritrace-logo-mark.svg` | Solo ícono (256×256). App, avatares, espacios cuadrados. |
 | `agritrace-logo-lockup.svg` | Ícono + wordmark vertical. Splash, headers, documentos. |
+| `agritrace-logo-white.svg` | Variante monocroma blanca, fondo transparente. Sobre fondos oscuros / verde (ej. pantalla de bienvenida móvil). |
 | `favicon.svg` | Variante simplificada para 16–32 px (pestaña de navegador, PWA). |
 
 ## Paleta (design tokens)
