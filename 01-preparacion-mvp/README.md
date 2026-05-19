@@ -70,7 +70,7 @@ Capa comercial / Go-to-Market para validación del MVP en Valle del Cauca:
 - Pitch de 30s y 2min
 - Lista de 20 prospectos
 - Guion de call de validación
-- Modelo de pricing híbrido (Mes 1 gratis + $29.990 COP/mes Mes 2)
+- Modelo de pricing híbrido escalonado (Mes 1 gratis → Mes 2-3 $14.900 COP/mes → Mes 4+ $29.900 COP/mes)
 - Contrato de feedback para piloto
 - Análisis de riesgo "robo de idea"
 - Cronograma de validación de 4 semanas

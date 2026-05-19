@@ -66,7 +66,7 @@
 | Métrica | Cuándo se captura |
 |---------|-------------------|
 | Precio mencionado por piloto en pregunta exploratoria | Semana 2 del piloto |
-| Reacción a $10K vs $29.990 | Semana 3 del piloto |
+| Reacción a $10K vs $29.900 | Semana 3 del piloto |
 | Decisión final pago / no pago | Semana 4 del piloto (cierre Mes 1) |
 
 ---
@@ -77,7 +77,7 @@
 
 | Métrica | Meta verde | Meta amarillo | Meta rojo |
 |---------|-------------|---------------|-----------|
-| Pilotos que dijeron "pago $29.990" | ≥ 2 | 1 | 0 |
+| Pilotos que dijeron "pago $29.900" | ≥ 2 | 1 | 0 |
 | Pilotos que dijeron "pago a precio menor" | ≥ 1 adicional | 0-1 | 0 |
 | Pilotos que dijeron "lo pagaría la coop" | ≥ 1 | 0-1 | 0 |
 | Tasa de actividad sostenida (%) | ≥ 80% | 50-79% | < 50% |
@@ -129,15 +129,15 @@ Para iteración futura: si volumen crece, mover a Notion / Airtable / Metabase. 
 Con base en [`06-modelo-pricing-validacion.md`](06-modelo-pricing-validacion.md) §"Decisión a tomar al cierre Semana 4":
 
 ```
-SI (pilotos_pagan_29990 >= 2) ENTONCES
+SI (pilotos_pagan_29900 >= 2) ENTONCES
     Veredicto: "Validación FUERTE"
     Acción: continuar plan original, escalar a iteración futura con cooperativas
-ELSE SI (pilotos_pagan_29990 == 1) ENTONCES
+ELSE SI (pilotos_pagan_29900 == 1) ENTONCES
     Veredicto: "Validación TIBIA"
     Acción: validar 5 pilotos adicionales antes de pivotar
 ELSE SI (pilotos_pagan_menor_precio >= 3) ENTONCES
     Veredicto: "Pricing alto"
-    Acción: bajar a $14.990 + 1 mes adicional de validación
+    Acción: bajar a $14.900 + 1 mes adicional de validación
 ELSE SI (pilotos_dicen_coop_paga >= 3) ENTONCES
     Veredicto: "Modelo B2B"
     Acción: pivote a B2B-via-coop
@@ -165,7 +165,7 @@ NÚMEROS DUROS
 - Calls completadas: XX
 - Pilotos firmados: XX
 - Pilotos activos al cierre: XX
-- Pilotos que pagarían $29.990: XX
+- Pilotos que pagarían $29.900: XX
 - Pilotos que pagarían menor precio: XX
 - Pilotos que dicen "que pague la coop": XX
 

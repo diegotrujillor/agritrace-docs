@@ -64,7 +64,7 @@ Cada sub-segmento tiene un pitch ligeramente personalizado y canal preferente di
 - Cacao tiene cadena de exportación con trazabilidad obligatoria (UE EUDR 2025+)
 - Productores ya escuchan "trazabilidad" de sus compradores
 - FEDECACAO ya empuja digitalización
-- Margen suficiente para pagar $29.990/mes
+- Margen suficiente para pagar $29.900/mes
 
 **Localización en Valle**:
 - Norte del Valle: Bolívar, El Dovio, Versalles, Toro
@@ -170,7 +170,7 @@ Cada sub-segmento tiene un pitch ligeramente personalizado y canal preferente di
 > Tiene smartphone Android pero firma intermitente en la finca.
 > Vende a una cooperativa local que paga $X/kg. Ha oído que
 > compradores europeos piden "trazabilidad" pero no sabe qué es.
-> No paga $50.000/mes pero $29.990 le suena posible si ve valor.
+> No paga $50.000/mes pero $29.900 le suena posible si ve valor.
 > Prefiere WhatsApp sobre email.
 
 Este "Carlos" es tu prospecto promedio. Cuando dudes, pregúntate: "¿Carlos pagaría esto?"

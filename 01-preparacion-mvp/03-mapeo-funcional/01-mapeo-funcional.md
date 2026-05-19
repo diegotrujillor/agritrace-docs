@@ -27,7 +27,7 @@ Sirve para:
 | **Registro de actividades agrícolas (offline)** | Productor | Registra siembra, fertilización, aplicación de químicos, cosecha y evidencias. Funciona sin internet. | Fotos, notas, fechas, tipo de insumo. | Actividad almacenada en historial local + cola de sincronización. | WatermelonDB local, almacenamiento multimedia | Must |
 | **Sincronización automática** | Sistema | Sube actividades pendientes al servidor cuando hay conexión. | Conectividad detectada. | Cola vacía, registros con IDs autoritativos. | API sync, JWT auth | Must |
 | **Timeline de actividades** | Productor | Visualiza historial cronológico de actividades de un lote. | Selección de lote. | Lista cronológica con fotos y notas. | DB local + remota | Must |
-| **Exportar reporte PDF de trazabilidad** | Productor | Genera PDF con datos del productor, finca, lote y timeline para compartir con comprador o cooperativa. | Selección de lote. | Archivo PDF descargado/compartido. | Renderizador PDF (local o backend) | Must |
+| **Exportar reporte PDF de trazabilidad** | Productor | Genera PDF con datos del productor, finca, lote y timeline para compartir con comprador o cooperativa. | Selección de lote. | Archivo PDF descargado/compartido. | Renderizador PDF **client-side en Flutter (app, offline-capable), Sprint 3** | Must |
 | **Alertas locales** | Sistema | Recordatorios programados de actividades / clima básico. | Eventos programados. | Notificación in-app o SMS. | Cron local, opcionalmente SMS gateway | Should |
 | **Adjuntar certificación existente como PDF** | Productor | Subir un PDF de una certificación que ya posee (ICA, orgánico, etc.) al perfil. | Archivo PDF. | PDF asociado al perfil del productor. | Almacenamiento multimedia | Could |
 | **Generación de código QR público** | Sistema | Genera QR único por lote con URL pública verificable. | Datos del lote. | QR generado y URL pública. | API QR, servidor de trazabilidad | **Iteración futura** — diferido |
@@ -115,7 +115,7 @@ Cada tipo de usuario tiene un diagrama que muestra su recorrido típico:
 ## 📌 Observaciones
 
 - El flujo MVP prioriza **simplicidad y operatividad offline** (modo desconectado + sincronización automática).
-- El reporte PDF exportable actúa como artefacto de trazabilidad principal en MVP. El **QR público** queda diferido a iteración futura.
+- El reporte PDF exportable actúa como artefacto de trazabilidad principal en MVP. Se renderiza **client-side en Flutter (en la app, offline-capable)** y es un entregable de **Sprint 3** (decisión tomada; no es "local o backend"). El **QR público** queda diferido a iteración futura.
 - Los datos cumplen Ley 1581 (Habeas Data) con aviso de privacidad y consentimiento explícito al registro.
 - El MVP no incluye: pagos, marketplace, QR público, dashboards de cooperativa/comprador, certificación digital emitida por la plataforma, analítica avanzada, web admin, chat ni multi-idioma.
 

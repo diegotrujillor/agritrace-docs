@@ -2,7 +2,7 @@
 
 **Estado**: decisión inicial — sujeta a validación durante Semanas 1-4
 
-**Decisión**: Híbrido de **Mes 1 gratis con commitment contract** → **Mes 2 en adelante $29.990 COP/mes** por productor individual.
+**Decisión**: Híbrido escalonado de **Mes 1 gratis con commitment contract** → **Mes 2 y 3 = $14.900 COP/mes (precio introductorio)** → **Mes 4 en adelante = $29.900 COP/mes (tarifa full)** por productor individual.
 
 ---
 
@@ -30,18 +30,26 @@
 
 Detalle del compromiso: [`07-contrato-feedback-piloto.md`](07-contrato-feedback-piloto.md)
 
-### Mes 2 en adelante (Pago)
+### Mes 2 en adelante (Pago escalonado)
 
-**Precio individual**: **$29.990 COP/mes** por productor.
+El pago arranca en Mes 2 con un **precio introductorio** y escala a la **tarifa full** en Mes 4:
 
-**Por qué $29.990 COP**:
+| Periodo | Precio COP/mes | Rol |
+|---------|----------------|-----|
+| Mes 1 | $0 (gratis) | Onboarding + commitment contract |
+| Mes 2 y 3 | **$14.900** | Precio introductorio — reduce fricción de la primera transacción real |
+| Mes 4 en adelante | **$29.900** | Tarifa full — precio objetivo de validación |
+
+**Nota de validación**: el precio introductorio de $14.900 es **solo una oferta de onboarding**, nunca el número que se valida. La pregunta de disposición a pagar se hace siempre sobre la **tarifa full $29.900**.
+
+**Por qué $29.900 COP (tarifa full)**:
 
 | Justificación | Detalle |
 |---------------|---------|
 | Precio anclaje psicológico | Bajo umbral de "treinta mil pesos" — productor pequeño puede asimilarlo |
 | Comparación cultural | Cuesta menos que un kg de pollo, similar a un servicio mensual de telefonía básica |
 | Margen mínimo viable | A 100 productores activos = $3M COP/mes (cubre costo de infra + soporte) |
-| Punto de validación | Si paga $29.990 hay willingness real; si solo paga $10K, hay que pivotar |
+| Punto de validación | Si paga $29.900 hay willingness real; si solo paga $10K, hay que pivotar |
 
 **Forma de pago tentativa Mes 2**:
 - Nequi / Daviplata (transferencia mensual recurrente)
@@ -69,16 +77,16 @@ Anota la respuesta. No la negocies. Si dice "$5.000", anótalo.
 
 ### Semana 3 del piloto: pregunta direccional
 ```
-"¿Qué le parece más razonable: $10.000 al mes, $29.990,
+"¿Qué le parece más razonable: $10.000 al mes, $29.900,
 o más?"
 ```
 
-Esta es la "pregunta del precio anclado". Posiciona $29.990 como precio central.
+Esta es la "pregunta del precio anclado". Posiciona $29.900 como precio central.
 
 ### Semana 4 (cierre): pregunta concreta
 ```
 "Mes 1 fue gratis como acordamos. ¿A partir del próximo mes
-pagaría $29.990 al mes para seguir usándolo? Sí o no, ambas
+pagaría $29.900 al mes para seguir usándolo? Sí o no, ambas
 respuestas valen."
 ```
 
@@ -92,7 +100,7 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 
 ### Si patrón muestra alta sensibilidad de precio (mayoría dice "$10.000 max")
 
-**Acción**: bajar precio a $14.990 COP/mes para iteración futura + reformular value prop.
+**Acción**: bajar precio a $14.900 COP/mes para iteración futura + reformular value prop.
 
 **Riesgo**: ARPU baja → necesitas más volumen → presión sobre canales de adquisición.
 
@@ -132,7 +140,7 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 |---------|-------|
 | Pilotos firmados Mes 1 | 5 |
 | Conversión a pago Mes 2 | 3 (60%) |
-| Ingreso Mes 2 | 3 × $29.990 = $89.970 COP |
+| Ingreso Mes 2 | 3 × $29.900 = $89.970 COP |
 | Ingreso Mes 3 (asumiendo retención + nuevos) | $179.940 COP |
 
 ### Escenario B — Validación tibia (base case)
@@ -141,7 +149,7 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 |---------|-------|
 | Pilotos firmados Mes 1 | 5 |
 | Conversión a pago Mes 2 | 1 (20%) |
-| Ingreso Mes 2 | 1 × $29.990 = $29.990 COP |
+| Ingreso Mes 2 | 1 × $29.900 = $29.900 COP |
 | Decisión | Pivote canal o pivote pricing |
 
 ### Escenario C — Validación baja (worst case que aún informa)
@@ -161,7 +169,7 @@ Si dice **no a cualquier precio**: piloto exitoso pero usuario no es cliente. Ci
 - ❌ **No bajar a $10.000** porque alguien lo pidió. Tomar dato y promediar al final del piloto.
 - ❌ **No firmar plan anual** en Mes 2. Demasiada promesa con poca data.
 - ❌ **No prometer descuentos a corto plazo** ("primer cliente paga 50% siempre"). Crea precedente difícil de revertir.
-- ✅ **Sí cobrar Mes 2 en producción** aunque sean $29.990 de 1 piloto. Esa transacción es prueba de mercado.
+- ✅ **Sí cobrar Mes 2 en producción** aunque sean $29.900 de 1 piloto. Esa transacción es prueba de mercado.
 
 ---
 
@@ -182,9 +190,9 @@ Con base en el patrón observado:
 
 | Patrón observado | Decisión |
 |-------------------|----------|
-| ≥ 2 de 5 pilotos pagan $29.990 | Continuar con plan original. Empezar iteración futura (cooperativas). |
-| 1 de 5 pagaría $29.990 | Tibio. Validar más con 5 pilotos adicionales antes de pivotar. |
-| 0 de 5 a precio $29.990 pero ≥ 3 a precio menor | Bajar precio a $14.990 y reintentar 1 mes. |
+| ≥ 2 de 5 pilotos pagan $29.900 | Continuar con plan original. Empezar iteración futura (cooperativas). |
+| 1 de 5 pagaría $29.900 | Tibio. Validar más con 5 pilotos adicionales antes de pivotar. |
+| 0 de 5 a precio $29.900 pero ≥ 3 a precio menor | Bajar precio a $14.900 y reintentar 1 mes. |
 | 0 de 5 a cualquier precio individual, pero ≥ 3 dicen "lo pagaría la coop" | Pivote a B2B-via-coop. |
 | 0 de 5 disposición clara | Pivote estructural. Revisar problema-solución. |
 

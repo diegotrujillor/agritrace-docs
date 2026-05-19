@@ -38,7 +38,7 @@ Juan escucha sobre AgriTrace en una capacitación de su cooperativa. Le prometen
     - 3 slides con beneficios visuales
 3. **Registro inicial**
     - Nombre completo
-    - Celular (con verificación SMS)
+    - Celular _(la **verificación SMS** es **iteración futura / no-MVP**: no figura en `09-scope-mvp.md`; el MVP captura el celular sin verificación automática)_
     - Correo (opcional)
     - Contraseña segura
 
@@ -46,7 +46,7 @@ Juan escucha sobre AgriTrace en una capacitación de su cooperativa. Le prometen
 
 - ❌ Formularios muy largos
 - ❌ Lenguaje técnico
-- ❌ Validación de celular que falla
+- ❌ Validación de celular que falla _(aplica solo si se implementa verificación SMS — **iteración futura / no-MVP**)_
 - ❌ No entiende para qué sirve cada campo
 
 ### Soluciones de diseño
@@ -58,7 +58,7 @@ Juan escucha sobre AgriTrace en una capacitación de su cooperativa. Le prometen
 
 ---
 
-### 📍 iteración futura: Configuración de Finca
+### 📱 MVP (Sprint 2): Configuración de Finca
 
 ### Contexto
 
@@ -96,8 +96,8 @@ Juan necesita registrar su finca "La Esperanza" con sus 3 lotes de café.
 
 - ✅ Entrada manual de coordenadas alternativa
 - ✅ Sugerencias: "Puedes crear lotes por edad de siembra o variedad"
-- ✅ **Auto-guardado cada 30 segundos**
-- ✅ Modo offline con sincronización posterior
+- ✅ Modo offline con sincronización posterior (cubre la persistencia de datos en el MVP)
+- ⚠️ **Auto-guardado cada 30 segundos**: **iteración futura / no-MVP** — no figura en `09-scope-mvp.md`; en el MVP la persistencia la cubre el modo offline
 
 ---
 
@@ -137,8 +137,8 @@ Juan realiza fertilización orgánica en el "Lote Norte" y quiere documentarlo.
 
 - ✅ Compresión automática de imágenes
 - ✅ Notificaciones recordatorias semanales
-- ✅ **Entrada por voz** para notas (dictado)
-- ✅ Templates pre-llenados para actividades frecuentes
+- ⚠️ **Entrada por voz** para notas (dictado): **iteración futura / no-MVP** — no figura en `09-scope-mvp.md`
+- ⚠️ **Templates pre-llenados** para actividades frecuentes: **iteración futura / no-MVP** — no figura en `09-scope-mvp.md`
 
 ---
 
@@ -153,11 +153,11 @@ Juan está listo para cosechar y quiere darle a su comprador, cooperativa o cert
 1. **Revisión de trazabilidad:**
     - Lote → Botón "Ver historial completo"
     - Timeline con todas las actividades
-    - Indicador de completitud: "85% documentado"
+    - Indicador de completitud: "85% documentado" _(**iteración futura / no-MVP**: el cálculo de porcentaje de completitud no figura en `09-scope-mvp.md`)_
 2. **Exportar PDF:**
     - Botón prominente: "Exportar PDF de trazabilidad"
     - Modal: "Tu reporte está listo"
-    - Preview del PDF
+    - Preview del PDF _(**iteración futura / no-MVP**: la previsualización embebida del PDF no figura en `09-scope-mvp.md`; el MVP genera y comparte el PDF directamente)_
     - Opciones:
         - Descargar
         - Compartir por WhatsApp
@@ -174,7 +174,7 @@ Juan está listo para cosechar y quiere darle a su comprador, cooperativa o cert
 
 - ✅ Compresión de fotos en el PDF
 - ✅ PDF generado localmente (offline-capable)
-- ✅ Tutorial integrado: "Cómo compartir tu trazabilidad"
+- ⚠️ Tutorial integrado: "Cómo compartir tu trazabilidad" — **iteración futura / no-MVP** — no figura en `09-scope-mvp.md`
 
 > **Generación de QR público y página de trazabilidad escaneable** quedan diferidas a iteración futura (scope-mvp.md §4). Razón: encuesta de stakeholders mostró cero demanda firme de QR público; el reporte PDF cubre la necesidad operativa del MVP de manera más simple y verificable.
 
@@ -196,7 +196,7 @@ Juan está listo para cosechar y quiere darle a su comprador, cooperativa o cert
 
 ---
 
-### 📊 MVP: Onboarding Cooperativa
+### 📊 iteración futura: Onboarding Cooperativa
 
 ### Contexto
 
@@ -300,7 +300,7 @@ María necesita generar reportes para auditorías externas.
 
 ---
 
-### 🔍 MVP: Consulta de Trazabilidad (Experiencia Pública)
+### 🔍 iteración futura: Consulta de Trazabilidad (Experiencia Pública)
 
 ### Contexto
 
@@ -376,7 +376,7 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ---
 
-### 🛡️ MVP: Gestión de Usuarios
+### 🛡️ iteración futura: Gestión de Usuarios
 
 ### Flujo
 
@@ -413,13 +413,15 @@ Thomas recibe un QR de un productor colombiano y quiere verificar la calidad del
 
 ## 5. Flujo de Datos: Diagrama de Integración
 
-### MVP (implementado)
+### MVP (planificado — Sprint 3)
+
+> El almacenamiento offline (WatermelonDB), la sincronización y la exportación PDF están **planificados para el Sprint 3**, aún no implementados.
 
 ```mermaid
 graph TD
-    A[Productor registra actividad] -->|Offline| B[Almacenamiento local<br/>WatermelonDB]
-    B -->|Sync automática| C[Backend AgriTrace<br/>Node.js + Postgres]
-    A -->|Cuando lo necesita| E[Exportar PDF de trazabilidad]
+    A[Productor registra actividad] -->|Offline| B[Almacenamiento local<br/>WatermelonDB · Sprint 3]
+    B -->|Sync automática · Sprint 3| C[Backend AgriTrace<br/>Node.js + Postgres]
+    A -->|Cuando lo necesita| E[Exportar PDF de trazabilidad · Sprint 3]
     E --> F[Compartir vía WhatsApp / Email]
 ```
 

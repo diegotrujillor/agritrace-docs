@@ -22,7 +22,7 @@ AgriTrace - Mes 1 (Validación gratuita)
 
 Entre:
 
-Diego Trujillo Rodríguez
+Diego Trujillo
 Cédula: [tu cédula]
 Email: diegotrujillor@gmail.com
 ("El equipo AgriTrace")
@@ -67,7 +67,7 @@ COMPROMISOS DEL PRODUCTOR PILOTO:
    el positivo.
 
 4. DECISIÓN AL CIERRE: Al final de las 4 semanas, responder con
-   franqueza UNA pregunta: "¿Pagaría $29.990 COP al mes por
+   franqueza UNA pregunta: "¿Pagaría $29.900 COP al mes por
    continuar usando esta aplicación?" — sí, no, o "sí pero a otro
    precio (especificar)".
 
@@ -110,7 +110,7 @@ QUÉ PASA AL FINAL DEL MES 1:
 
 | Decisión del productor   | Qué sucede                                    |
 |--------------------------|-----------------------------------------------|
-| "Sí pago $29.990/mes"    | Continuamos con plan de pago mensual.         |
+| "Sí pago $29.900/mes"    | Continuamos con plan de pago mensual.         |
 | "Sí pero a $X/mes"       | Negociamos precio o pivote.                   |
 | "No pago, gracias"       | Cierre limpio. Datos exportados o eliminados. |
 | "No respondo"            | Cierre por defecto al día 35.                 |
@@ -119,7 +119,7 @@ QUÉ PASA AL FINAL DEL MES 1:
 
 FIRMAS:
 
-Diego Trujillo Rodríguez                Productor piloto
+Diego Trujillo                          Productor piloto
 
 ________________________                ________________________
 Firma                                   Firma

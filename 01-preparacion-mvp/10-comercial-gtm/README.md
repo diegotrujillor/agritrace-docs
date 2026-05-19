@@ -34,7 +34,7 @@ No expandir a Eje Cafetero, Antioquia ni otras regiones hasta validar adopción 
 
 ## Modelo de Pricing (Decisión MVP)
 
-**Híbrido: Mes 1 gratis con commitment contract → Mes 2 en adelante $29.990 COP/mes**
+**Híbrido escalonado: Mes 1 gratis con commitment contract → Mes 2 y 3 = $14.900 COP/mes (precio introductorio) → Mes 4 en adelante = $29.900 COP/mes (tarifa full)**
 
 Detalle completo: [`06-modelo-pricing-validacion.md`](06-modelo-pricing-validacion.md)
 
@@ -74,7 +74,7 @@ Sigue este orden secuencial. Cada documento construye sobre el anterior:
 - 5 calls de validación completadas con feedback documentado
 - 2+ productores con commitment contract firmado para piloto
 - 10+ puntos de feedback específicos sobre el MVP
-- Patrón claro de willingness-to-pay (¿$0? ¿$29.990? ¿paga la cooperativa?)
+- Patrón claro de willingness-to-pay (¿$0? ¿$29.900? ¿paga la cooperativa?)
 - Decisión informada sobre necesidad de growth hacker / consultor / ningún apoyo externo
 
 ---
@@ -86,7 +86,6 @@ Sigue este orden secuencial. Cada documento construye sobre el anterior:
 | Qué hace el MVP técnicamente | [`../09-scope-mvp.md`](../09-scope-mvp.md) |
 | Quiénes son los stakeholders ya encuestados | [`../01-encuesta-partes-interesadas/`](../01-encuesta-partes-interesadas/) |
 | Cómo se ve la app | [`../04-diseno-ui-ux/`](../04-diseno-ui-ux/) |
-| Cronograma de desarrollo (paralelo a este) | [`../07-gestion-de-proyectos/`](../07-gestion-de-proyectos/) |
 
 ---
 

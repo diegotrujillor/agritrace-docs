@@ -24,7 +24,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 | **Geografía** | Piloto exclusivo: **Valle del Cauca**. Razón: foco geográfico del founder, cooperativas y gremios accesibles, validación más rápida con menos variables. Ver [`10-comercial-gtm/01-icp-y-segmentacion.md`](10-comercial-gtm/01-icp-y-segmentacion.md). |
 | **Dispositivo** | Smartphone (eventual); actualmente 50% tienen básicos o lapicero+cuaderno |
 | **Conectividad** | Intermitente (3G/4G rural); 1 de 4 nunca tiene conexión |
-| **Disposición a pagar** | Encuesta n=4 dio 2.25/5 (baja confianza por sesgo de muestra). MVP usa modelo híbrido: **Mes 1 gratis con commitment contract → Mes 2 = $29.990 COP/mes** para validar willingness real. Si patrón muestra rechazo, pivotar a B2B-via-coop o B2B2C. Ver [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
+| **Disposición a pagar** | Encuesta n=4 dio 2.25/5 (baja confianza por sesgo de muestra). MVP usa modelo híbrido: **Mes 1 gratis con commitment contract → Mes 2 = $29.900 COP/mes** para validar willingness real. Si patrón muestra rechazo, pivotar a B2B-via-coop o B2B2C. Ver [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
 
 ---
 
@@ -85,7 +85,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 | **Agricultores adoptarán smartphones**: Hoy 50% usan básicos/nada. Asumimos gradual adoption. | **Baja (⚠️)** | Agregar SMS/USSD fallback; evaluar web-responsive para laptops en iteración futura. |
 | **Offline-first es correcta arquitectura**: 4/4 dijeron "sí" a offline pero solo 2/4 tienen siempre conexión. | **Alta (✅)** | Validado. Todos los screens deben funcionar offline 14+ días. |
 | **Activity log + alerts es el wedge**: Stakeholders no pidieron marketplace/buyer dashboard. | **Media (⚠️)** | Validar con 10+ más agricultores en Weeks 1-2. Ajustar prioridades si marketplace tiene demanda oculta. |
-| **Farmers won't pay directo por SaaS**: Encuesta n=4 dio willingness 2.25/5 (sesgo conocido). | **Media (⚠️)** | MVP valida con modelo híbrido (Mes 1 gratis + commitment + $29.990 COP Mes 2). Si <2 de 5 pilotos pagan, pivotar a B2B-via-coop / B2B2C. Detalle: [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
+| **Farmers won't pay directo por SaaS**: Encuesta n=4 dio willingness 2.25/5 (sesgo conocido). | **Media (⚠️)** | MVP valida con modelo híbrido (Mes 1 gratis + commitment + $29.900 COP Mes 2). Si <2 de 5 pilotos pagan, pivotar a B2B-via-coop / B2B2C. Detalle: [`10-comercial-gtm/06-modelo-pricing-validacion.md`](10-comercial-gtm/06-modelo-pricing-validacion.md). |
 | **1 región es suficiente para MVP**: No intentar ser nacional día 1. | **Alta (✅)** | Go-live en **Valle del Cauca** con 2+ pilotos firmados. Detalle: [`10-comercial-gtm/01-icp-y-segmentacion.md`](10-comercial-gtm/01-icp-y-segmentacion.md). |
 
 ---
@@ -96,6 +96,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 - [ ] 10 pantallas implementadas en Flutter con offline-first (WatermelonDB)
 - [ ] Sincronización bidireccional funcionando (upload + download changes)
+- [ ] Exportación de trazabilidad en PDF (activity log) — renderizado **client-side en Flutter (app, offline-capable)**, entregable de **Sprint 3**
 - [ ] 80%+ test coverage
 - [ ] API endpoints documentados y testeados
 - [ ] PostgreSQL schema deployable

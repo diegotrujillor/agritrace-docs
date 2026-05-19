@@ -137,7 +137,7 @@ de su cooperativa.
 1. **Saludo**: "Buenos días" o "Buenas tardes" según hora. NO "Hola".
 2. **Identificación**: nombre completo + "ingeniero" en primera línea.
 3. **No enlace al inicio**: el demo se manda DESPUÉS de que respondan positivo.
-4. **No precio**: nunca mencionar $29.990 en primer contacto.
+4. **No precio**: nunca mencionar $29.900 en primer contacto.
 5. **Pregunta cerrada al final**: "¿Tendría 15 minutos?" — no "¿Le interesa?".
 6. **Firma corta**: solo nombre. NO logos ni disclaimers legales.
 7. **Si no responden en 3 días**: 1 follow-up corto:

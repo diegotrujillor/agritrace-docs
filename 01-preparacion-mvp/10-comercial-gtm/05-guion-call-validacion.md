@@ -130,7 +130,7 @@ no está]. Por ahora el MVP se enfoca en registrar actividades.
 4. Si esto estuviera listo en 1 mes y le diéramos 1 mes gratis
    para probarlo en su finca, ¿lo usaría? Sí o no.
 
-5. Si después de ese mes le pidiéramos $29.990 pesos al mes,
+5. Si después de ese mes le pidiéramos $29.900 pesos al mes,
    ¿lo seguiría usando? ¿O al precio de $10.000? ¿O cero?
 
 6. Si usted no pagara, ¿quién cree que sí pagaría? ¿La cooperativa?
@@ -147,7 +147,7 @@ no está]. Por ahora el MVP se enfoca en registrar actividades.
 
 | Respuesta a P5 | Significado | Acción |
 |----------------|-------------|--------|
-| "Sí pago $29.990" | Modelo validado | Anotar y celebrar internamente |
+| "Sí pago $29.900" | Modelo validado | Anotar y celebrar internamente |
 | "Sí pero $10.000 max" | Sensibilidad de precio | Anotar; ver patrón con otros |
 | "No pago, debería ser gratis" | No paga directo | Pregunta P6 (¿quién paga?) |
 | Silencio / evasiva | Probablemente no paga | No insistir, anotar como "willingness baja" |
@@ -176,7 +176,7 @@ compromisos pequeños:
 2. Una llamada corta de 15 minutos cada semana para que me cuente
    qué funciona y qué no.
 
-3. Al final del mes, me dice honestamente: "sí pagaría $29.990"
+3. Al final del mes, me dice honestamente: "sí pagaría $29.900"
    o "no, no pagaría". Sin compromiso de pago, solo honestidad.
 
 Le envío un documento corto de 1 página que firmamos los dos
@@ -232,7 +232,7 @@ REACCIÓN AL PRODUCTO:
 WILLINGNESS-TO-PAY:
 - $0: [sí/no]
 - $10.000: [sí/no]
-- $29.990: [sí/no]
+- $29.900: [sí/no]
 - ¿Quién pagaría?: [productor / coop / comprador / nadie]
 
 DECISIÓN:

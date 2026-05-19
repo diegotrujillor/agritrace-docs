@@ -156,7 +156,7 @@ Compara la columna probabilidad: el "robo de idea" estaría en el último puesto
 
 ## Frase para recordar
 
-> "Una idea sin clientes vale cero. Diez clientes pagando $29.990 valen oro.
+> "Una idea sin clientes vale cero. Diez clientes pagando $29.900 valen oro.
 > El copión no quiere tu idea. Quiere tus 10 clientes. Y esos los construyes,
 > no los esconde."
 
