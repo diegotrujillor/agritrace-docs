@@ -20,7 +20,7 @@ Este documento captura las decisiones de infraestructura que regirán el desplie
 | **Escala esperada** | 5 agricultores piloto, ~50 actividades/día, sync intermitente | No requiere alta disponibilidad, clúster, ni autoscaling. Una sola VM suficiente. |
 | **Equipo operativo** | 1 desarrollador (Diego) | Stack debe ser autoservicio, sin SRE dedicado. |
 | **Time-to-deploy** | ≤ 1 día (Semana 4 del cronograma) | Tooling complejo (Kubernetes, multi-region) descartado. |
-| **Cumplimiento legal** | Ley 1581 (Habeas Data Colombia) | Transferencia internacional permitida con aviso de privacidad explícito. |
+| **Cumplimiento legal** | Ley 1581 (Habeas Data Colombia) | Datos alojados en Colombia (Bogotá): sin transferencia internacional. Aviso de privacidad explícito de todas formas. |
 | **Geografía usuarios** | Valle del Cauca, Colombia | Latencia aceptable: ≤ 150ms. Sync no es en tiempo real (offline-first). |
 
 ### 1.2 Filosofía
@@ -38,9 +38,9 @@ Cada herramienta del stack debe responder a una pregunta concreta: ¿qué se rom
 | Elemento | Valor |
 |----------|-------|
 | **Proveedor** | Oracle Cloud Infrastructure (OCI) |
-| **Región** | South America East (São Paulo, `sa-saopaulo-1`) |
+| **Región** | South America (Bogotá, `sa-bogota-1`) |
 | **Instancia** | VM.Standard.A1.Flex (ARM Ampere) |
-| **Recursos** | 4 OCPU + 24 GB RAM + 200 GB block storage |
+| **Recursos** | 1 OCPU + 6 GB RAM + 50 GB boot volume |
 | **Costo** | $0/mes (always-free tier) |
 | **OS** | Ubuntu 24.04 LTS (ARM64) |
 
@@ -52,9 +52,9 @@ Oracle Cloud ofrece el tier gratuito más generoso del mercado: **always-free**,
 
 | Alternativa | Costo/mes | Región | Veredicto |
 |-------------|-----------|--------|-----------|
-| **Oracle Cloud Free Tier (São Paulo)** ⭐ | $0 | Brasil (~80ms a Cali) | **Elegido**: free perpetuo, recursos generosos, latencia aceptable |
+| **Oracle Cloud Free Tier (Bogotá)** ⭐ | $0 | Colombia (~10ms en-país) | **Elegido**: free perpetuo, datos en territorio nacional (Ley 1581), latencia óptima |
 | Hetzner Cloud CX11 | €3.79 (~$4.20) | Alemania (~150ms) | Descartado: no es gratis, latencia mayor |
-| Fly.io (Bogotá BOG) | ~$5-10 | Colombia (~10ms) | Descartado para MVP: rompe restricción $0. Re-evaluar tras validación si Ley 1581 lo exige. |
+| Fly.io (Bogotá BOG) | ~$5-10 | Colombia (~10ms) | Descartado para MVP: rompe restricción $0. Sin necesidad: los datos ya están en Colombia con Oracle Bogotá. |
 | AWS EC2 t2.micro Free | $0 (12 meses) | N. Virginia | Descartado: expira en 12 meses, no Colombia |
 | Self-host (laptop + Cloudflare Tunnel) | $0 | Cali (físico) | Descartado: SPOF en hardware doméstico, no escalable, riesgo cortes eléctricos |
 | OpenStack autoadministrado | Variable | Variable | Descartado: requiere multi-nodo + ops dedicado, overkill total para 5 usuarios |
@@ -176,7 +176,7 @@ Las siguientes herramientas se mencionaron en planificaciones previas pero **se 
 | **Logs centralizados (Loki / ELK)** | Más de un host o > 1 GB logs/día |
 | **OpenStack autoadministrado** | Auditoría legal estricta exige infra 100% nacional + control hardware |
 
-**Hosting en Colombia (Fly.io Bogotá / IFX / CAPACOL)**: se evaluará tras el cierre del Mes 1 del piloto, en función de si aparece demanda real de compliance Ley 1581 estricto.
+**Hosting en Colombia**: ya satisfecho — el MVP corre en Oracle Cloud región Bogotá (`sa-bogota-1`), con los datos en territorio nacional desde el día uno. No requiere migración futura por motivos de residencia de datos.
 
 ---
 
@@ -185,7 +185,7 @@ Las siguientes herramientas se mencionaron en planificaciones previas pero **se 
 ### Fase 1 — Bootstrap del Proveedor (1-2h)
 
 1. Crear cuenta Oracle Cloud Free Tier
-2. Lanzar VM Ampere A1 en `sa-saopaulo-1` (4 OCPU, 24 GB RAM, 200 GB block)
+2. Lanzar VM Ampere A1 en `sa-bogota-1` (1 OCPU, 6 GB RAM, 50 GB boot volume)
 3. Asignar IP pública reservada (no efímera)
 4. Comprar dominio (`agritrace.co` vía Cloudflare Registrar)
 5. Configurar zona DNS en Cloudflare, apuntar NS desde el registrador
@@ -215,7 +215,7 @@ Las siguientes herramientas se mencionaron en planificaciones previas pero **se 
 
 | Concepto | Periodicidad | Monto USD | Monto COP aprox. |
 |----------|--------------|-----------|------------------|
-| VM Oracle Cloud (4 OCPU, 24 GB RAM) | Mensual | $0 | $0 |
+| VM Oracle Cloud (1 OCPU, 6 GB RAM) | Mensual | $0 | $0 |
 | Oracle Object Storage 20 GB | Mensual | $0 | $0 |
 | Cloudflare DNS + Proxy + WAF básico | Mensual | $0 | $0 |
 | UptimeRobot Free (50 monitores) | Mensual | $0 | $0 |
@@ -229,18 +229,18 @@ Las siguientes herramientas se mencionaron en planificaciones previas pero **se 
 
 ### 7.1 Situación
 
-Los datos personales de agricultores (nombre, ubicación de finca, teléfono) se almacenarán en Oracle Cloud São Paulo (Brasil), no en Colombia. La Ley 1581 permite transferencia internacional bajo las siguientes condiciones:
+Los datos personales de agricultores (nombre, ubicación de finca, teléfono) se almacenarán en Oracle Cloud región Bogotá (`sa-bogota-1`), **en territorio colombiano**. Al no existir transferencia internacional de datos, la cláusula de transferencia internacional de la Ley 1581 **no aplica**. Aun así, se mantiene buena práctica de protección de datos:
 
-- El titular **otorga consentimiento explícito** para la transferencia
-- El país destino otorga **nivel adecuado de protección** (Brasil cumple desde la LGPD 2018)
-- Existe **aviso de privacidad accesible** que describe la transferencia
+- Los datos residen en Colombia: **residencia de datos nacional** garantizada por diseño
+- El titular **otorga consentimiento explícito** para el tratamiento de sus datos
+- Existe **aviso de privacidad accesible** que describe el tratamiento y el almacenamiento nacional
 
 ### 7.2 Acciones requeridas antes del go-live
 
 - [ ] Redactar política de privacidad explícita en español, incluyendo:
   - Datos recolectados
   - Finalidad
-  - Transferencia internacional a Brasil (Oracle Cloud)
+  - Almacenamiento en Colombia (Oracle Cloud Bogotá) — sin transferencia internacional
   - Derechos ARCO del titular
   - Contacto para ejercer derechos
 - [ ] Implementar pantalla de consentimiento al registro
@@ -248,7 +248,7 @@ Los datos personales de agricultores (nombre, ubicación de finca, teléfono) se
 
 ### 7.3 Reevaluación
 
-Si la validación comercial confirma tracción y la base supera 100 agricultores, evaluar migración a hosting nacional (Fly.io Bogotá o proveedor local como IFX/CAPACOL) en iteración futura.
+La residencia de datos nacional ya está cubierta (Oracle Cloud Bogotá), por lo que no se requiere migración por motivos de Ley 1581. Si la validación comercial confirma tracción y la base supera 100 agricultores, reevaluar la robustez del hosting (capacidad, redundancia, SLA) en iteración futura — pero ya no por residencia de datos.
 
 ---
 
