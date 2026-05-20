@@ -7,19 +7,15 @@ Gracias por probar la app. Esto es un piloto: nos sirve **tu uso real** y
 
 ## 1. Instalar la app (una sola vez)
 
-1. Abre este link en tu celular Android:
-   **https://github.com/diegotrujillor/agritrace-mobile/releases/latest**
-2. Toca el archivo **`AgriTrace.apk`** para descargarlo.
-3. Cuando termine de bajar, toca el archivo.
-4. Si Android te dice **"Por seguridad tu teléfono no permite instalar
-   apps de fuera de Play Store"**, toca **"Configuración"** → activa
-   **"Permitir esta fuente"** → vuelve atrás y toca **"Instalar"**.
-5. Si aparece la alerta **"Play Protect no reconoce esta app"** toca
-   **"Instalar de todos modos"**.
-6. Listo. Vas a ver el ícono **AgriTrace** en tu pantalla.
+Abre este link en tu celular Android y sigue los pasos ilustrados:
 
-> Más adelante distribuiremos por Play Store y estos pasos
-> desaparecen. Por ahora es así para arrancar rápido.
+### 👉 [https://agritrace.co/#instalar](https://agritrace.co/#instalar)
+
+La página tiene el botón de descarga, los 6 pasos numerados, y los
+avisos que vas a ver en Android (cómo pasarlos). Toma ~5 minutos.
+
+> Página temporal mientras AgriTrace llega a Play Store. Cuando esté
+> ahí, este paso será mucho más fácil.
 
 ---
 
