@@ -52,7 +52,7 @@ Cada CU cumple tres funciones simultáneas:
 | [CU-03](CU-03-logout.md) | Logout (revoca refresh) | MUST | ✅ pasa | 2026-05-20 | Emulador AVD; sin diálogo de confirmación (UX call opcional) |
 | [CU-04](CU-04-solicitar-borrado-cuenta.md) | Solicitar borrado de cuenta (ARCO derecho al olvido) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** — workaround vía email + curl. P2 |
 | [CU-05](CU-05-exportar-datos-personales.md) | Exportar datos personales (ARCO derecho de acceso) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** — workaround vía email + curl. P2 |
-| [CU-06](CU-06-crear-finca.md) | Crear finca con cultivo + área + coordenadas opcionales | MUST | 🟡 pendiente | | |
+| [CU-06](CU-06-crear-finca.md) | Crear finca con cultivo + área + coordenadas opcionales | MUST | ❌ **FALLA — P1 BLOQUEADOR** | 2026-05-20 | Backend OK; mobile muestra error genérico tras crear fila en DB. **Bloquea Sprint 5.** Bug en parseo de respuesta o `_refresh()` |
 | [CU-07](CU-07-ver-lista-fincas.md) | Ver lista de fincas en dashboard | MUST | 🟡 pendiente | | |
 | [CU-08](CU-08-ver-detalle-editar-finca.md) | Ver detalle de finca + editar | MUST | 🟡 pendiente | | |
 | [CU-09](CU-09-eliminar-finca.md) | Eliminar finca (cascada visible: los lotes desaparecen) | MUST | 🟡 pendiente | | |
