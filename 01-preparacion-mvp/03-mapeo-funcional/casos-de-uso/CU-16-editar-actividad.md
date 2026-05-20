@@ -42,13 +42,14 @@
 - **Given** sin conexión, **When** Diego edita, **Then** el item queda con `_status='updated'` y se sincroniza al reconectar (LWW por `updated_at`).
 
 ## Estado de prueba
-- **Estado:** ❌ FALLA — UI ausente
+- **Estado:** ✅ pasa (v1.4.0) — con nota de trazabilidad
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.6 (relevamiento de código, no alcanzable en emulador)
+- **Versión APK probada:** 1.4.0 (CI commit `d04824a`)
 - **Notas de Diego (auto):**
-  > Survey confirma: backend `PUT /v1/activities/{id}` + `ActivityService.update` + `activitiesProvider.update` testeados, **pero `activity_timeline_screen` y la pantalla de detalle de actividad no exponen botón "Editar"**. No existe `activity_edit_screen` ni ruta `/activities/:id/edit`.
-  > **Impacto MVP:** P2 — para trazabilidad inmutable es defendible no permitir edición. Decisión de producto: ¿permitir corrección o forzar `delete+create`? Por ahora bloqueado.
-  > **Acción:** decidir UX (editar vs nota correctiva) antes del pilot. Si "editar", reusar form de [[CU-14]] con prefill.
+  > Shipping: pantalla `activity_edit_screen.dart` + `ActivityForm` widget compartido + ruta `/activities/:id/edit` + entrada vía **long-press** en cada item del timeline (bottom sheet "Editar / Eliminar"). Commit `9843e4d` en main.
+  > **Tests:** `test/widget/activity_edit_screen_test.dart` (prefill 4 campos + submit).
+  > **Decisión producto:** la edición es destructiva sobre el registro original (no genera "nota correctiva"). Documentado en CHANGELOG. Revisitar post-pilot si productores piden auditoría inmutable.
+  > **Retest E2E:** pendiente al desbloquear [[CU-11]] auth-refresh.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

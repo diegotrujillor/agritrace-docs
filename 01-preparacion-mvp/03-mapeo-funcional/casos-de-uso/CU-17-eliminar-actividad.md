@@ -40,13 +40,13 @@
 - **Given** Diego intenta eliminar actividad ajena, **When** envía `DELETE`, **Then** recibe 403.
 
 ## Estado de prueba
-- **Estado:** ❌ FALLA — UI ausente
+- **Estado:** ✅ pasa (v1.4.0)
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.6 (relevamiento de código, no alcanzable en emulador)
+- **Versión APK probada:** 1.4.0 (CI commit `d04824a`)
 - **Notas de Diego (auto):**
-  > Survey confirma: backend `DELETE /v1/activities/{id}` + `ActivityService.delete` + `activitiesProvider.delete` testeados, **pero no hay botón "Eliminar" ni swipe-to-delete** ni diálogo de confirmación en el timeline ni en la pantalla de detalle de actividad.
-  > **Impacto MVP:** P2 — un productor podría querer revertir un registro mal hecho. Misma decisión que [[CU-16]]: ¿inmutable o editable? Si MVP es estricto sobre trazabilidad: dejar fuera de scope y documentar.
-  > **Acción:** alinear con [[CU-16]]. Si se decide editable → agregar long-press menú con "Editar" / "Eliminar" + `AlertDialog`.
+  > Shipping: long-press en item del timeline → bottom sheet "Eliminar" → `AlertDialog` "¿Eliminar esta actividad?" con copy "Esta acción no se puede deshacer". Commit `9843e4d` en main. Mismo flujo mirrored en `plot_detail_screen` (timeline inline del lote).
+  > **Tests:** `test/widget/activity_timeline_delete_test.dart` (3 casos: sheet, confirm, cancel).
+  > **Retest E2E:** pendiente al desbloquear [[CU-11]].
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

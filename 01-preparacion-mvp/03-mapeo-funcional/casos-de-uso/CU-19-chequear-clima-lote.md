@@ -41,13 +41,14 @@
 - **Given** el stub devuelve clima estable, **When** Diego consulta, **Then** **no** se crea alerta y la UI lo informa explícitamente.
 
 ## Estado de prueba
-- **Estado:** ❌ FALLA — UI manual ausente (provider stub en backend)
+- **Estado:** ✅ pasa (v1.4.0) — manual trigger; cron/provider real pendiente post-pilot
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.6 (relevamiento de código)
+- **Versión APK probada:** 1.4.0 (CI commit `d04824a`)
 - **Notas de Diego (auto):**
-  > Survey confirma: backend `POST /v1/alerts/weather/check` existe, `WeatherService.checkLote` existe, `WEATHER_PROVIDER=stub` configurado en prod (genera alerta sintética). **No hay botón en mobile que dispare el check manual**, ni cron ni reload automático al abrir Pantalla 13 (Alertas).
-  > **Impacto MVP:** P2 — alerta de clima es uno de los value-props pero el flujo automático no está activo en el cliente. Workaround: trigger vía curl/Postman manualmente para demo.
-  > **Acción:** agregar botón "Actualizar clima" en `alerts_screen` que llame `alertService.checkWeather(lotIds)` y haga refresh de la lista, **o** configurar cron en backend que corra cada N horas.
+  > Shipping: acción "Actualizar clima" en AppBar de `alerts_screen` con spinner inline + snackbar "Clima actualizado · N alertas nuevas" / mensaje de error en rojo. `AlertsNotifier.runWeatherCheckForAllPlots(plotIds)` agrega un loop sobre lotes del usuario + invalidación de lista. Commit `9d64d5f` en main.
+  > **Tests:** `test/widget/alerts_screen_weather_check_test.dart` — 3 casos (1 call por lote, happy path con spinner observable, error path con snackbar rojo y lista intacta).
+  > **Backend:** `WEATHER_PROVIDER=stub` sigue activo en prod (genera alerta sintética). El switch a `openweathermap` real + cron son decisiones post-pilot documentadas en CHANGELOG.
+  > **Retest E2E:** pendiente al desbloquear [[CU-11]].
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG. (Provider real pendiente de configurar — el MVP usa `stub`.)
