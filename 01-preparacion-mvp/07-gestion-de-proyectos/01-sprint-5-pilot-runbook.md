@@ -39,9 +39,13 @@ Mientras la app no esté en Play Internal testing
 (prerequisitos en
 [`agritrace-mobile/docs/PLAY_CONSOLE_SETUP.md`](https://github.com/diegotrujillor/agritrace-mobile/blob/main/docs/PLAY_CONSOLE_SETUP.md)):
 
-- Link público: `https://github.com/diegotrujillor/agritrace-mobile/releases/latest`
-- Archivo a descargar: **`AgriTrace.apk`**
-- Instrucciones para el tester:
+- **Canal recomendado para testers:** `https://agritrace.co/#instalar`
+  (página pública con botón de descarga + 6 pasos ilustrados + ayuda).
+  Compartir ese link por WhatsApp; abre directamente la pestaña de
+  instalación.
+- Fallback / fuente: `https://github.com/diegotrujillor/agritrace-mobile/releases/latest/download/AgriTrace.apk`
+  (lo que la página descarga; útil si el tester ya está técnico).
+- Guion 1-a-1 para el onboarding:
   [`02-tester-onboarding-es-CO.md`](02-tester-onboarding-es-CO.md).
 
 Cuando Play Internal testing esté listo, **migrar el canal de
