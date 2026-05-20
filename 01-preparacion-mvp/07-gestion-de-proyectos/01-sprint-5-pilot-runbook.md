@@ -66,8 +66,12 @@ Plantillas de issue:
 - 🐞 Bug en piloto (Sprint 5) — `.github/ISSUE_TEMPLATE/field-test-bug.yml`
 - 💬 Feedback de uso (Sprint 5) — `.github/ISSUE_TEMPLATE/field-test-feedback.yml`
 
-Etiquetas auto-aplicadas: `sprint-5`, `field-test`, + `bug`/`feedback`.  
+Etiquetas auto-aplicadas: `sprint-5`, `field-test`, + `bug`/`feedback`.
+Severidad (manual, añadir al triage): `P0` / `P1` / `P2` / `P3` (ver §5).
 Filtro del board: `is:issue label:sprint-5`.
+
+Mensajes listos para copiar-pegar (reclutamiento, pulso diario,
+hotfix, cierre): [`03-comms-templates-es-CO.md`](03-comms-templates-es-CO.md).
 
 ---
 
@@ -115,7 +119,8 @@ Fuentes:
 - Agricultores activos / actividades: consulta SQL a producción
   (ver [`agritrace-backend` migraciones](https://github.com/diegotrujillor/agritrace-backend/tree/main/src/db/migrations)).
 - Sync: filtrar `audit_logs.path LIKE '/v1/sync%'` y agrupar por `status_code`.
-- SUS-10: Google Form al día 14 (instrumento estándar, escala 1-5).
+- SUS-10: Google Form al día 14. Preguntas + scoring + plantilla
+  Sheets en [`04-sus-10-cuestionario.md`](04-sus-10-cuestionario.md).
 
 ### Plantilla SQL — agricultores activos
 
