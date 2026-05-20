@@ -45,11 +45,14 @@
 - **Given** no hay conexión, **When** Diego guarda, **Then** el lote queda local con `_status='created'` y se sincroniza al reconectar (CU-23).
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ✅ pasa (en v1.3.5)
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5 (release APK con fixes nav + URL)
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > Desde Pantalla 7 (Detalle Finca), tap FAB "Agregar lote" → Pantalla 8 (form). Form muestra: Nombre del lote, Tipo de cultivo (dropdown default "cacao"), Variedad (opcional), Área hectáreas (opcional), Estado (dropdown default "Planificación"), botón "Agregar lote".
+  > Llené "Lote B" (sin área) + submit → form se cerró → volvió a Pantalla 7 con "Lote B / cacao · Planificación" listado bajo "Lotes". Sin banner de error.
+  > Compartía el mismo bug nav que CU-06 antes de v1.3.4 — confirma que el fix de FAB context.go→push también aplica a este flow.
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG.

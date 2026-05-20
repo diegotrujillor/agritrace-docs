@@ -49,11 +49,15 @@
 - **Given** no hay conexión, **When** Diego edita, **Then** el cambio queda en WatermelonDB local con `_status='updated'` y se sincroniza al reconectar.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ⚠️ pasa con notas — ver finca ✅, editar persiste pero UX stale
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > **Ver detalle ✅:** tap card de finca → navega al detail screen con nombre, cultivo, área. La sección Lotes se renderiza correctamente tras el fix v1.3.5 de URL.
+  > **Editar ⚠️:** tap "Editar finca" → form pre-fillado (nombre + cultivo + área + dirección). Modifiqué área de 7.0 → 8.5 + tap "Guardar cambios" → PUT /v1/farms/:id 200 en backend (verificado en DB: area_hectares=8.50). Sin embargo, la pantalla de detalle siguió mostrando "Área: 7.0 ha" hasta navegar atrás + reabrir.
+  > **Bug UX:** el `_refresh()` de `farmsProvider` actualiza la lista pero el detail screen lee un `farmProvider(id)` separado que no se invalidó. Tras navegar atrás → dashboard muestra el valor actualizado (8.5 ha) y al re-tapear el card el detail también. Workaround: pull-to-refresh o re-navegar.
+  > **Backend OK.** Fix sugerido en mobile: `farmsProvider.updateFarm` debe invalidar `farmProvider(id)` también, o el detail watch debe combinarse con la lista. P3 — no bloquea Sprint 5 (datos correctos, sólo refresh tardío).
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG.

@@ -54,10 +54,10 @@ Cada CU cumple tres funciones simultáneas:
 | [CU-05](CU-05-exportar-datos-personales.md) | Exportar datos personales (ARCO derecho de acceso) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** — workaround vía email + curl. P2 |
 | [CU-06](CU-06-crear-finca.md) | Crear finca con cultivo + área + coordenadas opcionales | MUST | ✅ pasa (v1.3.4) | 2026-05-20 | Falló en v1.3.3 (P1 nav bug). Fix v1.3.4 context.go→push. Re-test OK |
 | [CU-07](CU-07-ver-lista-fincas.md) | Ver lista de fincas en dashboard | MUST | ✅ pasa (v1.3.4) | 2026-05-20 | Tarjeta visible tras crear finca; empty state previo confirmado |
-| [CU-08](CU-08-ver-detalle-editar-finca.md) | Ver detalle de finca + editar | MUST | 🟡 pendiente | | |
-| [CU-09](CU-09-eliminar-finca.md) | Eliminar finca (cascada visible: los lotes desaparecen) | MUST | 🟡 pendiente | | |
-| [CU-10](CU-10-crear-lote.md) | Crear lote dentro de una finca | MUST | 🟡 pendiente | | |
-| [CU-11](CU-11-ver-detalle-lote-timeline.md) | Ver detalle de lote + timeline de actividades | MUST | 🟡 pendiente | | |
+| [CU-08](CU-08-ver-detalle-editar-finca.md) | Ver detalle de finca + editar | MUST | ⚠️ pasa con notas | 2026-05-20 | Detail ✅. Editar persiste backend, detail screen stale hasta re-nav. P3 |
+| [CU-09](CU-09-eliminar-finca.md) | Eliminar finca (cascada visible: los lotes desaparecen) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** (no botón en detail). P2 |
+| [CU-10](CU-10-crear-lote.md) | Crear lote dentro de una finca | MUST | ✅ pasa (v1.3.5) | 2026-05-20 | Confirmado: form → lote visible en detail. Nav fix v1.3.4 aplica |
+| [CU-11](CU-11-ver-detalle-lote-timeline.md) | Ver detalle de lote + timeline de actividades | MUST | ⚠️ pasa parcial | 2026-05-20 | Lista en finca-detail OK; lote-detail mostró 401 (token refresh). P3 |
 | [CU-12](CU-12-editar-lote-status.md) | Editar lote (cambio de status planning→growing→ready→harvested) | MUST | 🟡 pendiente | | |
 | [CU-13](CU-13-eliminar-lote.md) | Eliminar lote (cascada: las actividades desaparecen) | MUST | 🟡 pendiente | | |
 | [CU-14](CU-14-registrar-actividad.md) | Registrar actividad (los 6 tipos) | MUST | 🟡 pendiente | | |

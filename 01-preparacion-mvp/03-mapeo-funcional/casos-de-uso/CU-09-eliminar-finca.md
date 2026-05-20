@@ -43,11 +43,15 @@
 - **Given** Diego cancela el diálogo, **When** no toca confirmar, **Then** no hay request HTTP ni cambio en DB.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ⚠️ pasa con notas — **falta UI mobile**
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > **Backend:** `DELETE /v1/farms/:id` existe y funciona (cascada plots/activities). Soft-delete, ejercitado en tests de integración.
+  > **Mobile:** **NO existe UI para eliminar finca en runtime.** grep en `lib/screens/farms/` y `lib/widgets/domain/farm_card.dart` por "delete"/"Eliminar"/"Dismissible" no encuentra nada. Detail screen sólo tiene "Editar finca" + "Agregar lote". `FarmsNotifier.delete` existe (con widget tests) pero ninguna pantalla lo invoca.
+  > **Workaround MVP:** productor escribe a `diegotrujillor@gmail.com` para borrar finca; Diego ejecuta `curl -X DELETE`. Misma estrategia que CU-04.
+  > **Bug:** P2 — añadir botón "Eliminar finca" en AppBar de detail con diálogo de confirmación. Mismo patrón requerido en lotes (CU-13) y actividades (CU-17).
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG.

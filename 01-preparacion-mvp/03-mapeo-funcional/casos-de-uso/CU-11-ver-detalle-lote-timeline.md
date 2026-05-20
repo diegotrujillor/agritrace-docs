@@ -44,11 +44,15 @@
 - **Given** el lote tiene foto en la actividad, **When** Diego toca la miniatura, **Then** se abre la foto en grande.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ⚠️ pasa parcial — listar en finca-detail ✅, lote-detail screen tuvo error de auth en re-test
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > **Listar lotes en Pantalla 7 (Detalle Finca):** ✅ tras fix v1.3.5 URL — la sección "Lotes" se renderiza con tarjetas de lotes. Verificado: tras CU-10 el lote "Lote B / cacao · Planificación" aparece inmediatamente.
+  > **Pantalla 9 (Detalle Lote / Timeline):** ⚠️ — al intentar abrir se mostró "Credenciales incorrectas" (401). Probablemente token expirado (15 min) y el `_AuthInterceptor` no logró refresh exitosamente, OR el screen no maneja el caso AsyncLoading mientras el refresh está en vuelo. Re-login no resolvió en mi sesión.
+  > **Posible bug:** P3 — investigar si el refresh interceptor está completando bien. La home auto-loguea (refresh token válido 7d) pero al navegar al lote-detail con tokens recién renovados el screen falla.
+  > **Acción:** repetir prueba con sesión fresca + watch logcat. Fuera de scope para este barrido inicial.
 
 ## Bugs históricos relevantes
 - **Pre v1.3.3** — `activity_timeline_screen` ordenaba actividades dentro de `itemBuilder` (O(n²) en scroll). Confirmar que el scroll es fluido aun con >20 items. Ver CHANGELOG entrada `refactor de seams compartidos + fixes — perf (bug)`.
