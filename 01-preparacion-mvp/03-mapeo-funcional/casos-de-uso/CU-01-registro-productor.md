@@ -47,11 +47,26 @@
 - **Given** el registro fue exitoso, **When** se inspecciona la DB, **Then** existe `users.privacy_consent_at IS NOT NULL` y `users.role = 'producer'`.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ✅ pasa
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.3 (release APK del GitHub Release)
+- **Entorno:** emulador Android 14, Pixel 7 Pro AVD, arm64-v8a; backend prod v0.4.1 en `api.agritrace.co`. Ejecutado por Claude vía `adb` (sin Pixel físico).
+- **Notas de Diego (auto):**
+  > Welcome renderiza con `AppButton` "Iniciar sesión" + `TextButton` "¿No tienes cuenta? Regístrate" — coincide con el CU actualizado (no es el layout simétrico inicial).
+  > Registro renderiza con orden Nombre→Teléfono→Email→Contraseña — coincide con CU actualizado.
+  > **`TextCapitalization.words` funciona en el IME del emulador:** "juan gomez" se autocapitaliza a "Juan Gomez" al escribir.
+  > **Toggle ojo de password** muestra `visibility_off_outlined` (ícono tachado) cuando hidden — confirma fix v1.3.3 vigente en runtime.
+  > Botón "Registrarse" se mantuvo disabled hasta marcar consentimiento — gating de Ley 1581 OK.
+  > Submit con datos válidos → `POST /v1/auth/register` 201 → tokens guardados → navegó a Dashboard (`AgriTrace` AppBar + canvas vacío + FAB "+"). Tiempo total: < 1 s.
+  > Cleanup vía `DELETE /v1/users/me` 200 → `users` row borrado, `deletion_requests` con status `completed` (Ley 1581 ARCO).
+
+## Bug nuevo descubierto durante esta prueba
+- **P2 — `google_fonts` Inter no se carga en runtime.** `lib/main.dart:11` setea
+  `GoogleFonts.config.allowRuntimeFetching = false` (correcto offline-first) pero los TTF de Inter
+  **no están bundleados** en `pubspec.yaml` como assets. Cada render que pida Inter logea una
+  `Unhandled Exception: GoogleFonts.config.allowRuntimeFetching is false but font Inter-SemiBold
+  was not found`. Cae silenciosamente a la fuente del sistema. Funcional pero ruidoso + perf hit.
+  No bloquea Sprint 5. Programar hotfix v1.3.5 (declarar Inter TTFs como assets).
 
 ## Bugs históricos relevantes
 - **v1.3.1** — crash al abrir Android por `MainActivity` en paquete inexistente (`com.example.agritrace_mobile`). Si el flujo de registro **no abre la app**, validar que el bug no regresó. Ver CHANGELOG mobile entrada `2026-05-19 — fix: crash al abrir + nombre de la app`.

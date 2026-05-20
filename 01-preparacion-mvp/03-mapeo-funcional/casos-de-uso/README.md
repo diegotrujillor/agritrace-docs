@@ -47,7 +47,7 @@ Cada CU cumple tres funciones simultáneas:
 
 | CU-ID | Título | Prioridad MVP | Estado | Fecha de prueba | Notas cortas |
 |---|---|---|---|---|---|
-| [CU-01](CU-01-registro-productor.md) | Registro de productor con consentimiento Ley 1581 | MUST | 🟡 pendiente | | |
+| [CU-01](CU-01-registro-productor.md) | Registro de productor con consentimiento Ley 1581 | MUST | ✅ pasa | 2026-05-20 | Emulador AVD Android 14 + v1.3.3; descubrió P2 google_fonts Inter no bundled |
 | [CU-02](CU-02-login.md) | Login email + contraseña | MUST | 🟡 pendiente | | |
 | [CU-03](CU-03-logout.md) | Logout (revoca refresh) | MUST | 🟡 pendiente | | |
 | [CU-04](CU-04-solicitar-borrado-cuenta.md) | Solicitar borrado de cuenta (ARCO derecho al olvido) | MUST | 🟡 pendiente | | |
