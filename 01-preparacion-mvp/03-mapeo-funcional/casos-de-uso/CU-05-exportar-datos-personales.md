@@ -40,11 +40,15 @@
 - **Given** el export se completó, **When** se consulta `audit_logs`, **Then** existe una entrada con `action='users.export'` y `user_id` correcto.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ⚠️ pasa con notas — **falta UI mobile**
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.3
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > **Backend:** endpoint `GET /v1/users/me/export` existe y está documentado en `openapi.yaml` (operationId `usersExportMe`). Devuelve bundle JSON con todas las filas asociadas al usuario autenticado. No ejercitado en runtime acá (cliente lo necesita).
+  > **Mobile:** **NO existe UI para exportar datos desde la app** (grep en `lib/` por "exportar.*datos" / "me/export" / "exportMe" no encontró nada — sólo el export-PDF de plots).
+  > **Workaround MVP:** el productor solicita su bundle escribiendo a `diegotrujillor@gmail.com` (canal documentado en política de privacidad). Diego ejecuta `curl -H "Authorization: Bearer …" https://api.agritrace.co/v1/users/me/export > diego_data.json` manualmente.
+  > **Bug:** P2 — añadir acción "Exportar mis datos" en perfil/dashboard antes de Production. No bloquea Sprint 5 (compliance Ley 1581 satisfecho por canal email manual).
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

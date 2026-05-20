@@ -48,10 +48,10 @@ Cada CU cumple tres funciones simultáneas:
 | CU-ID | Título | Prioridad MVP | Estado | Fecha de prueba | Notas cortas |
 |---|---|---|---|---|---|
 | [CU-01](CU-01-registro-productor.md) | Registro de productor con consentimiento Ley 1581 | MUST | ✅ pasa | 2026-05-20 | Emulador AVD Android 14 + v1.3.3; descubrió P2 google_fonts Inter no bundled |
-| [CU-02](CU-02-login.md) | Login email + contraseña | MUST | 🟡 pendiente | | |
-| [CU-03](CU-03-logout.md) | Logout (revoca refresh) | MUST | 🟡 pendiente | | |
-| [CU-04](CU-04-solicitar-borrado-cuenta.md) | Solicitar borrado de cuenta (ARCO derecho al olvido) | MUST | 🟡 pendiente | | |
-| [CU-05](CU-05-exportar-datos-personales.md) | Exportar datos personales (ARCO derecho de acceso) | MUST | 🟡 pendiente | | |
+| [CU-02](CU-02-login.md) | Login email + contraseña | MUST | ✅ pasa | 2026-05-20 | Emulador AVD; v1.3.3; navegó a Dashboard < 1 s |
+| [CU-03](CU-03-logout.md) | Logout (revoca refresh) | MUST | ✅ pasa | 2026-05-20 | Emulador AVD; sin diálogo de confirmación (UX call opcional) |
+| [CU-04](CU-04-solicitar-borrado-cuenta.md) | Solicitar borrado de cuenta (ARCO derecho al olvido) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** — workaround vía email + curl. P2 |
+| [CU-05](CU-05-exportar-datos-personales.md) | Exportar datos personales (ARCO derecho de acceso) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** — workaround vía email + curl. P2 |
 | [CU-06](CU-06-crear-finca.md) | Crear finca con cultivo + área + coordenadas opcionales | MUST | 🟡 pendiente | | |
 | [CU-07](CU-07-ver-lista-fincas.md) | Ver lista de fincas en dashboard | MUST | 🟡 pendiente | | |
 | [CU-08](CU-08-ver-detalle-editar-finca.md) | Ver detalle de finca + editar | MUST | 🟡 pendiente | | |

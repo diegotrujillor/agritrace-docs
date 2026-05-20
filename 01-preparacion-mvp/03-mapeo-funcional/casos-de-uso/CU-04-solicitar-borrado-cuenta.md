@@ -45,11 +45,15 @@
 - **Given** Diego cancela el diálogo, **When** no toca confirmar, **Then** no hay request HTTP ni cambio de UI.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado> — usar al final de cada sesión de QA para limpiar el ambiente.
+- **Estado:** ⚠️ pasa con notas — **falta UI mobile**
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.3
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > **Backend:** endpoint `DELETE /v1/users/me` funciona — ejercitado durante cleanup de CU-01 y CU-02. Cascada en `users` (deleted), `producers` (cascade), `farms`/`plots`/`activities`/`alerts` (cascade), `deletion_requests` (status=completed con `requested_at` + `completed_at`). Verificado en DB de prod.
+  > **Mobile:** **NO existe UI para que el productor solicite borrado desde la app** (grep en `lib/` por "eliminar cuenta" / "deleteMe" / "/users/me DELETE" no encontró nada).
+  > **Workaround MVP:** el productor solicita borrado escribiendo a `diegotrujillor@gmail.com` (canal documentado en la política de privacidad). Diego ejecuta `curl -X DELETE` manualmente.
+  > **Bug:** P2 — añadir botón "Eliminar mi cuenta" en perfil/dashboard antes de Production. No bloquea Sprint 5 (compliance Ley 1581 satisfecho por canal email manual).
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG (endpoint existe desde Sprint 1; UX puede no estar pulido).

@@ -40,11 +40,14 @@
 - **Given** no hay conexión, **When** Diego cierra sesión, **Then** los tokens locales se borran y la app va a Bienvenida (con warning opcional).
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ✅ pasa
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.3 (release APK)
+- **Entorno:** emulador Android 14, Pixel 7 Pro AVD, arm64-v8a; backend v0.4.1. Tras CU-02 con sesión activa.
+- **Notas de Diego (auto):**
+  > Dashboard → tap ícono "Cerrar sesión" (top-right de la AppBar) → navegó a Pantalla 1 (Welcome) inmediatamente.
+  > No se observó diálogo de confirmación intermedio — logout directo. Si se desea confirmación, pendiente UX call (no bloquea MVP).
+  > Tokens borrados de `FlutterSecureStorage` (validado indirectamente: tras logout, el router redirigió a Welcome, confirmando estado `AuthUnauthenticated`).
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

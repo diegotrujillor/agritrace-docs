@@ -44,11 +44,14 @@
 - **Given** Diego está autenticado y cierra la app, **When** la vuelve a abrir, **Then** entra directo a Dashboard sin re-loguearse (auto-refresh del access token vía `_AuthInterceptor`).
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ✅ pasa
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.3 (release APK)
+- **Entorno:** emulador Android 14, Pixel 7 Pro AVD, arm64-v8a; backend v0.4.1. Ejecutado por Claude vía `adb`.
+- **Notas de Diego (auto):**
+  > Welcome → tap "Iniciar sesión" → Login screen renderiza (Email + Contraseña + botón Iniciar sesión + link "¿No tienes cuenta? Regístrate").
+  > Email + password aceptados; submit → `POST /v1/auth/login` 200 → tokens guardados → navegó a Dashboard (Pantalla 4 - empty state "No tienes fincas aún" + CTA "Registrar finca").
+  > AppBar muestra acciones: bell (alertas) + logout (cerrar sesión). Tiempo total < 1 s.
 
 ## Bugs históricos relevantes
 - **v1.3.2** — permiso `INTERNET` faltaba: login mostraba "Sin conexión" con red activa. Confirmar que **no** regresa.
