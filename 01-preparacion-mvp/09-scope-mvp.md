@@ -103,7 +103,7 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 ### Criterio Producto
 
-- [ ] Field test con 5 agricultores por 2 semanas (actividades reales registradas offline + sync)
+- [ ] Field test con 5 agricultores por **30 días (1 mes)** (actividades reales registradas offline + sync). Coherente con `10-comercial-gtm/07-contrato-feedback-piloto.md` (piloto Mes 1).
 - [ ] UX testing: pantalla de activity log es tan simple como cuaderno (SUS score > 60)
 - [ ] Alerts funcionales (SMS o in-app)
 - [ ] Offline works for 14+ days sin conexión
@@ -117,15 +117,15 @@ El MVP valida el problema (agricultores necesitan mejor registro de actividades)
 
 ## 7. Timeline
 
-**6 semanas (MVP aún aplicable):**
+**9 semanas (Sprint 5 = 30 días de campo):**
 
 | Semana | Hito |
 |--------|------|
 | 1-2 | Sprints 1-2: Auth, farm/plot management, basic activity log. Flutter screens 1-8. |
 | 3 | Sprint 3: Activity timeline (pantalla 9) + register activity (pantalla 10). WatermelonDB integration. |
 | 4 | Sprint 4: Sync engine, offline indicator, alerts, SMS fallback (if time). |
-| 5 | Sprint 5: Field test con 5 agricultores. Bug fixes. — runbook: [`07-gestion-de-proyectos/01-sprint-5-pilot-runbook.md`](07-gestion-de-proyectos/01-sprint-5-pilot-runbook.md); hoja de onboarding al tester: [`07-gestion-de-proyectos/02-tester-onboarding-es-CO.md`](07-gestion-de-proyectos/02-tester-onboarding-es-CO.md). |
-| 6 | Sprint 6: Final refinement, beta release. |
+| 5-8 | **Sprint 5: Field test con 5 agricultores (30 días / 1 mes). Bug fixes.** — runbook: [`07-gestion-de-proyectos/01-sprint-5-pilot-runbook.md`](07-gestion-de-proyectos/01-sprint-5-pilot-runbook.md); hoja de onboarding al tester: [`07-gestion-de-proyectos/02-tester-onboarding-es-CO.md`](07-gestion-de-proyectos/02-tester-onboarding-es-CO.md). |
+| 9 | Sprint 6: Final refinement, beta release. |
 
 ---
 

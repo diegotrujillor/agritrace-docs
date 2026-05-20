@@ -173,7 +173,7 @@
 
 | Actividad | Enfoque | Resultado esperado |
 |-----------|---------|-------------------|
-| Field test con 5 agricultores | Pantallas 6-10 en uso real | 10+ actividades registradas/agricultor en 2 semanas |
+| Field test con 5 agricultores | Pantallas 6-10 en uso real | 10+ actividades registradas/agricultor en 30 días (1 mes) |
 | Corrección de bugs | Todas las pantallas | Cero crashes, tiempo de carga < 5 seg offline |
 | Checklist de lanzamiento | Todo el sistema | API keys, migraciones DB, documentación de despliegue lista |
 
@@ -186,7 +186,7 @@
 | Métrica | Objetivo | Criticidad |
 |---------|----------|------------|
 | Agricultores activos en field test | 5 agricultores | MUST |
-| Actividades registradas | 10+ por agricultor en 2 semanas | MUST |
+| Actividades registradas | 10+ por agricultor en 30 días (1 mes) | MUST |
 | Resiliencia offline | App funciona 14+ días sin conexión, 0 pérdida de datos | MUST |
 | UX registro de actividades (SUS score) | > 60 | MUST |
 | Sincronización correcta | 100% de registros sincronizados, 0 pérdidas | MUST |

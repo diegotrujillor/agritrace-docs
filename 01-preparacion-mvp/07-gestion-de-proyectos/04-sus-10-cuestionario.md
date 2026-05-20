@@ -4,7 +4,7 @@ System Usability Scale (J. Brooke, 1996). 10 afirmaciones, escala
 Likert 1–5. Estándar para evaluar usabilidad; meta del MVP es **>60**
 (`09-scope-mvp.md §6`).
 
-> Copiar este contenido a Google Forms / Tally / Typeform al Día 14 y
+> Copiar este contenido a Google Forms / Tally / Typeform al Día 30 y
 > enviar el link por WhatsApp (plantilla §7 en
 > [`03-comms-templates-es-CO.md`](03-comms-templates-es-CO.md)).
 
@@ -13,7 +13,7 @@ Likert 1–5. Estándar para evaluar usabilidad; meta del MVP es **>60**
 ## Instrucciones para el tester (mostrar al inicio del form)
 
 > Responde con qué tan de acuerdo estás con cada frase, pensando en
-> cómo te fue usando AgriTrace estos 14 días.
+> cómo te fue usando AgriTrace estos 30 días.
 >
 > **1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo**
 >
