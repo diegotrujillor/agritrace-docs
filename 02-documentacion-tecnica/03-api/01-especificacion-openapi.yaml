@@ -1,3 +1,20 @@
+# =====================================================================
+# ⚠️  DOCUMENTO HISTÓRICO / DE PLANEACIÓN — NO ES LA SPEC CANÓNICA
+# =====================================================================
+# La especificación VIVA de la API está en el repo agritrace-backend:
+#
+#   https://github.com/diegotrujillor/agritrace-backend/blob/main/docs/openapi.yaml
+#
+# Refleja exactamente las rutas implementadas y se valida en CI con
+# `npx @redocly/cli lint`. Cualquier consulta sobre el contrato real de
+# la API debe hacerse contra ese archivo.
+#
+# Este archivo se conserva como referencia de la planeación temprana
+# del MVP (Mayo 2026); la versión, el contacto, la licencia y varios
+# endpoints difieren de la realidad.
+#
+# Ver README.md para detalles + cómo renderizar la spec.
+# =====================================================================
 openapi: 3.0.0
 info:
   title: AgriTrace API
