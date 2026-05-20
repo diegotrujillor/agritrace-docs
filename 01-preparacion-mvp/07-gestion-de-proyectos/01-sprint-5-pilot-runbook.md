@@ -1,8 +1,12 @@
 # Sprint 5 — Runbook del piloto en campo
 
 **Fecha de inicio**: 2026-05-19  
-**Duración nominal**: 14 días continuos (mínimo) — ver
-[`09-scope-mvp.md`](../09-scope-mvp.md).  
+**Duración nominal**: **30 días (1 mes)** — coherente con el contrato
+comercial [`10-comercial-gtm/07-contrato-feedback-piloto.md`](../10-comercial-gtm/07-contrato-feedback-piloto.md)
+(piloto Mes 1) y `09-scope-mvp.md §6`.
+> El piso técnico de offline (14+ días) sigue vigente como criterio
+> arquitectural; el piloto de 30 días provee margen extra para
+> evidenciarlo.  
 **Objetivo del sprint** (per
 [`09-scope-mvp.md §7`](../09-scope-mvp.md#7-timeline)): *"Field test con
 5 agricultores. Bug fixes."*
@@ -75,15 +79,19 @@ hotfix, cierre): [`03-comms-templates-es-CO.md`](03-comms-templates-es-CO.md).
 
 ---
 
-## 4. Ritmo del sprint (14 días)
+## 4. Ritmo del sprint (30 días)
 
 | Día | Acción de Diego |
 |---|---|
 | 0 | Onboarding 1-a-1 con cada tester (presencial o video) — instalar, registrar, crear una finca + un lote. ≤45 min cada uno. |
-| 1-7 | Pulso diario en WhatsApp: "¿pudo abrir hoy? ¿algo raro?". Triage de bugs (label + severidad). Hotfixes críticos vía tags `vX.Y.Z` → re-distribuir APK. |
-| 7 | Check-in semanal: revisar métricas (§6), preguntar 1 cosa estructurada (ej. "¿cuál pantalla le costó más?"). |
-| 8-13 | Continuar pulso + atender feedback acumulado. Frenar features nuevos; sólo bug fixes. |
-| 14 | Cierre: enviar SUS-10 vía Google Form, calcular métricas finales, decidir Go/No-Go para Sprint 6 (release beta). |
+| 1-7 (Sem. 1) | Pulso diario en WhatsApp. Triage de bugs (label + severidad). Hotfixes críticos vía tags `vX.Y.Z` → re-distribuir APK. |
+| 7 | Check-in semanal #1: revisar métricas (§6), preguntar 1 cosa estructurada. |
+| 8-14 (Sem. 2) | Pulso diario. Atender backlog de feedback. Frenar features nuevos. |
+| 14 | Check-in semanal #2 (mitad del piloto): comparar evolución con Sem. 1, confirmar ≥14 días offline observado. |
+| 15-21 (Sem. 3) | Pulso diario. Sólo bug fixes; cero scope creep. |
+| 21 | Check-in semanal #3: medir SUS-lite informal (1 pregunta), validar Go-tendency. |
+| 22-29 (Sem. 4) | Cierre progresivo. Preparar Google Form SUS-10. |
+| 30 | Cierre: enviar SUS-10, calcular métricas finales (§6), decidir Go/No-Go para Sprint 6 (release beta). |
 
 ---
 
@@ -107,7 +115,7 @@ Espejo de [`09-scope-mvp.md §6`](../09-scope-mvp.md):
 
 | Métrica | Meta MVP |
 |---|---|
-| Agricultores activos al día 14 | ≥5 |
+| Agricultores activos al día 30 | ≥5 |
 | Actividades registradas / día (mediana de los testers) | ≥10 |
 | Capacidad offline observada en campo | ≥14 días continuos sin crash |
 | Tasa de éxito de sync (lectura logs `/v1/sync`) | 100 % |
@@ -119,7 +127,7 @@ Fuentes:
 - Agricultores activos / actividades: consulta SQL a producción
   (ver [`agritrace-backend` migraciones](https://github.com/diegotrujillor/agritrace-backend/tree/main/src/db/migrations)).
 - Sync: filtrar `audit_logs.path LIKE '/v1/sync%'` y agrupar por `status_code`.
-- SUS-10: Google Form al día 14. Preguntas + scoring + plantilla
+- SUS-10: Google Form al día 30. Preguntas + scoring + plantilla
   Sheets en [`04-sus-10-cuestionario.md`](04-sus-10-cuestionario.md).
 
 ### Plantilla SQL — agricultores activos
@@ -134,7 +142,7 @@ LEFT JOIN producers p  ON p.user_id    = u.id
 LEFT JOIN farms f      ON f.producer_id = p.id
 LEFT JOIN plots pl     ON pl.farm_id    = f.id
 LEFT JOIN activities a ON a.plot_id     = pl.id
-WHERE u.created_at > NOW() - INTERVAL '14 days'
+WHERE u.created_at > NOW() - INTERVAL '30 days'
 GROUP BY u.email
 ORDER BY activities_count DESC;
 ```
@@ -144,14 +152,14 @@ ORDER BY activities_count DESC;
 ## 7. Criterios de salida (Go / No-Go a Sprint 6)
 
 **Go** (proceder a beta release / Play Production prep):
-- ≥5 agricultores activos al día 14.
+- ≥5 agricultores activos al día 30.
 - 0 P0 / ≤2 P1 abiertos.
 - Sync success rate 100 %.
 - SUS-10 promedio >60.
 
 **No-Go** (extender Sprint 5 o pivotar):
 - <3 agricultores activos → problema de adopción, no de producto.
-- ≥1 P0 sin resolver al día 14 → estabilidad insuficiente.
+- ≥1 P0 sin resolver al día 30 → estabilidad insuficiente.
 - SUS <50 → problema de UX que requiere rediseño antes de beta.
 
 ---

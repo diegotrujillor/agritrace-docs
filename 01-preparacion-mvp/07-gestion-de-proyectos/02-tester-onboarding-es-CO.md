@@ -36,7 +36,7 @@ avisos que vas a ver en Android (cómo pasarlos). Toma ~5 minutos.
 
 ---
 
-## 3. ¿Qué hacer durante el piloto? (14 días)
+## 3. ¿Qué hacer durante el piloto? (30 días / 1 mes)
 
 Sólo **3 cosas**, y todas las puedes hacer **sin internet**:
 
@@ -89,7 +89,7 @@ Lo formal (opcional, si prefieres):
 
 ---
 
-## 7. Al cerrar el piloto (día 14)
+## 7. Al cerrar el piloto (día 30)
 
 Te enviamos **una sola encuesta corta** (10 preguntas, 5 min) para
 saber qué tan fácil te pareció usar la app. Eso decide los próximos

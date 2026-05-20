@@ -13,7 +13,7 @@ Reemplazar lo marcado entre `[ ]`.
 > [vereda/cooperativa] una app móvil para llevar finca, lotes y
 > actividades (siembra, riego, cosecha) — funciona sin internet.
 >
-> ¿Te interesa probarla 14 días? Solo necesitas un celular Android.
+> ¿Te interesa probarla 1 mes (30 días)? Solo necesitas un celular Android.
 > No tiene costo. Lo que más necesito es tu opinión real.
 >
 > Si te animas dime y te paso el link de instalación + nos vemos 30
@@ -41,7 +41,7 @@ Reemplazar lo marcado entre `[ ]`.
 
 > ¡Bienvenido al grupo del piloto AgriTrace 🌱!
 >
-> Aquí vamos a estar 14 días. Reglas simples:
+> Aquí vamos a estar 1 mes (30 días). Reglas simples:
 > • Cuenta cualquier cosa rara que veas en la app — captura de
 >   pantalla si puedes.
 > • Si la app se cierra sola, avisa: es importante.
@@ -70,7 +70,13 @@ Reemplazar lo marcado entre `[ ]`.
 
 ---
 
-## 5. Check-in semanal (Día 7)
+## 5. Check-ins semanales (Días 7, 14, 21)
+
+> Reutilizar la misma plantilla cada semana cambiando "1 semana" por
+> "2 semanas" / "3 semanas". El check-in del Día 21 enfoca señales de
+> Go/No-Go anticipado.
+
+### Día 7 — primer check-in
 
 > Llevamos 1 semana 🎉
 > 3 preguntas cortas (responde con un número o una frase):
@@ -98,9 +104,9 @@ Reemplazar lo marcado entre `[ ]`.
 
 ---
 
-## 7. Cierre del piloto + encuesta SUS (Día 14)
+## 7. Cierre del piloto + encuesta SUS (Día 30)
 
-> ¡Llegamos al día 14! Gracias por aguantar el piloto 🙌
+> ¡Llegamos al día 30! Gracias por aguantar el piloto 🙌
 >
 > Última cosa, 5 minutos máximo: 10 preguntas sobre qué tan fácil te
 > pareció usar la app. Es anónimo y nos dice si esto ya sirve o
@@ -140,7 +146,7 @@ Captura: [adjuntar si la mandó]
 
 ---
 
-## 9. Decisión Go/No-Go a Sprint 6 (Día 15)
+## 9. Decisión Go/No-Go a Sprint 6 (Día 31)
 
 **Si Go** (al grupo):
 
