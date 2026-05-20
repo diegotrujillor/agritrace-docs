@@ -58,16 +58,16 @@ Cada CU cumple tres funciones simultáneas:
 | [CU-09](CU-09-eliminar-finca.md) | Eliminar finca (cascada visible: los lotes desaparecen) | MUST | ⚠️ pasa con notas | 2026-05-20 | Backend OK; **mobile UI ausente** (no botón en detail). P2 |
 | [CU-10](CU-10-crear-lote.md) | Crear lote dentro de una finca | MUST | ✅ pasa (v1.3.5) | 2026-05-20 | Confirmado: form → lote visible en detail. Nav fix v1.3.4 aplica |
 | [CU-11](CU-11-ver-detalle-lote-timeline.md) | Ver detalle de lote + timeline de actividades | MUST | ⚠️ pasa parcial | 2026-05-20 | Lista en finca-detail OK; lote-detail mostró 401 (token refresh). P3 |
-| [CU-12](CU-12-editar-lote-status.md) | Editar lote (cambio de status planning→growing→ready→harvested) | MUST | 🟡 pendiente | | |
-| [CU-13](CU-13-eliminar-lote.md) | Eliminar lote (cascada: las actividades desaparecen) | MUST | 🟡 pendiente | | |
-| [CU-14](CU-14-registrar-actividad.md) | Registrar actividad (los 6 tipos) | MUST | 🟡 pendiente | | |
-| [CU-15](CU-15-ver-timeline-actividades.md) | Ver timeline ordenado por fecha | MUST | 🟡 pendiente | | |
-| [CU-16](CU-16-editar-actividad.md) | Editar actividad (fecha, descripción, foto) | MUST | 🟡 pendiente | | |
-| [CU-17](CU-17-eliminar-actividad.md) | Eliminar actividad | MUST | 🟡 pendiente | | |
-| [CU-18](CU-18-crear-recordatorio-manual.md) | Crear recordatorio manual con scheduled_for | SHOULD | 🟡 pendiente | | |
-| [CU-19](CU-19-chequear-clima-lote.md) | Chequear clima del lote → genera alerta weather si umbral cruzado | SHOULD | 🟡 pendiente | | |
-| [CU-20](CU-20-listar-alertas-sync-badge.md) | Listar alertas + sync status badge | SHOULD | 🟡 pendiente | | |
-| [CU-21](CU-21-descartar-eliminar-alerta.md) | Descartar/eliminar alerta | SHOULD | 🟡 pendiente | | |
+| [CU-12](CU-12-editar-lote-status.md) | Editar lote (cambio de status planning→growing→ready→harvested) | MUST | ❌ FALLA | 2026-05-20 | Backend + service OK; **mobile UI ausente** (no botón "Editar" en plot-detail). P1 |
+| [CU-13](CU-13-eliminar-lote.md) | Eliminar lote (cascada: las actividades desaparecen) | MUST | ❌ FALLA | 2026-05-20 | Backend `DELETE /v1/plots/:id` + service OK; **mobile UI ausente**. P2 |
+| [CU-14](CU-14-registrar-actividad.md) | Registrar actividad (los 6 tipos) | MUST | ⚠️ pasa con notas | 2026-05-20 | **Bug P1** `DateTime.now().toIso8601String()` sin `Z` → Zod 400. Fix v1.3.6 (curl + 200 tests). Retest E2E bloqueado por bug auth-refresh ([[CU-11]]) |
+| [CU-15](CU-15-ver-timeline-actividades.md) | Ver timeline ordenado por fecha | MUST | ⚠️ pasa con notas | 2026-05-20 | Pantalla y orden DESC OK. EmptyState OK. E2E con actividades reales pendiente al desbloquear [[CU-14]] |
+| [CU-16](CU-16-editar-actividad.md) | Editar actividad (fecha, descripción, foto) | MUST | ❌ FALLA | 2026-05-20 | Backend + service OK; **mobile UI ausente**. Decisión producto: editable vs nota correctiva |
+| [CU-17](CU-17-eliminar-actividad.md) | Eliminar actividad | MUST | ❌ FALLA | 2026-05-20 | Backend + service OK; **mobile UI ausente**. Alineado con [[CU-16]] |
+| [CU-18](CU-18-crear-recordatorio-manual.md) | Crear recordatorio manual con scheduled_for | SHOULD | ⚠️ pasa con notas | 2026-05-20 | **Mismo bug ISO UTC** que [[CU-14]]. Fix v1.3.6 cubre `scheduledFor`. E2E pendiente |
+| [CU-19](CU-19-chequear-clima-lote.md) | Chequear clima del lote → genera alerta weather si umbral cruzado | SHOULD | ❌ FALLA | 2026-05-20 | Backend `WEATHER_PROVIDER=stub` OK; **mobile no expone trigger manual** ni cron activo |
+| [CU-20](CU-20-listar-alertas-sync-badge.md) | Listar alertas + sync status badge | SHOULD | ⚠️ pasa con notas | 2026-05-20 | Pantalla 13 + `SyncStatusBadge` OK. E2E con alertas reales bloqueado por [[CU-18]] |
+| [CU-21](CU-21-descartar-eliminar-alerta.md) | Descartar/eliminar alerta | SHOULD | ⚠️ pasa con notas | 2026-05-20 | UI dismiss/delete existe. E2E bloqueado por [[CU-18]]/[[CU-19]] |
 | [CU-22](CU-22-trabajar-offline.md) | Trabajar offline sin pérdida (registros locales) | MUST | 🟡 pendiente | | |
 | [CU-23](CU-23-reconectar-sincronizar.md) | Reconectar y sincronizar (push + pull) | MUST | 🟡 pendiente | | |
 | [CU-24](CU-24-resolucion-conflicto-lww.md) | Resolución de conflicto LWW (dos clientes editan misma fila offline) | SHOULD | 🟡 pendiente | | |

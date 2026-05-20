@@ -42,11 +42,13 @@
 - **Given** sin conexión, **When** Diego edita, **Then** el item queda con `_status='updated'` y se sincroniza al reconectar (LWW por `updated_at`).
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ❌ FALLA — UI ausente
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.6 (relevamiento de código, no alcanzable en emulador)
+- **Notas de Diego (auto):**
+  > Survey confirma: backend `PUT /v1/activities/{id}` + `ActivityService.update` + `activitiesProvider.update` testeados, **pero `activity_timeline_screen` y la pantalla de detalle de actividad no exponen botón "Editar"**. No existe `activity_edit_screen` ni ruta `/activities/:id/edit`.
+  > **Impacto MVP:** P2 — para trazabilidad inmutable es defendible no permitir edición. Decisión de producto: ¿permitir corrección o forzar `delete+create`? Por ahora bloqueado.
+  > **Acción:** decidir UX (editar vs nota correctiva) antes del pilot. Si "editar", reusar form de [[CU-14]] con prefill.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

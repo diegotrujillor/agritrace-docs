@@ -45,11 +45,15 @@
 - **Given** Diego cancela el diálogo de eliminar, **When** no toca confirmar, **Then** no hay cambio.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ⚠️ pasa con notas — UI existe; retest E2E pendiente al desbloquear [[CU-18]]
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.6
+- **Notas de Diego (auto):**
+  > Survey confirma: backend `POST /v1/alerts/{id}/dismiss` + `DELETE /v1/alerts/{id}` + `AlertService.dismiss/delete` + `AlertsNotifier` testeados. `alerts_screen.dart` expone acción "Descartar" / "Eliminar" por ítem (swipe o long-press).
+  > **Pendiente E2E:** una vez exista al menos 1 alerta en lista vía [[CU-18]] o [[CU-19]], probar:
+  >   1. Descartar → ítem desaparece del feed activo.
+  >   2. Eliminar → ítem desaparece definitivo, no vuelve tras pull-to-refresh.
+  > **Acción:** marcar ✅ pasa una vez completado E2E con v1.3.6.
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG.

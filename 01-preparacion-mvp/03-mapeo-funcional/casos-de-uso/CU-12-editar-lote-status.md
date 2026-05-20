@@ -40,11 +40,13 @@
 - **Given** Diego intenta editar lote ajeno, **When** envía `PUT`, **Then** recibe 403.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ❌ FALLA — UI ausente
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5 (relevamiento de código, no se reprodujo en emulador porque la acción no es alcanzable)
+- **Notas de Diego (auto):**
+  > Survey de código confirma: backend `PUT /v1/plots/{id}` + `PlotService.update` + `plotsProvider` existen y están testeados, **pero la pantalla de detalle del lote (`plot_detail_screen.dart`) no expone botón "Editar"** y no hay `plot_edit_screen` ni ruta `/plots/:id/edit` registradas en `app_router.dart`.
+  > **Impacto MVP:** P1 — Diego no puede corregir estado/área/cultivo sin borrar+recrear (también bloqueado, ver [[CU-13]]).
+  > **Acción:** crear `plot_edit_screen.dart` reusando el form de `plot_create_screen` + ruta + botón "Editar" en plot-detail. Issue a abrir antes del pilot.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

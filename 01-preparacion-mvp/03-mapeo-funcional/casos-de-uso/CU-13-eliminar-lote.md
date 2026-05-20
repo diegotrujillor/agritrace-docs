@@ -41,11 +41,13 @@
 - **Given** Diego cancela el diálogo, **When** no toca confirmar, **Then** no hay request HTTP ni cambio en DB.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ❌ FALLA — UI ausente
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.5 (relevamiento de código, no alcanzable en emulador)
+- **Notas de Diego (auto):**
+  > Survey de código confirma: backend `DELETE /v1/plots/{id}` + `PlotService.delete` + `plotsProvider` testeados, **pero `plot_detail_screen.dart` no expone botón "Eliminar"** ni hay diálogo de confirmación.
+  > **Impacto MVP:** P2 — no es bloqueante para validar trazabilidad, pero Diego no puede "limpiar" lotes creados por error. Workaround: dejar el lote y filtrar visualmente.
+  > **Acción:** agregar botón "Eliminar" + `AlertDialog` de confirmación en `plot_detail_screen` antes del pilot. Issue a abrir.
 
 ## Bugs históricos relevantes
 - **v0.3.0 backend** — endpoint `DELETE /v1/plots/:id` añadido (cerró el gap con `PlotsNotifier.deletePlot` del cliente móvil). Confirmar que cliente y backend están alineados. Ver backend CHANGELOG entrada `2026-05-20 — feat(plots delete) + docs(OpenAPI 3.0)`.

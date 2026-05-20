@@ -41,11 +41,13 @@
 - **Given** el stub devuelve clima estable, **When** Diego consulta, **Then** **no** se crea alerta y la UI lo informa explícitamente.
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado> — confirmar qué `WEATHER_PROVIDER` está activo en prod antes de probar.
+- **Estado:** ❌ FALLA — UI manual ausente (provider stub en backend)
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.6 (relevamiento de código)
+- **Notas de Diego (auto):**
+  > Survey confirma: backend `POST /v1/alerts/weather/check` existe, `WeatherService.checkLote` existe, `WEATHER_PROVIDER=stub` configurado en prod (genera alerta sintética). **No hay botón en mobile que dispare el check manual**, ni cron ni reload automático al abrir Pantalla 13 (Alertas).
+  > **Impacto MVP:** P2 — alerta de clima es uno de los value-props pero el flujo automático no está activo en el cliente. Workaround: trigger vía curl/Postman manualmente para demo.
+  > **Acción:** agregar botón "Actualizar clima" en `alerts_screen` que llame `alertService.checkWeather(lotIds)` y haga refresh de la lista, **o** configurar cron en backend que corra cada N horas.
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG. (Provider real pendiente de configurar — el MVP usa `stub`.)
