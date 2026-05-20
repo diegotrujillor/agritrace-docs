@@ -45,19 +45,15 @@
 - **Given** no hay conexión, **When** Diego guarda, **Then** la finca queda en WatermelonDB local con `_status='created'` y la UI igualmente navega a Pantalla 7.
 
 ## Estado de prueba
-- **Estado:** ❌ FALLA — **P1 BLOQUEADOR**
+- **Estado:** ✅ pasa (en v1.3.4) — previamente ❌ P1 en v1.3.3
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.3 (release APK)
+- **Versión APK probada:** **1.3.4** (release APK con fix)
 - **Entorno:** emulador Android 14, Pixel 7 Pro AVD, arm64-v8a; backend v0.4.1.
 - **Notas de Diego (auto):**
-  > **Síntoma:** llenar form (Nombre "Finca QA", cultivo "cacao", área 5) + tap **Registrar finca** → muestra banner "Ocurrió un error, intenta de nuevo" y **permanece en el form**.
-  > **Realidad:** `POST /v1/farms` 201 y la fila SÍ se crea en DB. Verificado por SSH + `SELECT * FROM farms` — fila presente con campos correctos. 3 intentos consecutivos crearon 3 filas duplicadas en DB.
-  > **Pase de curl con payload idéntico desde laptop:** 201 y JSON válido devuelto. Backend OK.
-  > **Conclusión:** bug en el cliente — la excepción se lanza DESPUÉS del 201, en el parseo de la respuesta o en el `_refresh()` que sigue. No es un DioException (logcat no muestra rastro). Cae al fallback genérico de `parseApiError`. El `_submit` catch silenciosamente swallow del error sin print/logger → invisible en logcat.
-  > **Hipótesis principal:** algo en `Farm.fromJson` o en `unwrapEnvelope` truena con el JSON real. Posiblemente `address: null` cast a `String?`, `areaHectares: 5` (int) → toDoubleOrNull, o un campo nuevo (`producerId`, `updatedAt`) que el modelo no maneja. Necesita repro con `flutter run --debug` y `debugPrint(error.toString())` en el catch.
-  > **Impacto Sprint 5:** **BLOQUEA TODA LA CADENA DE FINCA/LOTE/ACTIVIDAD** — todo flow CRUD que use `farmsProvider.create` / `update` / `delete` muestra error genérico al usuario aunque el backend procese correctamente. Productores creerán que la app no funciona. **No se puede arrancar piloto con esto vivo.**
-  > **Fix prioritario:** añadir `debugPrint('FARM CREATE ERROR: $error\n$stacktrace')` en `lib/screens/farms/farm_form_screen.dart:91` catch, build APK debug, repetir el flow, capturar excepción exacta. Luego corregir.
-  > **Mismo patrón probable en:** `lib/providers/{plots,activities,alerts}_provider.dart` create/update/delete — todos usan el mismo `unwrapOne` + Model.fromJson. Riesgo de fallar también CU-10 (crear lote), CU-14 (registrar actividad), CU-18 (crear alerta).
+  > **Re-test post-fix v1.3.4:** llené el form (Nombre "Finca v134", cultivo "cacao", área 7) + tap **Registrar finca** → form se cerró, navegué a Dashboard, finca aparece en la lista con tarjeta "Finca v134 / cacao · 7 ha". **Sin banner de error.** FAB "+" disponible para siguiente.
+  > **Historial del bug (v1.3.3):** los FAB "+" usaban `context.go(form)` (REPLACE en go_router 14), dejando la pila vacía. Form llamaba `context.pop()` tras 201 → `GoError('There is nothing to pop')` atrapado silenciosamente → banner genérico. **Backend SÍ creaba la fila** — 3 taps = 3 duplicados.
+  > **Fix v1.3.4:** 6 sitios cambiados `context.go` → `context.push` (dashboard FAB, farm-detail edit + FAB, plot-detail FAB, activity-timeline FAB, alerts FAB). Test de regresión `form_nav_regression_test.dart` ancla el patrón push-then-pop para los 4 CRUD chains.
+  > **Cobertura del fix:** alivia CU-06 (crear finca) y por el mismo patrón debería arreglar CU-10 (crear lote), CU-12 (editar lote), CU-14 (registrar actividad), CU-18 (crear alerta). Re-testear cada uno.
 
 ## Bugs históricos relevantes
 - Ninguno específico a este flujo. (Validar UX del botón "Obtener ubicación" — el v1.3.3 no menciona fixes en esta pantalla.)

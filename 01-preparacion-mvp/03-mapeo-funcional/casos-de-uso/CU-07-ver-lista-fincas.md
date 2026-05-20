@@ -44,11 +44,13 @@
 - **Given** toca una tarjeta de finca, **When** la app responde, **Then** navega a `Routes.farmDetail(<id>)` (Pantalla 7).
 
 ## Estado de prueba
-- **Estado:** 🟡 pendiente
-- **Fecha de prueba:**
-- **Versión APK probada:**
-- **Notas de Diego:**
-  > <espacio para anotar lo observado>
+- **Estado:** ✅ pasa (en v1.3.4)
+- **Fecha de prueba:** 2026-05-20
+- **Versión APK probada:** 1.3.4 (release APK)
+- **Entorno:** emulador AVD + backend v0.4.1.
+- **Notas de Diego (auto):**
+  > Tras crear la finca en CU-06, el dashboard renderiza la tarjeta de la finca: "Finca v134 / cacao · 7 ha" con icono de tractor y chevron derecho. FAB "+" para agregar otra. AppBar muestra "Alertas" + "Cerrar sesión".
+  > El estado vacío previo ("No tienes fincas aún" + CTA "Registra tu primera finca para comenzar") confirma que la lista se rinde dinámicamente.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para esta pantalla en CHANGELOG.
