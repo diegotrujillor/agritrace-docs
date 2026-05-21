@@ -40,16 +40,12 @@
 - **Given** Diego toca `SyncStatusBadge`, **When** hay cambios pendientes, **Then** dispara sync (CU-23) y muestra "Sincronizando…".
 
 ## Estado de prueba
-- **Estado:** ⚠️ pasa con notas — pantalla y badge existen; retest E2E pendiente al desbloquear [[CU-18]]
+- **Estado:** ✅ pasa (v1.4.1) — retest E2E en emulador OK
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.6
+- **Versión APK probada:** 1.4.1
 - **Notas de Diego (auto):**
   > Survey + observación en CU-04 confirman: ícono campana (🔔) presente en AppBar del dashboard, navega a `Pantalla 13 — Alertas`. `alerts_screen.dart` + `alertsProvider` (`AlertsNotifier.build()` → `GET /v1/alerts`) implementados. `SyncStatusBadge` (badge de "Sincronizado" / "Pendiente") agregado en Sprint 4 (CHANGELOG `[1.2.0]`).
-  > **Pendiente E2E:** una vez [[CU-18]] cree un recordatorio en v1.3.6, abrir esta pantalla y confirmar:
-  >   1. El recordatorio aparece en la lista.
-  >   2. `SyncStatusBadge` muestra estado coherente con el último sync.
-  >   3. EmptyState correcto si la lista está vacía.
-  > **Acción:** marcar ✅ pasa una vez completado E2E.
+  > **Retest emulador 2026-05-20 (v1.4.1):** ✅ — pantalla rinde: AppBar con acción "Actualizar clima" ([[CU-19]]), badge "Tocar para sincronizar", EmptyState "Sin alertas / Crea un recordatorio para tus tareas de cultivo", FAB "Recordatorio". Tras crear el recordatorio de [[CU-18]] aparece en la lista; tras eliminarlo ([[CU-21]]) vuelve al EmptyState.
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG. (`SyncStatusBadge` agregado en Sprint 4 — ver mobile CHANGELOG entrada `[1.2.0] - Sprint 4`.)

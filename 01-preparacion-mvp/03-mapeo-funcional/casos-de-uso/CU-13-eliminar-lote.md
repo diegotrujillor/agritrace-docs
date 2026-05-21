@@ -47,7 +47,7 @@
 - **Notas de Diego (auto):**
   > Shipping: acción "Eliminar lote" en `PopupMenuButton` de `plot_detail_screen` + `AlertDialog` "¿Eliminar lote?" con copy de cascada ("las actividades asociadas también se eliminarán") + redirect a `farmDetail` tras confirmar. Commit `3e0ac0e` en main.
   > **Tests añadidos:** `test/widget/plot_detail_delete_test.dart` (confirm + cancel paths).
-  > **Retest E2E:** pendiente al desbloquear bug auth-refresh ([[CU-11]]).
+  > **Retest E2E emulador 2026-05-20 (v1.4.1):** ✅ — overflow → "Eliminar" abre `AlertDialog` "¿Eliminar lote?" con copy de cascada. UI verificada (no se confirmó el borrado para no perder el lote de prueba del resto del barrido). Bug auth-refresh ([[CU-11]]) ya cerrado.
 
 ## Bugs históricos relevantes
 - **v0.3.0 backend** — endpoint `DELETE /v1/plots/:id` añadido (cerró el gap con `PlotsNotifier.deletePlot` del cliente móvil). Confirmar que cliente y backend están alineados. Ver backend CHANGELOG entrada `2026-05-20 — feat(plots delete) + docs(OpenAPI 3.0)`.

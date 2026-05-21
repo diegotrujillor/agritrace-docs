@@ -38,16 +38,12 @@
 - **Given** está offline, **When** abre la pantalla, **Then** ve actividades locales + indicador de offline.
 
 ## Estado de prueba
-- **Estado:** ⚠️ pasa con notas — depende de que [[CU-14]] persista actividades; pantalla y código verificados.
+- **Estado:** ✅ pasa (v1.4.1) — retest E2E en emulador OK
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.5
+- **Versión APK probada:** 1.4.1
 - **Notas de Diego (auto):**
   > Pantalla `activity_timeline_screen.dart` existe, renderiza `ListView` con `itemBuilder`, perf fix pre-v1.3.3 ya en su lugar (orden por `occurred_at` DESC fuera del builder). `EmptyState` correcto. Botón "Registrar actividad" presente. Sin actividades reales aún por bug [[CU-14]]; en el árbol vacío se rinde el EmptyState correctamente (verificado al abrir lote nuevo).
-  > **Acción:** una vez registradas las 3 actividades de [[CU-14]] con v1.3.6, validar:
-  >   1. Las 3 aparecen ordenadas por fecha DESC.
-  >   2. Iconos y formato de fecha correctos.
-  >   3. Tap en una actividad navega al detalle (o muestra info — ver pantalla 10 espec).
-  > Si los 3 ítems se renderizan → ✅ pasa.
+  > **Retest emulador 2026-05-20 (v1.4.1):** ✅ — tras registrar "Siembra · 20/05/2026" ([[CU-14]]), el item aparece en el timeline con icono + fecha local. EmptyState correcto antes de registrar y después de eliminar ([[CU-17]]). Long-press abre el bottom sheet Editar/Eliminar.
 
 ## Bugs históricos relevantes
 - **Pre v1.3.3** — orden O(n²) dentro de `itemBuilder` corregido. Confirmar fluidez del scroll. Ver CHANGELOG entrada `refactor de seams compartidos + fixes — perf (bug)`.

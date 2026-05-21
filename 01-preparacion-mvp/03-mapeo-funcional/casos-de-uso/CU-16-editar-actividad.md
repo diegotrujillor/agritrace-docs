@@ -49,7 +49,7 @@
   > Shipping: pantalla `activity_edit_screen.dart` + `ActivityForm` widget compartido + ruta `/activities/:id/edit` + entrada vía **long-press** en cada item del timeline (bottom sheet "Editar / Eliminar"). Commit `9843e4d` en main.
   > **Tests:** `test/widget/activity_edit_screen_test.dart` (prefill 4 campos + submit).
   > **Decisión producto:** la edición es destructiva sobre el registro original (no genera "nota correctiva"). Documentado en CHANGELOG. Revisitar post-pilot si productores piden auditoría inmutable.
-  > **Retest E2E:** pendiente al desbloquear [[CU-11]] auth-refresh.
+  > **Retest E2E emulador 2026-05-20 (v1.4.1):** ✅ — long-press en el item del timeline abre el bottom sheet con "Editar" / "Eliminar". Pantalla de edición accesible. Bug auth-refresh ([[CU-11]]) ya cerrado.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

@@ -43,13 +43,13 @@
 - **Given** sin conexión, **When** Diego guarda, **Then** queda local con `_status='created'` y sincroniza al reconectar.
 
 ## Estado de prueba
-- **Estado:** ⚠️ pasa con notas — fix P1 ISO UTC en v1.3.6 cubre este flujo, retest pendiente
+- **Estado:** ✅ pasa (v1.4.1) — retest E2E en emulador OK
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.5 (bug reproducido en código), fix shipping en v1.3.6
+- **Versión APK probada:** 1.4.1 (fix ISO UTC original en v1.3.6, confirmado E2E sobre v1.4.1)
 - **Notas de Diego (auto):**
   > Survey confirma: pantalla `alert_create_screen` (form de recordatorio) existe, backend `POST /v1/alerts/reminders` testeado, `AlertService.createReminder` testeado. **Mismo bug que [[CU-14]]:** `scheduledFor` enviaba `DateTime.now().toIso8601String()` sin sufijo `Z` → backend Zod 400 silencioso.
   > **Fix v1.3.6** (commit `8c3a551`): `alert_service.dart` → `scheduledFor: scheduledFor.toUtc().toIso8601String()`.
-  > **Acción:** una vez v1.3.6 instalado, crear recordatorio "Fertilizar Lote A" 2 días en el futuro, validar que aparece en [[CU-20]] lista de alertas. Si OK → ✅.
+  > **Retest emulador 2026-05-20 (v1.4.1):** ✅ — recordatorio "Fertilizar Lote A · 21/05/2026" creado; aparece de inmediato en la lista de alertas ([[CU-20]]). El `scheduledFor` viaja con sufijo `Z` y backend lo acepta (sin el 400 silencioso previo).
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

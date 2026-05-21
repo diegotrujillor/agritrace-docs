@@ -44,15 +44,15 @@
 - **Given** el lote tiene foto en la actividad, **When** Diego toca la miniatura, **Then** se abre la foto en grande.
 
 ## Estado de prueba
-- **Estado:** ⚠️ pasa parcial — listar en finca-detail ✅, lote-detail screen tuvo error de auth en re-test
+- **Estado:** ✅ pasa (v1.4.1) — bug P1 de auth-refresh cerrado
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.5
-- **Entorno:** emulador AVD + backend v0.4.1.
+- **Versión APK probada:** 1.4.1 (CI commit `b82d6a4`)
+- **Entorno:** emulador AVD + backend prod (`api.agritrace.co`).
 - **Notas de Diego (auto):**
-  > **Listar lotes en Pantalla 7 (Detalle Finca):** ✅ tras fix v1.3.5 URL — la sección "Lotes" se renderiza con tarjetas de lotes. Verificado: tras CU-10 el lote "Lote B / cacao · Planificación" aparece inmediatamente.
-  > **Pantalla 9 (Detalle Lote / Timeline):** ⚠️ — al intentar abrir se mostró "Credenciales incorrectas" (401). Probablemente token expirado (15 min) y el `_AuthInterceptor` no logró refresh exitosamente, OR el screen no maneja el caso AsyncLoading mientras el refresh está en vuelo. Re-login no resolvió en mi sesión.
-  > **Posible bug:** P3 — investigar si el refresh interceptor está completando bien. La home auto-loguea (refresh token válido 7d) pero al navegar al lote-detail con tokens recién renovados el screen falla.
-  > **Acción:** repetir prueba con sesión fresca + watch logcat. Fuera de scope para este barrido inicial.
+  > **Listar lotes en Pantalla 7 (Detalle Finca):** ✅ — sección "Lotes" renderiza tarjetas. Verificado en retest E2E: tras CU-10 el "Lote A / cacao · Planificación" aparece inmediatamente.
+  > **Pantalla 9 (Detalle Lote / Timeline):** ✅ — al abrir el lote la pantalla rinde info + timeline + botón "Exportar PDF" + FAB "Registrar actividad". **NO aparece "Credenciales incorrectas".** Antes (v1.3.5) mostraba el banner 401 dos veces.
+  > **Causa raíz cerrada:** bug de `_AuthInterceptor` corregido en v1.4.1 — refresh coalescing (single-flight) + Dio dedicado sin interceptores + `AuthSessionCollapsed` sentinel. Ver mobile CHANGELOG `[1.4.1]`.
+  > **Observación P3 (no bloqueante):** en relaunch rápido del proceso, el probe de cold-start (`AuthNotifier.build` → `/auth/refresh`) a veces manda a `/welcome` (probable race: el probe rota el refresh token y un segundo `build()` ve el token ya rotado). Login manual resuelve. Vale follow-up para suavizar el probe.
 
 ## Bugs históricos relevantes
 - **Pre v1.3.3** — `activity_timeline_screen` ordenaba actividades dentro de `itemBuilder` (O(n²) en scroll). Confirmar que el scroll es fluido aun con >20 items. Ver CHANGELOG entrada `refactor de seams compartidos + fixes — perf (bug)`.

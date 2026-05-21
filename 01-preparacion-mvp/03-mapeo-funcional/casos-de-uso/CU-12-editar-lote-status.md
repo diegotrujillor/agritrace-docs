@@ -46,7 +46,7 @@
 - **Notas de Diego (auto):**
   > Shipping: pantalla `plot_edit_screen.dart` + `PlotForm` widget compartido + ruta `/plots/:id/edit` + entrada vía `PopupMenuButton` overflow en `plot_detail_screen`. Commit `3e0ac0e` en main.
   > **Tests añadidos:** `test/widget/plot_edit_screen_test.dart` (prefill + submit). 204→213 tests verdes después de los 3 commits paralelos.
-  > **Retest E2E emulador:** pendiente (bloqueado por bug auth-refresh [[CU-11]], P1).
+  > **Retest E2E emulador 2026-05-20 (v1.4.1):** ✅ — overflow → "Editar" → cambié Estado de "Planificación" a "En crecimiento"; persistió y el detalle del lote refleja el nuevo estado. Bug auth-refresh ([[CU-11]]) ya cerrado.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.

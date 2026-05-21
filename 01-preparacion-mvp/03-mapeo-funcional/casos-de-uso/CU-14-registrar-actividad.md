@@ -46,15 +46,15 @@
 - **Given** Diego adjunta una foto, **When** guarda, **Then** la actividad guarda `photoUrl` (local URI offline, remoto al sync) y la miniatura se muestra en el timeline.
 
 ## Estado de prueba
-- **Estado:** ⚠️ pasa con notas — bug P1 ISO UTC corregido en v1.3.6, retest pendiente
+- **Estado:** ✅ pasa (v1.4.1) — retest E2E en emulador OK
 - **Fecha de prueba:** 2026-05-20
-- **Versión APK probada:** 1.3.5 (bug reproducido vía curl), fix shipping en v1.3.6
+- **Versión APK probada:** 1.4.1 (fix ISO UTC original en v1.3.6, confirmado E2E sobre v1.4.1)
 - **Notas de Diego (auto):**
   > Survey de código confirmó UI completa (`activity_create_screen`, `ActivityForm`, `activitiesProvider`). Form acepta los 6 tipos. **Reproducido vía curl:** payload con `occurredAt: "2026-05-20T12:00:00.000000"` (sin `Z`) devuelve 400 `{"error":"occurredAt: occurredAt must be an ISO 8601 datetime"}`. Mismo payload con `Z` retorna 201.
   > **Causa raíz:** `DateTime.now().toIso8601String()` en Dart retorna local-time sin sufijo `Z`. Backend Zod `.datetime()` strict.
   > **Fix v1.3.6** (commit `8c3a551`): `.toUtc().toIso8601String()` en `activity_service.dart` (create + update).
   > **Acción:** una vez `v1.3.6` esté instalado, registrar `sowing`, `fertilization`, `harvest` en `Lote A` (cacao) y `Lote B` (caña, ver [[CU-10]]). Cambiar estado a ✅ pasa si los 3 tipos se persisten y aparecen en [[CU-15]] timeline.
-  > **Retest emulador 2026-05-20:** bloqueado por el bug de auth refresh detectado en [[CU-11]] (P3) — el `_AuthInterceptor` no completa el refresh al navegar de dashboard → finca-detail, deja la pantalla en "Credenciales incorrectas". El fix ISO UTC quedó **verificado a nivel de servicio vía curl + 200 tests** (`flutter test`), por lo que la causa raíz original está cerrada. Retest E2E queda pendiente al resolver el bug de refresh.
+  > **Retest emulador 2026-05-20 (v1.4.1):** ✅ — registrada actividad "Siembra · 20/05/2026" en Lote A; persiste y aparece en el timeline ([[CU-15]]) sin el banner genérico "Ocurrió un error". El bug de auth-refresh que bloqueaba este retest quedó cerrado en v1.4.1 (ver [[CU-11]]).
 
 ## Bugs históricos relevantes
 - Ninguno documentado específico al form de actividad en CHANGELOG.

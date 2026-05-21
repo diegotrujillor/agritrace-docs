@@ -48,7 +48,7 @@
   > Shipping: acción "Actualizar clima" en AppBar de `alerts_screen` con spinner inline + snackbar "Clima actualizado · N alertas nuevas" / mensaje de error en rojo. `AlertsNotifier.runWeatherCheckForAllPlots(plotIds)` agrega un loop sobre lotes del usuario + invalidación de lista. Commit `9d64d5f` en main.
   > **Tests:** `test/widget/alerts_screen_weather_check_test.dart` — 3 casos (1 call por lote, happy path con spinner observable, error path con snackbar rojo y lista intacta).
   > **Backend:** `WEATHER_PROVIDER=stub` sigue activo en prod (genera alerta sintética). El switch a `openweathermap` real + cron son decisiones post-pilot documentadas en CHANGELOG.
-  > **Retest E2E:** pendiente al desbloquear [[CU-11]].
+  > **Retest E2E emulador 2026-05-20 (v1.4.1):** ✅ — botón "Actualizar clima" en AppBar de `alerts_screen` dispara el check; snackbar "Clima actualizado" (provider `stub` no generó alerta sintética en esta corrida, pero la llamada completó sin error). Bug auth-refresh ([[CU-11]]) ya cerrado.
 
 ## Bugs históricos relevantes
 - Ninguno documentado en CHANGELOG. (Provider real pendiente de configurar — el MVP usa `stub`.)

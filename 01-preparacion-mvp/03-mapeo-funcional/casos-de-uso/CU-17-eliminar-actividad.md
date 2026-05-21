@@ -46,7 +46,7 @@
 - **Notas de Diego (auto):**
   > Shipping: long-press en item del timeline → bottom sheet "Eliminar" → `AlertDialog` "¿Eliminar esta actividad?" con copy "Esta acción no se puede deshacer". Commit `9843e4d` en main. Mismo flujo mirrored en `plot_detail_screen` (timeline inline del lote).
   > **Tests:** `test/widget/activity_timeline_delete_test.dart` (3 casos: sheet, confirm, cancel).
-  > **Retest E2E:** pendiente al desbloquear [[CU-11]].
+  > **Retest E2E emulador 2026-05-20 (v1.4.1):** ✅ — long-press → bottom sheet → "Eliminar" → `AlertDialog` "¿Eliminar esta actividad?" ("Esta acción no se puede deshacer"); al confirmar el timeline vuelve al EmptyState. Bug auth-refresh ([[CU-11]]) ya cerrado.
 
 ## Bugs históricos relevantes
 - Ninguno documentado para este flujo en CHANGELOG.
